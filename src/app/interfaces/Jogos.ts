@@ -1,11 +1,11 @@
-export interface Filmes{
+export interface Jogos{
     nome: string;
-    diretor: string;
+    autor: string;
     descricao: string;
     disponibilidade: string;
     estudio: string;
-    duracao: number;
     dtLancamento: number;
     status: string;
-    statusVisto: string;  
+    statusVisto: string;
+    duracaoMedia: number;
 }

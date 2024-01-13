@@ -7,7 +7,29 @@ import { Desenho } from 'src/app/interfaces/Desenho';
   styleUrls: ['./anime.component.css']
 })
 export class AnimeComponent {
-  Anime?: Desenho = {
-    nome: " "
-  };
+  nome = ' ';
+  autor =  ' ';
+  descricao=' ';
+  disponibilidade=' ';
+  estudio=' ';
+  maxEps = 0 ;
+  dtLancamento = 0 ;
+  nacionalidade=' ';
+  status=' ';
+  statusVisto=' ';
+  temps = 0 ;
+
+  Anime: Desenho = {
+    nome: this.nome,
+    autor: this.autor,
+    descricao: this.descricao,
+    disponibilidade: this.disponibilidade,
+    estudio: this.estudio,
+    maxEps: this.maxEps,
+    dtLancamento: this.dtLancamento,
+    nacionalidade: this.nacionalidade,
+    status: this.status,
+    statusVisto: this.statusVisto,
+    temps: this.temps
+  }
 }

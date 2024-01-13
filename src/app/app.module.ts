@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { FilmeComponent } from './componentes/filme/filme.component';
 import { NovelaComponent } from './componentes/novela/novela.component';
 import { MangaComponent } from './componentes/manga/manga.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { JogosComponent } from './componentes/jogos/jogos.component';
+import { AudioComponent } from './componentes/audio/audio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,11 +22,14 @@ import { HomeComponent } from './componentes/home/home.component';
     FilmeComponent,
     NovelaComponent,
     MangaComponent,
-    HomeComponent
+    HomeComponent,
+    JogosComponent,
+    AudioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
