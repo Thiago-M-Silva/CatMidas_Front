@@ -1,13 +1,17 @@
 <form >
-    <input type="text" [(ngModel)]="nome" nome="nome" >
-    <input type="text" [(ngModel)]="autor" autor="autor" >
-    <input type="text" [(ngModel)]="descricao" descricao="descricao" >
-    <input type="text" [(ngModel)]="disponibilidade" disponibilidade="disponibilidade" >
-    <input type="text" [(ngModel)]="estudio" estudio="estudio" >
-    <input type="text" [(ngModel)]="nacionalidade" nacionalidade="nacionalidade" >
-    <input type="text" [(ngModel)]="status" status="status" >
-    <input type="text" [(ngModel)]="statusVisto" statusVisto="statusVisto" >
-    <input type="number" [(ngModel)]="maxEps" maxEps="maxEps" >
-    <input type="number" [(ngModel)]="temps" temps="temps" >
-    <input type="date" [(ngModel)]="dtLancamento" dtLancamento="dtLancamento" >
+    <div class="form-group">
+        <input type="text" [(ngModel)]="Anime.nome" name="nome">
+        <input type="text" [(ngModel)]="Anime.autor" name="autor" >
+        <input type="text" [(ngModel)]="Anime.descricao" name="descricao">
+        <input type="text" [(ngModel)]="Anime.disponibilidade" name="disponibilidade">
+        <input type="text" [(ngModel)]="Anime.estudio" name="estudio">
+        <input type="text" [(ngModel)]="Anime.nacionalidade" name="nacionalidade">
+        <input type="text" [(ngModel)]="Anime.status" name="status">
+        <input type="text" [(ngModel)]="Anime.statusVisto" name="statusVisto">
+        <input type="number" [(ngModel)]="Anime.maxEps" name="maxEps">
+        <input type="number" [(ngModel)]="Anime.temps" name="temps">
+        <input type="date" [(ngModel)]="Anime.dtLancamento" name="dtLancamento">
+
+        <input type="submit" value="Enviar" (click)="enviaDados()">
+    </div>
 </form>
