@@ -1,1 +1,15 @@
-<p>filme works!</p>
+<form >
+    <div class="form-group">
+        <input type="text" [(ngModel)]="Filme.nome" name="nome">
+        <input type="text" [(ngModel)]="Filme.diretor" name="diretor" >
+        <input type="text" [(ngModel)]="Filme.descricao" name="descricao">
+        <input type="text" [(ngModel)]="Filme.disponibilidade" name="disponibilidade">
+        <input type="text" [(ngModel)]="Filme.estudio" name="estudio">
+        <input type="text" [(ngModel)]="Filme.duracao" name="nacionalidade">
+        <input type="text" [(ngModel)]="Filme.statusVisto" name="statusVisto">
+        <input type="number" [(ngModel)]="Filme.status" name="maxEps">
+        <input type="date" [(ngModel)]="Filme.dtLancamento" name="dtLancamento">
+
+        <input type="submit" value="Enviar" (click)="enviaDados()">
+    </div>
+</form>

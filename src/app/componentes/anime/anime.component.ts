@@ -41,7 +41,7 @@ export class AnimeComponent {
   }
 
   enviaDados(){
-    
+    console.log(this.Anime);
   }
 
   getDados(): void{

@@ -9,4 +9,5 @@ export interface Serie{
     status: string;
     statusVisto: string;
     temps: number;
+    // dtLancamento: Date;
 }

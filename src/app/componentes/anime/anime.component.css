@@ -1,0 +1,9 @@
+div {
+    margin: 0 5vw;
+    padding: 0 2vw;
+    flex-direction: column;
+}
+
+input {
+    margin: 5px;
+ }

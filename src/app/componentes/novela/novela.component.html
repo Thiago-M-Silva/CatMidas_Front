@@ -1,1 +1,15 @@
-<p>novela works!</p>
+<form >
+    <div class="form-group">
+        <input type="text" [(ngModel)]="Novela.nome" name="nome">
+        <input type="text" [(ngModel)]="Novela.autor" name="autor" >
+        <input type="text" [(ngModel)]="Novela.descricao" name="descricao">
+        <input type="text" [(ngModel)]="Novela.disponibilidade" name="disponibilidade">
+        <input type="text" [(ngModel)]="Novela.estudio" name="estudio">
+        <input type="number" [(ngModel)]="Novela.maxEps" name="maxEps">
+        <input type="text" [(ngModel)]="Novela.statusVisto" name="statusVisto">
+        <input type="number" [(ngModel)]="Novela.status" name="status">
+        <input type="number" [(ngModel)]="Novela.temps" name="number">
+
+        <input type="submit" value="Enviar" (click)="sendDados()">
+    </div>
+</form>

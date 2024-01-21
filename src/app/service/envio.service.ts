@@ -10,8 +10,8 @@ export class EnvioService {
 
   constructor(private http: HttpClient) { }
 
-  getDados(): Observable<Desenho>{
-    return this.http.get<Desenho>(this.apiUrl);
+  getDados(): Observable<any>{
+    return this.http.get<any>(this.apiUrl);
   }
 
   // terminar as funçoes

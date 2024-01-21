@@ -1,1 +1,15 @@
-<p>manga works!</p>
+<form >
+    <div class="form-group">
+        <input type="text" [(ngModel)]="Manga.nome" name="nome">
+        <input type="text" [(ngModel)]="Manga.autor" name="autor" >
+        <input type="text" [(ngModel)]="Manga.descricao" name="descricao">
+        <input type="text" [(ngModel)]="Manga.disponibilidade" name="disponibilidade">
+        <input type="number" [(ngModel)]="Manga.caps" name="caps">
+        <input type="text" [(ngModel)]="Manga.nacionalidade" name="nacionalidade">
+        <input type="text" [(ngModel)]="Manga.statusVisto" name="statusVisto">
+        <input type="number" [(ngModel)]="Manga.status" name="status">
+        <input type="date" [(ngModel)]="Manga.dtLancamento" name="dtLancamento">
+
+        <input type="submit" value="Enviar" (click)="enviaDados()">
+    </div>
+</form>

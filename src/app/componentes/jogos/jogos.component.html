@@ -1,1 +1,15 @@
-<p>jogos works!</p>
+<form >
+    <div class="form-group">
+        <input type="text" [(ngModel)]="Jogos.nome" name="nome">
+        <input type="text" [(ngModel)]="Jogos.autor" name="autor" >
+        <input type="text" [(ngModel)]="Jogos.descricao" name="descricao">
+        <input type="text" [(ngModel)]="Jogos.disponibilidade" name="disponibilidade">
+        <input type="text" [(ngModel)]="Jogos.estudio" name="estudio">
+        <input type="text" [(ngModel)]="Jogos.duracaoMedia" name="duracaoMedia">
+        <input type="text" [(ngModel)]="Jogos.statusVisto" name="statusVisto">
+        <input type="number" [(ngModel)]="Jogos.status" name="status">
+        <input type="date" [(ngModel)]="Jogos.dtLancamento" name="dtLancamento">
+
+        <input type="submit" value="Enviar" (click)="enviaDados()">
+    </div>
+</form>

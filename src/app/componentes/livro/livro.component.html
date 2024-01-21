@@ -1,1 +1,11 @@
-<p>livro works!</p>
+<form >
+    <div class="form-group">
+        <input type="text" [(ngModel)]="Livros.nome" name="nome">
+        <input type="text" [(ngModel)]="Livros.autor" name="autor" >
+        <input type="text" [(ngModel)]="Livros.descricao" name="descricao">
+        <input type="text" [(ngModel)]="Livros.statusLido" name="statusLido">
+        <input type="number" [(ngModel)]="Livros.paginas" name="paginas">
+        <input type="number" [(ngModel)]="Livros.dtLancamento" name="dtLancamento">
+        <input type="submit" value="Enviar" (click)="enviaDados()">
+    </div>
+</form>

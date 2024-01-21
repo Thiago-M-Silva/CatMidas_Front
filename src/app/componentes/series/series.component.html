@@ -1,1 +1,17 @@
-<p>series works!</p>
+<form >
+    <div class="form-group">
+        <input type="text" [(ngModel)]="Series.nome" name="nome">
+        <input type="text" [(ngModel)]="Series.autor" name="autor" >
+        <input type="text" [(ngModel)]="Series.descricao" name="descricao">
+        <input type="text" [(ngModel)]="Series.disponibilidade" name="disponibilidade">
+        <input type="text" [(ngModel)]="Series.estudio" name="estudio">
+        <input type="text" [(ngModel)]="Series.nacionalidade" name="nacionalidade">
+        <input type="text" [(ngModel)]="Series.statusVisto" name="statusVisto">
+        <input type="number" [(ngModel)]="Series.status" name="status">
+        <input type="number" [(ngModel)]="Series.maxEps" name="maxEps">
+        <input type="number" [(ngModel)]="Series.temps" name="temps">
+        <!-- <input type="date" [(ngModel)]="Series.dtLancamento" name="dtLancamento"> -->
+
+        <input type="submit" value="Enviar" (click)="sendDados()">
+    </div>
+</form>
