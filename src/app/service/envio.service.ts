@@ -6,7 +6,7 @@ import { Desenho } from '../interfaces/Desenho';
   providedIn: 'root'
 })
 export class EnvioService {
-  private apiUrl = 'http://localhost:8080';
+  private apiUrl = 'http://localhost:8080/Anime';
 
   constructor(private http: HttpClient) { }
 
@@ -15,8 +15,8 @@ export class EnvioService {
   }
 
   // terminar as funçoes
-  enviaDados(dados: any){
-    this.http.post(dados, this.apiUrl)
+  sendDados(dados: any): Observable<any>{
+    return this.http.post<any>(this.apiUrl, dados)
   }
 
   deletaDados(){}

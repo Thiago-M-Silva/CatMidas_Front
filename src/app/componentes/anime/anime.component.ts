@@ -41,10 +41,11 @@ export class AnimeComponent {
   }
 
   enviaDados(){
+    this.envioService.sendDados(this.Anime);
     console.log(this.Anime);
   }
 
   getDados(): void{
-    this.envioService.getDados().subscribe((desenho) => (this.Anime = desenho))
+    this.envioService.getDados().subscribe((desenho) => (this.Anime = desenho));
   }
 }
