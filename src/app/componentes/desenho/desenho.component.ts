@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Desenho } from 'src/app/interfaces/Desenho';
 import { EnvioService } from 'src/app/service/envio.service';
 @Component({
-  selector: 'app-anime',
-  templateUrl: './anime.component.html',
-  styleUrls: ['./anime.component.css']
+  selector: 'app-desenho',
+  templateUrl: './desenho.component.html',
+  styleUrls: ['./desenho.component.css']
 })
-export class AnimeComponent {
+export class DesenhoComponent {
   // declaracao das variaveis com valores nulos 
   nome = ' ';
   autor =  ' ';
@@ -26,7 +26,7 @@ export class AnimeComponent {
 
   ngOnInit(): void {}
 
-  Anime: Desenho = {
+  Desenho: Desenho = {
     nome: this.nome,
     autor: this.autor,
     descricao: this.descricao,
@@ -41,11 +41,11 @@ export class AnimeComponent {
   }
 
   enviaDados(){
-    this.envioService.sendDados(this.Anime);
-    console.log(this.Anime);
+    this.envioService.sendDados(this.Desenho);
+    console.log(this.Desenho);
   }
 
   getDados(): void{
-    this.envioService.getDados().subscribe((desenho) => (this.Anime = desenho));
+    this.envioService.getDados().subscribe((desenho) => (this.Desenho = desenho));
   }
 }

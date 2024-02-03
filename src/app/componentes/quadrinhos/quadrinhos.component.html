@@ -1,0 +1,15 @@
+<form >
+    <div class="form-group">
+        <input type="text" [(ngModel)]="Quadrinhos.nome" name="nome">
+        <input type="text" [(ngModel)]="Quadrinhos.autor" name="autor" >
+        <input type="text" [(ngModel)]="Quadrinhos.descricao" name="descricao">
+        <input type="text" [(ngModel)]="Quadrinhos.disponibilidade" name="disponibilidade">
+        <input type="number" [(ngModel)]="Quadrinhos.caps" name="caps">
+        <input type="text" [(ngModel)]="Quadrinhos.nacionalidade" name="nacionalidade">
+        <input type="text" [(ngModel)]="Quadrinhos.statusVisto" name="statusVisto">
+        <input type="number" [(ngModel)]="Quadrinhos.status" name="status">
+        <input type="date" [(ngModel)]="Quadrinhos.dtLancamento" name="dtLancamento">
+
+        <input type="submit" value="Enviar" (click)="enviaDados()">
+    </div>
+</form>

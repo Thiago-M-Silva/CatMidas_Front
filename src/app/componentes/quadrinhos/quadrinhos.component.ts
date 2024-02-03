@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Manga } from 'src/app/interfaces/Manga';
+import { Quadrinhos } from 'src/app/interfaces/Quadrinhos';
 import { EnvioService } from 'src/app/service/envio.service';
 @Component({
-  selector: 'app-manga',
-  templateUrl: './manga.component.html',
-  styleUrls: ['./manga.component.css']
+  selector: 'app-quadrinhos',
+  templateUrl: './quadrinhos.component.html',
+  styleUrls: ['./quadrinhos.component.css']
 })
-export class MangaComponent {
+export class QuadrinhosComponent {
   nome = ' ';
   autor = ' ';
   descricao = ' ';
@@ -23,7 +23,7 @@ export class MangaComponent {
 
   ngOnInit(){}
 
-  Manga: Manga = {
+  Quadrinhos: Quadrinhos = {
     nome: this.nome,
     autor: this.autor,
     descricao: this.descricao,
@@ -38,6 +38,6 @@ export class MangaComponent {
   enviaDados(){}
 
   getDados(): void{
-    this.envioService.getDados().subscribe((manga) => (this.Manga = manga))
+    this.envioService.getDados().subscribe((quadrinhos) => (this.Quadrinhos = quadrinhos))
   }
 }

@@ -6,24 +6,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { AnimeComponent } from './componentes/anime/anime.component';
+import { DesenhoComponent } from './componentes/desenho/desenho.component';
 import { SeriesComponent } from './componentes/series/series.component';
 import { LivroComponent } from './componentes/livro/livro.component';
 import { FilmeComponent } from './componentes/filme/filme.component';
 import { NovelaComponent } from './componentes/novela/novela.component';
-import { MangaComponent } from './componentes/manga/manga.component';
+import { QuadrinhosComponent } from './componentes/quadrinhos/quadrinhos.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { JogosComponent } from './componentes/jogos/jogos.component';
 import { AudioComponent } from './componentes/audio/audio.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AnimeComponent,
+    DesenhoComponent,
     SeriesComponent,
     LivroComponent,
     FilmeComponent,
     NovelaComponent,
-    MangaComponent,
+    QuadrinhosComponent,
     HomeComponent,
     JogosComponent,
     AudioComponent

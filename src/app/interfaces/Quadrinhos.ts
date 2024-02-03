@@ -1,4 +1,4 @@
-export interface Manga{
+export interface Quadrinhos{
     nome: string;
     autor: string;
     descricao: string;
