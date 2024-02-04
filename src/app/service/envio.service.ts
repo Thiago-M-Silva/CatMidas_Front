@@ -6,9 +6,14 @@ import { Desenho } from '../interfaces/Desenho';
   providedIn: 'root'
 })
 export class EnvioService {
-  private apiUrl = 'http://localhost:8080/Anime';
+  private apiUrl = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) { }
+
+  // formataEndereco(string: end = ' '): string{
+  //   string endereco = ' ';
+  //   return endereco = toString(this.apiUrl + end);
+  // }
 
   getDados(): Observable<any>{
     return this.http.get<any>(this.apiUrl);
@@ -16,7 +21,7 @@ export class EnvioService {
 
   // terminar as funçoes
   sendDados(dados: any): Observable<any>{
-    return this.http.post<any>(this.apiUrl, dados)
+    return this.http.post<any>(this.apiUrl, dados);
   }
 
   deletaDados(){}
