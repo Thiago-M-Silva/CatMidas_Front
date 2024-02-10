@@ -6,7 +6,7 @@ import { Desenho } from '../interfaces/Desenho';
   providedIn: 'root'
 })
 export class EnvioService {
-  private apiUrl = 'http://localhost:8080/';
+  private apiUrl = 'http://localhost:8080/anime';
 
   constructor(private http: HttpClient) { }
 
@@ -20,11 +20,47 @@ export class EnvioService {
   }
 
   // terminar as funçoes
-  sendDados(dados: any): Observable<any>{
-    return this.http.post<any>(this.apiUrl, dados);
+  sendDados(dados: any){
+    return this.http.post<any>(this.apiUrl, dados).subscribe(
+      resultado => {
+        console.log('Item corrigido com sucesso!');
+      },
+      erro => {
+        if(erro.status == 400){
+          console.log(erro);
+        }
+      }
+    );
   }
 
-  deletaDados(){}
+  deletaDados(){
+    return this.http.delete(`${this.apiUrl}/2`).subscribe(
+      resultado => {
+        console.log("Exclusao bem sucedida!");
+      }, 
+      erro => {
+        if(erro.status == 404 ){
+          console.log("Excusao mal sucedida - item não encontrado");
+        }
+      }
+    );
+  }
 
-  corrigeDados(){}
+  corrigeDados(dados: any){
+    return this.http.put<any>(`${ this.apiUrl }`, dados).subscribe(
+      resultado => {
+        console.log('Item corrigido com sucesso!');
+      },
+      erro => {
+        switch(erro.status){
+          case 400:
+            console.log(erro.error.mensagem);
+            break;
+          case 404:
+            console.log('Edicao mal sucedida - item não encontrado');
+            break;
+        }
+      }
+    );
+  }
 }

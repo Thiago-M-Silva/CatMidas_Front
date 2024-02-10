@@ -45,7 +45,11 @@ export class DesenhoComponent {
     console.log(this.Desenho);
   }
 
-  getDados(): void{
+  getDados(){
     this.envioService.getDados().subscribe((desenho) => (this.Desenho = desenho));
+  }
+
+  deletaDados(){
+    this.envioService.deletaDados();
   }
 }
