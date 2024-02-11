@@ -1,3 +1,21 @@
+<!-- *ngFor "let desenho of Desenhos " -->
+<div class="tabela">
+        <p>Nome -  {{ Desenho.nome }} </p>
+        <p>Autor - {{ Desenho.autor }}</p>
+        <p>Descricao - {{ Desenho.descricao }}</p>
+        <p>Estudio - {{ Desenho.estudio }}</p>
+        <p>Disponibilidade - {{ Desenho.disponibilidade }}</p>
+        <p>Estudio - {{ Desenho.estudio }}</p>
+        <p>Nacionalidade - {{ Desenho.nacionalidade }}</p>
+        <p>Status - {{ Desenho.status }}</p>
+        <p>Visto - {{ Desenho.statusVisto }}</p>
+        <p>Numero de Temporadas - {{ Desenho.temps }}</p>
+        <p>Numero de episódios - {{ Desenho.maxEps }}</p>
+        <p>Data de Lancamento - {{ Desenho.dtLancamento | date: 'dd/mm/aaaa' }}</p>
+
+        <button (click)="deletaDados( Desenho.id )"> Apagar </button>
+</div>
+
 <form >
     <div class="form-group">
         <p>Digite o nome:</p>
@@ -23,7 +41,8 @@
         <p>Digite a data de lançamento:</p>
         <input type="date" [(ngModel)]="Desenho.dtLancamento" name="dtLancamento">
 
-        <input type="submit" value="Enviar" (click)="enviaDados()">
-        <input type="submit" value="Deleta" (click)="deletaDados()">
+        <button (click)="enviaDados()"> Enviar </button>
+        <button (click)="editaDados( Desenho.id )"> Editar </button>
+
     </div>
 </form>

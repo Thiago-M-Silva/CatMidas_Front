@@ -8,25 +8,45 @@ import { EnvioService } from 'src/app/service/envio.service';
 })
 export class DesenhoComponent {
   // declaracao das variaveis com valores nulos 
-  nome = ' ';
-  autor =  ' ';
-  descricao=' ';
-  disponibilidade=' ';
-  estudio=' ';
-  maxEps = 0 ;
-  dtLancamento = 0 ;
-  nacionalidade=' ';
-  status=' ';
-  statusVisto=' ';
-  temps = 0 ;
+  id: number = 0;
+  nome: string = ' ';
+  autor: string  =  ' ';
+  descricao: string =' ';
+  disponibilidade: string =' ';
+  estudio: string =' ';
+  maxEps: number = 0 ;
+  dtLancamento: Date = new Date();
+  nacionalidade: string = ' ';
+  status: string =' ';
+  statusVisto: string =' ';
+  temps = 0;
 
   constructor(private envioService: EnvioService){
     this.getDados();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getDados();
+  }
+
+  
+  // Desenhos[]: Desenho = {
+  //   id: this.id,
+  //   nome: this.nome,
+  //   autor: this.autor,
+  //   descricao: this.descricao,
+  //   disponibilidade: this.disponibilidade,
+  //   estudio: this.estudio,
+  //   maxEps: this.maxEps,
+  //   dtLancamento: this.dtLancamento,
+  //   nacionalidade: this.nacionalidade,
+  //   status: this.status,
+  //   statusVisto: this.statusVisto,
+  //   temps: this.temps
+  // };
 
   Desenho: Desenho = {
+    id: this.id,
     nome: this.nome,
     autor: this.autor,
     descricao: this.descricao,
@@ -49,7 +69,11 @@ export class DesenhoComponent {
     this.envioService.getDados().subscribe((desenho) => (this.Desenho = desenho));
   }
 
-  deletaDados(){
-    this.envioService.deletaDados();
+  deletaDados(id: number){
+    this.envioService.deletaDados(id);
+  }
+
+  editaDados(id: number){
+    this.envioService.corrigeDados(this.Desenho, id);
   }
 }

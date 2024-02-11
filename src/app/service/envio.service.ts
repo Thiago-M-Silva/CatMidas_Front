@@ -19,7 +19,6 @@ export class EnvioService {
     return this.http.get<any>(this.apiUrl);
   }
 
-  // terminar as funçoes
   sendDados(dados: any){
     return this.http.post<any>(this.apiUrl, dados).subscribe(
       resultado => {
@@ -33,8 +32,8 @@ export class EnvioService {
     );
   }
 
-  deletaDados(){
-    return this.http.delete(`${this.apiUrl}/2`).subscribe(
+  deletaDados(id: number){
+    return this.http.delete(`${this.apiUrl}/id`).subscribe(
       resultado => {
         console.log("Exclusao bem sucedida!");
       }, 
@@ -46,8 +45,8 @@ export class EnvioService {
     );
   }
 
-  corrigeDados(dados: any){
-    return this.http.put<any>(`${ this.apiUrl }`, dados).subscribe(
+  corrigeDados(dados: any, id: number){
+    return this.http.put<any>(`${ this.apiUrl }/id`, dados).subscribe(
       resultado => {
         console.log('Item corrigido com sucesso!');
       },
