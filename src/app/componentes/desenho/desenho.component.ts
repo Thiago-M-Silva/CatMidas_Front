@@ -21,30 +21,6 @@ export class DesenhoComponent {
   statusVisto: string =' ';
   temps = 0;
 
-  constructor(private envioService: EnvioService){
-    this.getDados();
-  }
-
-  ngOnInit(): void {
-    this.getDados();
-  }
-
-  
-  // Desenhos[]: Desenho = {
-  //   id: this.id,
-  //   nome: this.nome,
-  //   autor: this.autor,
-  //   descricao: this.descricao,
-  //   disponibilidade: this.disponibilidade,
-  //   estudio: this.estudio,
-  //   maxEps: this.maxEps,
-  //   dtLancamento: this.dtLancamento,
-  //   nacionalidade: this.nacionalidade,
-  //   status: this.status,
-  //   statusVisto: this.statusVisto,
-  //   temps: this.temps
-  // };
-
   Desenho: Desenho = {
     id: this.id,
     nome: this.nome,
@@ -59,6 +35,16 @@ export class DesenhoComponent {
     statusVisto: this.statusVisto,
     temps: this.temps
   }
+  
+  Desenhos: Desenho[] = [];
+
+  constructor(private envioService: EnvioService){
+    this.getDados();
+  }
+
+  ngOnInit(): void {
+    this.getDados();
+  }
 
   enviaDados(){
     this.envioService.sendDados(this.Desenho);
@@ -66,11 +52,11 @@ export class DesenhoComponent {
   }
 
   getDados(){
-    this.envioService.getDados().subscribe((desenho) => (this.Desenho = desenho));
+    this.envioService.getDados().subscribe((desenhos) => (this.Desenhos = desenhos));
   }
 
   deletaDados(id: number){
-    this.envioService.deletaDados(id);
+    this.envioService.deletaDados(this.Desenhos[0].id);
   }
 
   editaDados(id: number){

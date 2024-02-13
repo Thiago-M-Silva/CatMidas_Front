@@ -1,19 +1,18 @@
-<!-- *ngFor "let desenho of Desenhos " -->
-<div class="tabela">
-        <p>Nome -  {{ Desenho.nome }} </p>
-        <p>Autor - {{ Desenho.autor }}</p>
-        <p>Descricao - {{ Desenho.descricao }}</p>
-        <p>Estudio - {{ Desenho.estudio }}</p>
-        <p>Disponibilidade - {{ Desenho.disponibilidade }}</p>
-        <p>Estudio - {{ Desenho.estudio }}</p>
-        <p>Nacionalidade - {{ Desenho.nacionalidade }}</p>
-        <p>Status - {{ Desenho.status }}</p>
-        <p>Visto - {{ Desenho.statusVisto }}</p>
-        <p>Numero de Temporadas - {{ Desenho.temps }}</p>
-        <p>Numero de episódios - {{ Desenho.maxEps }}</p>
-        <p>Data de Lancamento - {{ Desenho.dtLancamento | date: 'dd/mm/aaaa' }}</p>
+<div *ngFor=" let desenho of Desenhos " class="tabela">
+        <p>Nome -  {{ desenho.nome }} </p>
+        <p>Autor - {{ desenho.autor }}</p>
+        <p>Descricao - {{ desenho.descricao }}</p>
+        <p>Estudio - {{ desenho.estudio }}</p>
+        <p>Disponibilidade - {{ desenho.disponibilidade }}</p>
+        <p>Estudio - {{ desenho.estudio }}</p>
+        <p>Nacionalidade - {{ desenho.nacionalidade }}</p>
+        <p>Status - {{ desenho.status }}</p>
+        <p>Visto - {{ desenho.statusVisto }}</p>
+        <p>Numero de Temporadas - {{ desenho.temps }}</p>
+        <p>Numero de episódios - {{ desenho.maxEps }}</p>
+        <p>Data de Lancamento - {{ desenho.dtLancamento | date: 'dd/mm/aaaa' }}</p>
 
-        <button (click)="deletaDados( Desenho.id )"> Apagar </button>
+        <button (click)="deletaDados( desenho.id )"> Apagar </button>
 </div>
 
 <form >

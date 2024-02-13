@@ -46,7 +46,7 @@ export class EnvioService {
   }
 
   corrigeDados(dados: any, id: number){
-    return this.http.put<any>(`${ this.apiUrl }/id`, dados).subscribe(
+    return this.http.put<any>(`${ this.apiUrl }/4`, dados).subscribe(
       resultado => {
         console.log('Item corrigido com sucesso!');
       },
