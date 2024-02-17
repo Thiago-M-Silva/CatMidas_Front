@@ -14,12 +14,12 @@ export class DesenhoComponent {
   descricao: string =' ';
   disponibilidade: string =' ';
   estudio: string =' ';
-  maxEps: number = 0 ;
+  maxEps: number = 0;
   dtLancamento: Date = new Date();
   nacionalidade: string = ' ';
   status: string =' ';
   statusVisto: string =' ';
-  temps = 0;
+  temps: number = 0;
 
   Desenho: Desenho = {
     id: this.id,
@@ -47,7 +47,8 @@ export class DesenhoComponent {
   }
 
   enviaDados(){
-    this.envioService.sendDados(this.Desenho);
+    this.envioService.sendDados(this.Desenho).subscribe();
+    //fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(desenho => this.desenho.funcao )
     console.log(this.Desenho);
   }
 
@@ -56,10 +57,13 @@ export class DesenhoComponent {
   }
 
   deletaDados(id: number){
-    this.envioService.deletaDados(this.Desenhos[0].id);
+	console.log(id);
+    this.envioService.deletaDados(id).subscribe();
   }
 
-  editaDados(id: number){
-    this.envioService.corrigeDados(this.Desenho, id);
+  editaDados(desenho: Desenho){
+	console.log(desenho);
+	console.log(this.Desenho);
+    this.envioService.corrigeDados(desenho, this.Desenho.id).subscribe();
   }
 }

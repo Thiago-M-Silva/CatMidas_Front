@@ -1,4 +1,5 @@
 <div *ngFor=" let desenho of Desenhos " class="tabela">
+        <p>Id -  {{ desenho.id }} </p>
         <p>Nome -  {{ desenho.nome }} </p>
         <p>Autor - {{ desenho.autor }}</p>
         <p>Descricao - {{ desenho.descricao }}</p>
@@ -13,6 +14,7 @@
         <p>Data de Lancamento - {{ desenho.dtLancamento | date: 'dd/mm/aaaa' }}</p>
 
         <button (click)="deletaDados( desenho.id )"> Apagar </button>
+	<button (click)="editaDados( desenho )"> Editar </button>
 </div>
 
 <form >
@@ -41,7 +43,6 @@
         <input type="date" [(ngModel)]="Desenho.dtLancamento" name="dtLancamento">
 
         <button (click)="enviaDados()"> Enviar </button>
-        <button (click)="editaDados( Desenho.id )"> Editar </button>
 
     </div>
 </form>
