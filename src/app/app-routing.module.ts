@@ -7,6 +7,8 @@ import { LivroComponent } from './componentes/livro/livro.component';
 import { QuadrinhosComponent } from './componentes/quadrinhos/quadrinhos.component';
 import { NovelaComponent } from './componentes/novela/novela.component';
 import { SeriesComponent } from './componentes/series/series.component';
+import { JogosComponent } from './componentes/jogos/jogos.component';
+import { AudioComponent } from './componentes/audio/audio.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,7 +17,9 @@ const routes: Routes = [
   {path: 'livro', component: LivroComponent},
   {path: 'quadrinhos', component: QuadrinhosComponent},
   {path: 'novela', component: NovelaComponent},
-  {path: 'serie', component: SeriesComponent}
+  {path: 'serie', component: SeriesComponent},
+  {path: 'jogos', component: JogosComponent},
+  {path: 'audio', component: AudioComponent}
 ];
 
 @NgModule({

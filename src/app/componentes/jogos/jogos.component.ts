@@ -8,23 +8,19 @@ import { EnvioService } from 'src/app/service/envio.service';
   styleUrls: ['./jogos.component.css']
 })
 export class JogosComponent {
-  nome = ' ';
-  autor = ' ';
-  descricao = ' ';
-  disponibilidade = ' ';
-  estudio = ' ';
-  status = ' ';
-  statusVisto = ' ';
-  dtLancamento = 0;
-  duracaoMedia = 0;
-
-  constructor( private envioService: EnvioService){
-    this.getDados();
-  }
+  id: number = 0;
+  nome: string = ' ';
+  autor: string  = ' ';
+  descricao: string  = ' ';
+  disponibilidade: string  = ' ';
+  estudio: string  = ' ';
+  status: string  = ' ';
+  statusVisto: string  = ' ';
+  dtLancamento: Date = new Date();
+  duracaoMedia: number = 0;
   
-  ngOnInit(): void {}
-
   Jogos: Jogos = {
+    id: this.id,
     nome: this.nome,
     autor: this.autor,
     descricao: this.descricao,
@@ -36,9 +32,30 @@ export class JogosComponent {
     duracaoMedia: this.duracaoMedia
   }
 
-  enviaDados(){}
+  constructor( private envioService: EnvioService){
+    this.getDados();
+  }
+  
+  ngOnInit(): void {
+    this.getDados();
+  }
+
+  enviaDados(){
+    this.envioService.sendDados(this.Jogos).subscribe();
+  }
 
   getDados(): void{
     this.envioService.getDados().subscribe((jogos) => (this.Jogos = jogos))
+  }
+
+  deletaDados(id: number){
+	  console.log(id);
+    this.envioService.deletaDados(id).subscribe();
+  }
+
+  editaDados(jogos: Jogos){
+    console.log(jogos);
+    console.log(this.Jogos);
+    this.envioService.corrigeDados(jogos, this.Jogos.id).subscribe();
   }
 }

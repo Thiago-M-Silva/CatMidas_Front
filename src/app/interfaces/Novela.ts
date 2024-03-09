@@ -1,4 +1,5 @@
 export interface Novela{
+    id: number;
     nome: string;
     autor: string;
     descricao: string;
@@ -9,4 +10,5 @@ export interface Novela{
     status: string;
     statusVisto: string;
     temps: number;
+    dtLancamento: Date;
 }

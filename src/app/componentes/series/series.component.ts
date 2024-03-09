@@ -8,24 +8,21 @@ import { EnvioService } from 'src/app/service/envio.service';
   styleUrls: ['./series.component.css']
 })
 export class SeriesComponent {
-  nome = ' ';
-  autor = ' ';
-  descricao = ' ';
-  disponibilidade = ' ';
-  estudio = ' ';
-  nacionalidade = ' ';
-  status = ' ';
-  statusVisto = ' ';
-  maxEps = 0;
-  temps = 0;
-  dtLancamento = ' ';
-  // date = newDate(this.dtLancamento)
-
-  constructor( private envioService: EnvioService ){
-
-  }
-
-  Series: Serie = {
+  id: number = 0;
+  nome: string = ' ';
+  autor: string  = ' ';
+  descricao: string  = ' ';
+  disponibilidade: string  = ' ';
+  estudio: string  = ' ';
+  nacionalidade: string  = ' ';
+  status: string  = ' ';
+  statusVisto: string  = ' ';
+  maxEps: number  = 0;
+  temps: number  = 0;
+  dtLancamento: Date = new Date();
+  
+  Serie: Serie = {
+    id: this.id,
     nome: this.nome,
     autor: this.autor,
     descricao: this.descricao,
@@ -36,12 +33,37 @@ export class SeriesComponent {
     statusVisto: this.statusVisto,
     maxEps: this.maxEps,
     temps: this.temps,
-    // dtLancamento: this.date,
+    dtLancamento: this.dtLancamento,
   }
 
-  sendDados(){}
+  Series: Serie[] = [];
+
+  constructor( private envioService: EnvioService ){
+    this.getDados();
+  }
+
+  ngOnInit(): void{
+    this.getDados();
+  }
+
+  enviaDados(){
+    this.envioService.sendDados(this.Serie).subscribe();
+    //fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Serie => this.Serie.funcao )
+    console.log(this.Serie);
+  }
 
   getDados(){
     this.envioService.getDados().subscribe((serie) => (this.Series = serie))
+  }
+
+  deletaDados(id: number){
+	  console.log(id);
+    this.envioService.deletaDados(id).subscribe();
+  }
+
+  editaDados(serie: Serie){
+    console.log(serie);
+    console.log(this.Serie);
+    this.envioService.corrigeDados(serie, this.Serie.id).subscribe();
   }
 }

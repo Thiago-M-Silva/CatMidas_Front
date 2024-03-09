@@ -57,13 +57,13 @@ export class DesenhoComponent {
   }
 
   deletaDados(id: number){
-	console.log(id);
+	  console.log(id);
     this.envioService.deletaDados(id).subscribe();
   }
 
   editaDados(desenho: Desenho){
-	console.log(desenho);
-	console.log(this.Desenho);
+    console.log(desenho);
+    console.log(this.Desenho);
     this.envioService.corrigeDados(desenho, this.Desenho.id).subscribe();
   }
 }

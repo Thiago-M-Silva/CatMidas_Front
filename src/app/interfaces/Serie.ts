@@ -1,4 +1,5 @@
 export interface Serie{
+    id: number;
     nome: string;
     autor: string;
     descricao: string;
@@ -9,5 +10,5 @@ export interface Serie{
     status: string;
     statusVisto: string;
     temps: number;
-    // dtLancamento: Date;
+    dtLancamento: Date;
 }

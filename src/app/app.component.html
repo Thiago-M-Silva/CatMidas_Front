@@ -1,14 +1,54 @@
-<header>
-</header>
-<nav>
-    <a routerLink="/">Home</a>
-    <a routerLink="/desenho">Desenho</a>
-    <a routerLink="/filme">Filme</a>
-    <a routerLink="/livro">Livro</a>
-    <a routerLink="/quadrinhos">Quadrinhos</a>
-    <a routerLink="/novela">Novela</a>
-    <a routerLink="/serie">Series</a>
-</nav>
-<router-outlet></router-outlet>
-<main></main>
-<footer></footer>
+<div class="fundo">
+    <header>
+        <h1> {{ title }} </h1>
+    </header>
+
+    <img src="../assets/gato1.png" alt="gato.png">
+    
+    <div class="rotas">
+        <nav>
+            <a routerLink="/">Home</a>
+            <a routerLink="/desenho">Desenho</a>
+            <a routerLink="/filme">Filme</a>
+            <a routerLink="/livro">Livro</a>
+            <a routerLink="/quadrinhos">Quadrinhos</a>
+            <a routerLink="/novela">Novela</a>
+            <a routerLink="/serie">Series</a>
+            <a routerLink="/jogos">Jogos</a>
+            <a routerLink="/audio">Audio</a>
+        </nav>
+        <router-outlet></router-outlet>
+    </div>
+    
+    <main class="conteudo">
+        <h2>Ultimas adicoes</h2>
+        <div *ngFor="let audio in Audios" class="resumo">
+            <p>{{audio.nome}} - {{audio.autor}}</p>
+        </div>
+        <div *ngFor="let desenho in Desenhos" class="resumo">
+            <p>{{desenho.nome}} - {{desenho.autor}}</p>
+        </div>
+        <div *ngFor="let filme in Filmes" class="resumo">
+            <p>{{filme.nome}} - {{filme.autor}}</p>
+        </div>
+        <div *ngFor="let jogo in Jogos" class="resumo">
+            <p>{{jogo.nome}} - {{jogo.autor}}</p>
+        </div>
+        <div *ngFor="let livro in Livros" class="resumo">
+            <p>{{livro.nome}} - {{livro.autor}}</p>
+        </div>
+        <div *ngFor="let novela in Novelas" class="resumo">
+            <p>{{novela.nome}} - {{novela.autor}}</p>
+        </div>
+        <div *ngFor="let quadrinho in Quadrinhos" class="resumo">
+            <p>{{quadrinho.nome}} - {{quadrinho.autor}}</p>
+        </div>
+        <div *ngFor="let serie in Series" class="resumo">
+            <p>{{serie.nome}} - {{serie.autor}}</p>
+        </div>
+    </main>
+</div>
+
+<footer class="creditos">
+    <p>{{ creditos }}</p>
+</footer>

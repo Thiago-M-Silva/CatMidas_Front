@@ -1,3 +1,19 @@
+<div *ngFor=" let filme of Filmes " class="tabela">
+    <p>Id -  {{ filme.id }} </p>
+    <p>Nome -  {{ filme.nome }} </p>
+    <p>Autor - {{ filme.diretor }}</p>
+    <p>Descricao - {{ filme.descricao }}</p>
+    <p>Estudio - {{ filme.estudio }}</p>
+    <p>Disponibilidade - {{ filme.disponibilidade }}</p>
+    <p>Estudio - {{ filme.estudio }}</p>
+    <p>Status - {{ filme.status }}</p>
+    <p>Visto - {{ filme.statusVisto }}</p>
+    <p>Data de Lancamento - {{ filme.dtLancamento | date: 'dd/mm/aaaa' }}</p>
+
+    <button (click)="deletaDados( filme.id )"> Apagar </button>
+<button (click)="editaDados( filme )"> Editar </button>
+</div>
+
 <form >
     <div class="form-group">
         <input type="text" [(ngModel)]="Filme.nome" name="nome">
