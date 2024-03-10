@@ -1,27 +1,25 @@
 <div class="fundo">
     <header>
+        <button routerLink="/">Home</button>
         <h1> {{ title }} </h1>
     </header>
 
     <img src="../assets/gato1.png" alt="gato.png">
     
-    <div class="rotas">
-        <nav>
-            <a routerLink="/">Home</a>
-            <a routerLink="/desenho">Desenho</a>
-            <a routerLink="/filme">Filme</a>
-            <a routerLink="/livro">Livro</a>
-            <a routerLink="/quadrinhos">Quadrinhos</a>
-            <a routerLink="/novela">Novela</a>
-            <a routerLink="/serie">Series</a>
-            <a routerLink="/jogos">Jogos</a>
-            <a routerLink="/audio">Audio</a>
-        </nav>
-        <router-outlet></router-outlet>
-    </div>
+    <nav class="rotas">
+        <button routerLink="/desenho"> Desenho </button>
+        <button routerLink="/filme">Filme</button>
+        <button routerLink="/livro">Livro</button>
+        <button routerLink="/quadrinhos">Quadrinhos</button>
+        <button routerLink="/novela">Novela</button>
+        <button routerLink="/serie">Series</button>
+        <button routerLink="/jogos">Jogos</button>
+        <button routerLink="/audio">Audio</button>
+    </nav>
+    <router-outlet></router-outlet>
     
     <main class="conteudo">
-        <h2>Ultimas adicoes</h2>
+        <h2>Ultimas adições</h2>
         <div *ngFor="let audio in Audios" class="resumo">
             <p>{{audio.nome}} - {{audio.autor}}</p>
         </div>
