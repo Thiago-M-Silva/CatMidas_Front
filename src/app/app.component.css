@@ -6,9 +6,15 @@
     position: relative;
 }
 
-body{
-    margin: 0 0 100px;
-    padding: 25px
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.fundo{
+    margin: 0 0 8vh;
+    padding: 25px;
+    background-color: #FF934F;
 }
 
 header{
@@ -19,12 +25,6 @@ h1{
     font-size: 4em;
     justify-content: center;
     margin: auto;
-}
-
-.fundo{
-    background-color: #FF934F;
-    height: auto;
-    width: auto;
 }
 
 img{
@@ -62,25 +62,6 @@ h2{
     margin: auto;
 }
 
-/* footer{
-    background-color: aqua;
-} */
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-body {
-    margin: 0 0 100px;
-    /* bottom = footer height */
-    padding: 25px;
-}
 footer {
-    background-color: orange;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-    overflow:hidden;
+    background-color: #eaebec;
 }
