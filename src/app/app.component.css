@@ -6,9 +6,9 @@
     position: relative;
 }
 
-html {
-    position: relative;
-    min-height: 100%;
+body{
+    padding: 5%;
+    background-color: #FF934F;
 }
 
 .fundo{
@@ -17,8 +17,20 @@ html {
     background-color: #FF934F;
 }
 
-header{
+header {
     display: flex;
+}
+
+header > button{
+    border-radius: 100%;
+    width: 5%;
+    height: auto;
+    padding: 16px;
+    padding-left: 10px;
+    position: relative;
+    align-self: center;
+    font-size: 0.87em;
+    text-align: left;
 }
 
 h1{
@@ -63,5 +75,9 @@ h2{
 }
 
 footer {
-    background-color: #eaebec;
+    background-color: #da7557;
+    position: relative;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
 }
