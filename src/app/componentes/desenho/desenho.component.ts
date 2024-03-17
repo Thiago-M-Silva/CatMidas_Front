@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Desenho } from 'src/app/interfaces/Desenho';
 import { EnvioService } from 'src/app/service/envio.service';
+import { MatDialog } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-desenho',
   templateUrl: './desenho.component.html',
@@ -38,7 +40,8 @@ export class DesenhoComponent {
   
   Desenhos: Desenho[] = [];
 
-  constructor(private envioService: EnvioService){
+  constructor(private envioService: EnvioService,
+              public dialog: MatDialog){
     this.getDados();
   }
 
@@ -65,5 +68,10 @@ export class DesenhoComponent {
     console.log(desenho);
     console.log(this.Desenho);
     this.envioService.corrigeDados(desenho, this.Desenho.id).subscribe();
+  }
+
+  //teste popup
+  teste(){
+    const dialogRef = this.dialog.open(DesenhoComponent)
   }
 }

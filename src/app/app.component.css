@@ -11,12 +11,6 @@ body{
     background-color: #FF934F;
 }
 
-.fundo{
-    margin: 0 0 8vh;
-    padding: 25px;
-    background-color: #FF934F;
-}
-
 header {
     display: flex;
 }
@@ -40,14 +34,13 @@ h1{
 }
 
 img{
-    width: auto;
-    height: auto;
     margin: auto;
-    padding-top: 3vw;
     display: block;
 }
 
 nav{
+    position:relative;
+    top: -12px;
     display: flex;
     background-color: #eaebec;
     border-radius: 100px;
