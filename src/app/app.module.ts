@@ -16,6 +16,8 @@ import { QuadrinhosComponent } from './componentes/quadrinhos/quadrinhos.compone
 import { HomeComponent } from './componentes/home/home.component';
 import { JogosComponent } from './componentes/jogos/jogos.component';
 import { AudioComponent } from './componentes/audio/audio.component';
+import { FormDesenhoComponent } from './popups/form-desenho/form-desenho.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,8 @@ import { AudioComponent } from './componentes/audio/audio.component';
     QuadrinhosComponent,
     HomeComponent,
     JogosComponent,
-    AudioComponent
+    AudioComponent,
+    FormDesenhoComponent
   ],
   imports: [
     BrowserModule,

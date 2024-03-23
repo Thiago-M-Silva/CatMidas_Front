@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Desenho } from 'src/app/interfaces/Desenho';
 import { EnvioService } from 'src/app/service/envio.service';
 import { MatDialog } from '@angular/material/dialog';
+import { FormDesenhoComponent } from 'src/app/popups/form-desenho/form-desenho.component';
 
 @Component({
   selector: 'app-desenho',
@@ -49,12 +50,6 @@ export class DesenhoComponent {
     this.getDados();
   }
 
-  enviaDados(){
-    this.envioService.sendDados(this.Desenho).subscribe();
-    //fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(desenho => this.desenho.funcao )
-    console.log(this.Desenho);
-  }
-
   getDados(){
     this.envioService.getDados().subscribe((desenhos) => (this.Desenhos = desenhos));
   }
@@ -71,7 +66,7 @@ export class DesenhoComponent {
   }
 
   //teste popup
-  teste(){
-    const dialogRef = this.dialog.open(DesenhoComponent)
+  adicionar(){
+    const dialogRef = this.dialog.open(FormDesenhoComponent, {height: '400px', width: '600px'})
   }
 }

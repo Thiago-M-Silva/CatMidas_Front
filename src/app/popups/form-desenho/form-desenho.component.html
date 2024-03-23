@@ -1,0 +1,30 @@
+<form >
+    <div class="form-group">
+        <p>Digite o nome:</p>
+        <input type="text" [(ngModel)]="Desenho.nome" name="nome">
+        <p>Digite o nome do autor:</p>
+        <input type="text" [(ngModel)]="Desenho.autor" name="autor" >
+        <p>Digite a descricao:</p>
+        <input type="text" [(ngModel)]="Desenho.descricao" name="descricao">
+        <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
+        <input type="text" [(ngModel)]="Desenho.disponibilidade" name="disponibilidade">
+        <p>Digite o nome do estudio</p>
+        <input type="text" [(ngModel)]="Desenho.estudio" name="estudio">
+        <p>Digite a nacionalidade</p>
+        <input type="text" [(ngModel)]="Desenho.nacionalidade" name="nacionalidade">
+        <p>Digite se está em lançamento ou finalizado:</p>
+        <input type="text" [(ngModel)]="Desenho.status" name="status">
+        <p>Digite se você já assistiu ou não:</p>
+        <input type="text" [(ngModel)]="Desenho.statusVisto" name="statusVisto">
+        <p>Digite o numero maximo de episódios:</p>
+        <input type="number" [(ngModel)]="Desenho.maxEps" name="maxEps">
+        <p>Digite o numero de temporadas:</p>
+        <input type="number" [(ngModel)]="Desenho.temps" name="temps">
+        <p>Digite a data de lançamento:</p>
+        <input type="date" [(ngModel)]="Desenho.dtLancamento" name="dtLancamento">
+
+        <button (click)="enviaDados()"> Enviar </button>
+
+    </div>
+
+</form>
