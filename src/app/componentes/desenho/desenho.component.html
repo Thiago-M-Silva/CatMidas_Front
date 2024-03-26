@@ -1,4 +1,4 @@
-<div *ngFor=" let desenho of Desenhos " class="tabela">
+<!-- <div *ngFor=" let desenho of Desenhos " class="tabela">
         <p>Id -  {{ desenho.id }} </p>
         <p>Nome -  {{ desenho.nome }} </p>
         <p>Autor - {{ desenho.autor }}</p>
@@ -15,5 +15,25 @@
 
         <button (click)="deletaDados( desenho.id )"> Apagar </button>
 	<button (click)="editaDados( desenho )"> Editar </button>
+</div>
+<button (click)="adicionar()"> Adicionar </button> -->
+
+<div *ngIf=" Desenho " class="tabela">
+        <p>Id -  {{ Desenho.id }} </p>
+        <p>Nome -  {{ Desenho.nome }} </p>
+        <p>Autor - {{ Desenho.autor }}</p>
+        <p>Descricao - {{ Desenho.descricao }}</p>
+        <p>Estudio - {{ Desenho.estudio }}</p>
+        <p>Disponibilidade - {{ Desenho.disponibilidade }}</p>
+        <p>Estudio - {{ Desenho.estudio }}</p>
+        <p>Nacionalidade - {{ Desenho.nacionalidade }}</p>
+        <p>Status - {{ Desenho.status }}</p>
+        <p>Visto - {{ Desenho.statusVisto }}</p>
+        <p>Numero de Temporadas - {{ Desenho.temps }}</p>
+        <p>Numero de episódios - {{ Desenho.maxEps }}</p>
+        <p>Data de Lancamento - {{ Desenho.dtLancamento | date: 'dd/mm/aaaa' }}</p>
+
+        <button (click)="deletaDados( Desenho.id )"> Apagar </button>
+	<button (click)="editaDados( Desenho )"> Editar </button>
 </div>
 <button (click)="adicionar()"> Adicionar </button>

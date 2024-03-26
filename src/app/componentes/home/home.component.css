@@ -1,0 +1,7 @@
+.conteudo{
+    display: flex;
+    justify-content: center;
+    background-color: #eaebec;
+    margin: 1%;
+    border-radius: 100px;
+}

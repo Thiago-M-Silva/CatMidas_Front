@@ -1,0 +1,27 @@
+<main class="conteudo">
+    <h2>Ultimas adições</h2>
+    <div *ngFor="let audio in Audios" class="resumo">
+        <p>{{audio.nome}} - {{audio.autor}}</p>
+    </div>
+    <div *ngFor="let desenho in Desenhos" class="resumo">
+        <p>{{desenho.nome}} - {{desenho.autor}}</p>
+    </div>
+    <div *ngFor="let filme in Filmes" class="resumo">
+        <p>{{filme.nome}} - {{filme.autor}}</p>
+    </div>
+    <div *ngFor="let jogo in Jogos" class="resumo">
+        <p>{{jogo.nome}} - {{jogo.autor}}</p>
+    </div>
+    <div *ngFor="let livro in Livros" class="resumo">
+        <p>{{livro.nome}} - {{livro.autor}}</p>
+    </div>
+    <div *ngFor="let novela in Novelas" class="resumo">
+        <p>{{novela.nome}} - {{novela.autor}}</p>
+    </div>
+    <div *ngFor="let quadrinho in Quadrinhos" class="resumo">
+        <p>{{quadrinho.nome}} - {{quadrinho.autor}}</p>
+    </div>
+    <div *ngFor="let serie in Series" class="resumo">
+        <p>{{serie.nome}} - {{serie.autor}}</p>
+    </div>
+</main>

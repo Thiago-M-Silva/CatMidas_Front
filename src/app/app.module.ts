@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { DesenhoComponent } from './componentes/desenho/desenho.component';
@@ -37,7 +38,8 @@ import { FormDesenhoComponent } from './popups/form-desenho/form-desenho.compone
     AppRoutingModule, 
     FormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

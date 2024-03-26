@@ -1,50 +1,23 @@
+<header>
+    <button mat-fab routerLink="/">Home</button>
+    <h1> {{ title }} </h1>
+</header>
 <body >
-    <header>
-        <button routerLink="/">Home</button>
-        <h1> {{ title }} </h1>
-    </header>
 
     <img src="../assets/gato1.png" alt="gato.png">
     
     <nav class="rotas">
-        <button routerLink="/desenho"> Desenho </button>
-        <button routerLink="/filme">Filme</button>
-        <button routerLink="/livro">Livro</button>
-        <button routerLink="/quadrinhos">Quadrinhos</button>
-        <button routerLink="/novela">Novela</button>
-        <button routerLink="/serie">Series</button>
-        <button routerLink="/jogos">Jogos</button>
-        <button routerLink="/audio">Audio</button>
+        <button mat-fab routerLink="/desenho"> Desenho </button>
+        <button mat-fab routerLink="/filme">Filme</button>
+        <button mat-fab routerLink="/livro">Livro</button>
+        <button mat-fab routerLink="/quadrinhos">Quadrinhos</button>
+        <button mat-fab routerLink="/novela">Novela</button>
+        <button mat-fab routerLink="/serie">Series</button>
+        <button mat-fab routerLink="/jogos">Jogos</button>
+        <button mat-fab routerLink="/audio">Audio</button>
     </nav>
-    <router-outlet></router-outlet>
     
-    <main class="conteudo">
-        <h2>Ultimas adições</h2>
-        <div *ngFor="let audio in Audios" class="resumo">
-            <p>{{audio.nome}} - {{audio.autor}}</p>
-        </div>
-        <div *ngFor="let desenho in Desenhos" class="resumo">
-            <p>{{desenho.nome}} - {{desenho.autor}}</p>
-        </div>
-        <div *ngFor="let filme in Filmes" class="resumo">
-            <p>{{filme.nome}} - {{filme.autor}}</p>
-        </div>
-        <div *ngFor="let jogo in Jogos" class="resumo">
-            <p>{{jogo.nome}} - {{jogo.autor}}</p>
-        </div>
-        <div *ngFor="let livro in Livros" class="resumo">
-            <p>{{livro.nome}} - {{livro.autor}}</p>
-        </div>
-        <div *ngFor="let novela in Novelas" class="resumo">
-            <p>{{novela.nome}} - {{novela.autor}}</p>
-        </div>
-        <div *ngFor="let quadrinho in Quadrinhos" class="resumo">
-            <p>{{quadrinho.nome}} - {{quadrinho.autor}}</p>
-        </div>
-        <div *ngFor="let serie in Series" class="resumo">
-            <p>{{serie.nome}} - {{serie.autor}}</p>
-        </div>
-    </main>
+    <router-outlet></router-outlet>
 </body>
 
 <footer class="creditos">

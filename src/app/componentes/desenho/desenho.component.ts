@@ -25,18 +25,31 @@ export class DesenhoComponent {
   temps: number = 0;
 
   Desenho: Desenho = {
-    id: this.id,
-    nome: this.nome,
-    autor: this.autor,
-    descricao: this.descricao,
-    disponibilidade: this.disponibilidade,
-    estudio: this.estudio,
-    maxEps: this.maxEps,
+    // id: this.id,
+    // nome: this.nome,
+    // autor: this.autor,
+    // descricao: this.descricao,
+    // disponibilidade: this.disponibilidade,
+    // estudio: this.estudio,
+    // maxEps: this.maxEps,
+    // dtLancamento: this.dtLancamento,
+    // nacionalidade: this.nacionalidade,
+    // status: this.status,
+    // statusVisto: this.statusVisto,
+    // temps: this.temps
+
+    id: 1,
+    nome: 'teste',
+    autor: 'teste',
+    descricao: 'teste',
+    disponibilidade: 'teste',
+    estudio: 'teste',
+    maxEps: 720,
     dtLancamento: this.dtLancamento,
-    nacionalidade: this.nacionalidade,
-    status: this.status,
-    statusVisto: this.statusVisto,
-    temps: this.temps
+    nacionalidade: 'teste',
+    status:'teste',
+    statusVisto:  'teste',
+    temps: 72,
   }
   
   Desenhos: Desenho[] = [];
@@ -67,6 +80,8 @@ export class DesenhoComponent {
 
   //teste popup
   adicionar(){
-    const dialogRef = this.dialog.open(FormDesenhoComponent, {height: '400px', width: '600px'})
+   const dialogRef = this.dialog.open(FormDesenhoComponent)
+
+   dialogRef.afterClosed() //implementar funcao para reiniciar a pagina
   }
 }

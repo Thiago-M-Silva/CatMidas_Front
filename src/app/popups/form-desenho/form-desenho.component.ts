@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Desenho } from 'src/app/interfaces/Desenho';
 import { EnvioService } from 'src/app/service/envio.service';
 
@@ -36,5 +37,16 @@ export class FormDesenhoComponent {
     temps: this.temps
   }
 
-  enviaDados(){}
+  constructor(
+    private envioService: EnvioService,
+    public dialogRef: MatDialogRef<FormDesenhoComponent>
+    ){}
+
+  enviaDados(){
+    this.envioService.sendDados(this.Desenho).subscribe()
+  }
+  
+  fechar(){
+    this.dialogRef.close()
+  }
 }
