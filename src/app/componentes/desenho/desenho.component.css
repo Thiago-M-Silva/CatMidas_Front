@@ -1,4 +1,4 @@
-div {
+.tabela {
     margin: 0 5vw;
     padding: 0 2vw;
     display: flex;
@@ -7,4 +7,8 @@ div {
 
 input {
     margin: 5px;
+}
+
+.teste{ 
+    max-width: 300px;
 }

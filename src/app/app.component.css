@@ -17,6 +17,7 @@ header > button{
     height: 5%;
     padding: 16px;
     background-color: #6a4ee6;
+    color: aliceblue;
 }
 
 body{
@@ -53,12 +54,6 @@ img{
     min-width: 8%;
     border-radius: 50%;
     background-color: white;
-}
-
-
-h2{
-    font-size: 1em;
-    margin: auto;
 }
 
 footer {

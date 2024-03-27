@@ -1,39 +1,50 @@
+<mat-card>
+        <mat-card-content>{{ Desenho.nome }}</mat-card-content>
+</mat-card>
 <!-- <div *ngFor=" let desenho of Desenhos " class="tabela">
-        <p>Id -  {{ desenho.id }} </p>
-        <p>Nome -  {{ desenho.nome }} </p>
-        <p>Autor - {{ desenho.autor }}</p>
-        <p>Descricao - {{ desenho.descricao }}</p>
-        <p>Estudio - {{ desenho.estudio }}</p>
-        <p>Disponibilidade - {{ desenho.disponibilidade }}</p>
-        <p>Estudio - {{ desenho.estudio }}</p>
-        <p>Nacionalidade - {{ desenho.nacionalidade }}</p>
-        <p>Status - {{ desenho.status }}</p>
-        <p>Visto - {{ desenho.statusVisto }}</p>
-        <p>Numero de Temporadas - {{ desenho.temps }}</p>
-        <p>Numero de episódios - {{ desenho.maxEps }}</p>
-        <p>Data de Lancamento - {{ desenho.dtLancamento | date: 'dd/mm/aaaa' }}</p>
-
+        
+        <mat-card-header>
+                <mat-card-title>Descricao</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>{{ desenho.descricao }}</mat-card-content>
+        <mat-card-header>
+                <mat-card-title>Autor</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>{{ desenho.autor }}</mat-card-content>
+        <mat-card-header>
+                <mat-card-title>Numero de episodios</mat-card-title>        
+        </mat-card-header>
+        <mat-card-content>{{ desenho.maxEps }}</mat-card-content>
+        <mat-card-header>
+                <mat-card-title>Disponibilidade</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>{{ desenho.disponibilidade }}</mat-card-content>
+        <mat-card-header>
+                <mat-card-title>Estudio</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>{{ desenho.estudio }}</mat-card-content>
+        <mat-card-header>
+                <mat-card-title>Nacionalidade</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>{{ desenho.nacionalidade }}</mat-card-content>
+        <mat-card-header>
+                <mat-card-title>Status</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>{{ desenho.status }}</mat-card-content>
+        <mat-card-header>
+                <mat-card-title>Visto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>{{ desenho.statusVisto }}</mat-card-content>
+        <mat-card-header>
+                <mat-card-title>Numero de temporadas</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>{{ desenho.temps }}</mat-card-content>
+        <mat-card-header>
+                <mat-card-title>Lancamento</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>{{ desenho.dtLancamento }}</mat-card-content>
+        
         <button (click)="deletaDados( desenho.id )"> Apagar </button>
 	<button (click)="editaDados( desenho )"> Editar </button>
-</div>
-<button (click)="adicionar()"> Adicionar </button> -->
-
-<div *ngIf=" Desenho " class="tabela">
-        <p>Id -  {{ Desenho.id }} </p>
-        <p>Nome -  {{ Desenho.nome }} </p>
-        <p>Autor - {{ Desenho.autor }}</p>
-        <p>Descricao - {{ Desenho.descricao }}</p>
-        <p>Estudio - {{ Desenho.estudio }}</p>
-        <p>Disponibilidade - {{ Desenho.disponibilidade }}</p>
-        <p>Estudio - {{ Desenho.estudio }}</p>
-        <p>Nacionalidade - {{ Desenho.nacionalidade }}</p>
-        <p>Status - {{ Desenho.status }}</p>
-        <p>Visto - {{ Desenho.statusVisto }}</p>
-        <p>Numero de Temporadas - {{ Desenho.temps }}</p>
-        <p>Numero de episódios - {{ Desenho.maxEps }}</p>
-        <p>Data de Lancamento - {{ Desenho.dtLancamento | date: 'dd/mm/aaaa' }}</p>
-
-        <button (click)="deletaDados( Desenho.id )"> Apagar </button>
-	<button (click)="editaDados( Desenho )"> Editar </button>
-</div>
+</div> -->
 <button (click)="adicionar()"> Adicionar </button>

@@ -1,7 +1,13 @@
 .conteudo{
     display: flex;
     justify-content: center;
-    background-color: #eaebec;
+    background-color: #6a4ee6;
+    color: aliceblue;
     margin: 1%;
     border-radius: 100px;
+}
+
+h2{
+    margin: auto;
+    padding: 1%;
 }
