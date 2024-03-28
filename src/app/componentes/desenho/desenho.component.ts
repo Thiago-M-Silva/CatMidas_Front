@@ -40,7 +40,7 @@ export class DesenhoComponent {
     temps: this.temps
   }
   
-  Desenhos: Desenho[] = [];
+  Desenhos: Desenho[] = [this.Desenho];
 
   constructor(private envioService: EnvioService,
               public dialog: MatDialog){

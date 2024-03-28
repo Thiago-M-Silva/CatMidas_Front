@@ -1,14 +1,33 @@
-.tabela {
-    margin: 0 5vw;
-    padding: 0 2vw;
-    display: flex;
-    flex-direction: column;
+mat-card{
+    margin: 1%;
+    background-color: rgba(255, 255, 255, 0.521);
 }
 
-input {
+.adicionar{
+    margin-left: 5px;
+}
+
+.botoes{
+    display: flex;
+    justify-content: end;
+    max-width: 94%;
+}
+
+.botoes > button{
     margin: 5px;
 }
 
-.teste{ 
-    max-width: 300px;
+.lista {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+}
+
+.item{
+    display: inline;
+}
+
+.imagem{
+    max-height: 50%;
+    background-color: rgba(255, 255, 255, 0.11);
 }

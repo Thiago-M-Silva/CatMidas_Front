@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Catalogo_Tela:build:production"
+              "buildTarget": "Catalogo_Tela:build:production"
             },
             "development": {
-              "browserTarget": "Catalogo_Tela:build:development"
+              "buildTarget": "Catalogo_Tela:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Catalogo_Tela:build"
+            "buildTarget": "Catalogo_Tela:build"
           }
         },
         "test": {
