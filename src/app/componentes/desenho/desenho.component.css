@@ -4,12 +4,14 @@ mat-card{
 }
 
 .adicionar{
-    margin-left: 5px;
+    position: relative;
+    top: 5vh;
+    left: 8.5vh;
 }
 
 .botoes{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     max-width: 94%;
 }
 

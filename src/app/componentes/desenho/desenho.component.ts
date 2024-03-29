@@ -68,7 +68,7 @@ export class DesenhoComponent {
 
   //teste popup
   adicionar(){
-   const dialogRef = this.dialog.open(FormDesenhoComponent)
+   const dialogRef = this.dialog.open(FormDesenhoComponent, {height: '75vh', width: '75vw'})
 
    dialogRef.afterClosed() //implementar funcao para reiniciar a pagina
   }

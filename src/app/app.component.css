@@ -18,6 +18,7 @@ header > button{
     padding: 16px;
     background-color: #6a4ee6;
     color: aliceblue;
+    position: sticky;
 }
 
 body{
