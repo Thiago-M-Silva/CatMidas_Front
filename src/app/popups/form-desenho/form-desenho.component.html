@@ -1,32 +1,57 @@
-<button mat-raised-button (click)="fechar()">X</button>
+<button mat-raised-button (click)="fechar()" class="fechar">X</button>
 
-<form >
-    <div class="form-group">
-        <p>Digite o nome:</p>
-        <input type="text" [(ngModel)]="Desenho.nome" name="nome">
-        <p>Digite o nome do autor:</p>
-        <input type="text" [(ngModel)]="Desenho.autor" name="autor" >
-        <p>Digite a descricao:</p>
-        <input type="text" [(ngModel)]="Desenho.descricao" name="descricao">
-        <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
-        <input type="text" [(ngModel)]="Desenho.disponibilidade" name="disponibilidade">
-        <p>Digite o nome do estudio</p>
-        <input type="text" [(ngModel)]="Desenho.estudio" name="estudio">
-        <p>Digite a nacionalidade</p>
-        <input type="text" [(ngModel)]="Desenho.nacionalidade" name="nacionalidade">
-        <p>Digite se está em lançamento ou finalizado:</p>
-        <input type="text" [(ngModel)]="Desenho.status" name="status">
-        <p>Digite se você já assistiu ou não:</p>
-        <input type="text" [(ngModel)]="Desenho.statusVisto" name="statusVisto">
-        <p>Digite o numero maximo de episódios:</p>
-        <input type="number" [(ngModel)]="Desenho.maxEps" name="maxEps">
-        <p>Digite o numero de temporadas:</p>
-        <input type="number" [(ngModel)]="Desenho.temps" name="temps">
-        <p>Digite a data de lançamento:</p>
-        <input type="date" [(ngModel)]="Desenho.dtLancamento" name="dtLancamento">
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite o nome:</p>
+    <input matInput [(ngModel)]="Desenho.nome">
+</mat-form-field>
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite o nome do autor:</p>
+    <input matInput [(ngModel)]="Desenho.autor" >
+</mat-form-field>
 
-        <button (click)="enviaDados()"> Enviar </button>
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite a descricao:</p>
+    <input matInput [(ngModel)]="Desenho.descricao">
+</mat-form-field>
 
-    </div>
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
+    <input matInput [(ngModel)]="Desenho.disponibilidade">
+</mat-form-field>
 
-</form>
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite o nome do estudio</p>
+    <input matInput [(ngModel)]="Desenho.estudio">
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite a nacionalidade</p>
+    <input matInput [(ngModel)]="Desenho.nacionalidade">
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite se está em lançamento ou finalizado:</p>
+    <input matInput [(ngModel)]="Desenho.status">
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite se você já assistiu ou não:</p>
+    <input matInput [(ngModel)]="Desenho.statusVisto">
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite o numero maximo de episódios:</p>
+    <input matInput [(ngModel)]="Desenho.maxEps">
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite o numero de temporadas:</p>
+    <input matInput [(ngModel)]="Desenho.temps">
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="inputText">
+    <p>Digite a data de lançamento:</p>
+    <input matInput [(ngModel)]="Desenho.dtLancamento">
+</mat-form-field>
+
+<button (click)="enviaDados()"> Enviar </button>
