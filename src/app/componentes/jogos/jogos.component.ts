@@ -19,7 +19,7 @@ export class JogosComponent {
   dtLancamento: Date = new Date();
   duracaoMedia: number = 0;
   
-  Jogos: Jogos = {
+  Jogo: Jogos = {
     id: this.id,
     nome: this.nome,
     autor: this.autor,
@@ -32,6 +32,8 @@ export class JogosComponent {
     duracaoMedia: this.duracaoMedia
   }
 
+  Jogos: Jogos[] = [];
+
   constructor( private envioService: EnvioService){
     this.getDados();
   }
@@ -40,8 +42,9 @@ export class JogosComponent {
     this.getDados();
   }
 
-  enviaDados(){
-    this.envioService.sendDados(this.Jogos).subscribe();
+  adicionar(){
+    // popup
+    // this.envioService.sendDados(this.Jogos).subscribe();
   }
 
   getDados(): void{
@@ -56,6 +59,6 @@ export class JogosComponent {
   editaDados(jogos: Jogos){
     console.log(jogos);
     console.log(this.Jogos);
-    this.envioService.corrigeDados(jogos, this.Jogos.id).subscribe();
+    this.envioService.corrigeDados(jogos, this.Jogo.id).subscribe();
   }
 }

@@ -1,31 +1,82 @@
-<div *ngFor=" let filme of Filmes " class="tabela">
-    <p>Id -  {{ filme.id }} </p>
-    <p>Nome -  {{ filme.nome }} </p>
-    <p>Autor - {{ filme.diretor }}</p>
-    <p>Descricao - {{ filme.descricao }}</p>
-    <p>Estudio - {{ filme.estudio }}</p>
-    <p>Disponibilidade - {{ filme.disponibilidade }}</p>
-    <p>Estudio - {{ filme.estudio }}</p>
-    <p>Status - {{ filme.status }}</p>
-    <p>Visto - {{ filme.statusVisto }}</p>
-    <p>Data de Lancamento - {{ filme.dtLancamento | date: 'dd/mm/aaaa' }}</p>
-
-    <button (click)="deletaDados( filme.id )"> Apagar </button>
-<button (click)="editaDados( filme )"> Editar </button>
-</div>
-
-<form >
-    <div class="form-group">
-        <input type="text" [(ngModel)]="Filme.nome" name="nome">
-        <input type="text" [(ngModel)]="Filme.diretor" name="diretor" >
-        <input type="text" [(ngModel)]="Filme.descricao" name="descricao">
-        <input type="text" [(ngModel)]="Filme.disponibilidade" name="disponibilidade">
-        <input type="text" [(ngModel)]="Filme.estudio" name="estudio">
-        <input type="text" [(ngModel)]="Filme.duracao" name="nacionalidade">
-        <input type="text" [(ngModel)]="Filme.statusVisto" name="statusVisto">
-        <input type="number" [(ngModel)]="Filme.status" name="maxEps">
-        <input type="date" [(ngModel)]="Filme.dtLancamento" name="dtLancamento">
-
-        <input type="submit" value="Enviar" (click)="enviaDados()">
+<button mat-raised-button (click)="adicionar()" class="adicionar"> Adicionar </button>
+<div *ngFor=" let filme of Filmes">
+    <div class="botoes">
+            <button mat-raised-button (click)="deletaDados( filme.id )" color="warn"> Apagar </button>
+            <button mat-raised-button (click)="editaDados( filme )" color="primary"> Editar </button>
     </div>
-</form>
+    
+    <div class="lista">
+            <mat-card class="imagem">
+                    <mat-card-content>
+                            <img src="../../../assets/gato1.jpg" alt="Midas" sizes="300px">
+                    </mat-card-content>
+            </mat-card>
+            <div class="item">
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Nome</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ filme.nome }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Descricao</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ filme.descricao }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>    
+                            <mat-card-header>
+                                    <mat-card-title>Diretor</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ filme.diretor }}</mat-card-content>
+                    </mat-card>
+                    
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Duracao em minutos</mat-card-title>        
+                            </mat-card-header>
+                            <mat-card-content>{{ filme.duracao }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Disponibilidade</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ filme.disponibilidade }}</mat-card-content>
+                    </mat-card>
+                    
+
+                    <mat-card>        
+                            <mat-card-header>
+                                    <mat-card-title>Estudio</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ filme.estudio }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Status</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ filme.status }}</mat-card-content>        
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Visto</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ filme.statusVisto }}</mat-card-content>
+                    
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Lancamento</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ filme.dtLancamento }}</mat-card-content>
+                    </mat-card>
+            </div>        
+    </div>
+</div>

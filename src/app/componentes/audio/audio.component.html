@@ -1,4 +1,87 @@
-<form >
+<button mat-raised-button (click)="adicionar()" class="adicionar"> Adicionar </button>
+
+<div *ngFor=" let audio of Audios">
+    <div class="botoes">
+            <button mat-raised-button (click)="deletaDados( audio.id )" color="warn"> Apagar </button>
+            <button mat-raised-button (click)="editaDados( audio )" color="primary"> Editar </button>
+    </div>
+    
+    <div class="lista">
+            <mat-card class="imagem">
+                    <mat-card-content>
+                            <img src="../../../assets/gato1.jpg" alt="Midas" sizes="300px">
+                    </mat-card-content>
+            </mat-card>
+            <div class="item">
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Nome</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ audio.nome }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Descricao</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ audio.descricao }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>    
+                            <mat-card-header>
+                                    <mat-card-title>Autor</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ audio.autor }}</mat-card-content>
+                    </mat-card>
+                    
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Duração</mat-card-title>        
+                            </mat-card-header>
+                            <mat-card-content>{{ audio.duracao }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Disponibilidade</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ audio.disponibilidade }}</mat-card-content>
+                    </mat-card>
+                    
+
+                    <mat-card>        
+                            <mat-card-header>
+                                    <mat-card-title>Estudio</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ audio.estudio }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>                
+                            <mat-card-header>
+                                    <mat-card-title>Tipo</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ audio.tipo }}</mat-card-content>
+                    </mat-card>
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Visto</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ audio.statusVisto }}</mat-card-content>
+                    
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Lancamento</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ audio.dtLancamento }}</mat-card-content>
+                    </mat-card>
+            </div>        
+    </div>
+</div>
+
+<!-- <form >
     <div class="form-group">
         <input type="text" [(ngModel)]="Audio.nome" name="nome">
         <input type="text" [(ngModel)]="Audio.autor" name="autor" >
@@ -12,4 +95,4 @@
 
         <input type="submit" value="Enviar" (click)="enviaDados()">
     </div>
-</form>
+</form> -->

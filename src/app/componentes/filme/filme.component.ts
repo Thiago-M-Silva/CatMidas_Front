@@ -44,10 +44,8 @@ export class FilmeComponent {
     }
 
 
-    enviaDados(){
-      this.envioService.sendDados(this.Filme).subscribe();
-      //fazer uma funcao para atualizar a pagina
-      console.log(this.Filme);
+    adicionar(){
+      // popup
     }
 
     getDados(): void{

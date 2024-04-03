@@ -46,10 +46,11 @@ export class NovelaComponent {
     this.getDados();
   }
 
-  enviaDados(){
-    this.envioService.sendDados(this.Novela).subscribe();
-    //fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Novela => this.Novela.funcao )
-    console.log(this.Novela);
+  adicionar(){
+    // popup
+    // this.envioService.sendDados(this.Novela).subscribe();
+    // fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Novela => this.Novela.funcao )
+    // console.log(this.Novela);
   }
 
   getDados(){

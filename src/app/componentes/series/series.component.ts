@@ -46,10 +46,11 @@ export class SeriesComponent {
     this.getDados();
   }
 
-  enviaDados(){
-    this.envioService.sendDados(this.Serie).subscribe();
-    //fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Serie => this.Serie.funcao )
-    console.log(this.Serie);
+  adicionar(){
+    // popup
+    // this.envioService.sendDados(this.Serie).subscribe();
+    // fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Serie => this.Serie.funcao )
+    // console.log(this.Serie);
   }
 
   getDados(){

@@ -18,7 +18,7 @@ export class QuadrinhosComponent {
   caps: number = 0;
   dtLancamento: Date = new Date();
   
-  Quadrinhos: Quadrinhos = {
+  Quadrinho: Quadrinhos = {
     id: this.id,
     nome: this.nome,
     autor: this.autor,
@@ -30,6 +30,8 @@ export class QuadrinhosComponent {
     caps: this.caps,
     dtLancamento: this.dtLancamento
   }
+
+  Quadrinhos: Quadrinhos[] = [];
   
   constructor(private envioService: EnvioService ){
     this.getDados();
@@ -39,14 +41,15 @@ export class QuadrinhosComponent {
     this.getDados();
   }
 
-  enviaDados(){
-    this.envioService.sendDados(this.Quadrinhos).subscribe();
-    //fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Quadrinhos => this.Quadrinhos.funcao )
-    console.log(this.Quadrinhos);
+  adicionar(){
+    // popup
+    // this.envioService.sendDados(this.Quadrinho).subscribe();
+    // fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Quadrinho => this.Quadrinho.funcao )
+    // console.log(this.Quadrinho);
   }
 
   getDados(): void{
-    this.envioService.getDados().subscribe((quadrinhos) => (this.Quadrinhos = quadrinhos))
+    this.envioService.getDados().subscribe((quadrinho) => (this.Quadrinho = quadrinho))
   }
 
   deletaDados(id: number){
@@ -56,7 +59,7 @@ export class QuadrinhosComponent {
 
   editaDados(quadrinho: Quadrinhos){
     console.log(quadrinho);
-    console.log(this.Quadrinhos);
-    this.envioService.corrigeDados(quadrinho, this.Quadrinhos.id).subscribe();
+    console.log(this.Quadrinho);
+    this.envioService.corrigeDados(quadrinho, this.Quadrinho.id).subscribe();
   }
 }

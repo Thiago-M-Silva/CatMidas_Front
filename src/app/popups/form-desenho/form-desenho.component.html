@@ -1,4 +1,4 @@
-<button mat-raised-button (click)="fechar()" class="fechar">X</button>
+<button mat-raised-button (click)="fechar()" class="fechar">x</button>
 
 <mat-form-field appearance="fill" class="inputText">
     <p>Digite o nome:</p>
@@ -24,34 +24,40 @@
     <input matInput [(ngModel)]="Desenho.estudio">
 </mat-form-field>
 
+<!-- talvez lista de opcoes -->
 <mat-form-field appearance="fill" class="inputText">
     <p>Digite a nacionalidade</p>
     <input matInput [(ngModel)]="Desenho.nacionalidade">
 </mat-form-field>
 
+<!-- checkbox ou lista de opcoes talvez agrupar com o proximo -->
 <mat-form-field appearance="fill" class="inputText">
     <p>Digite se está em lançamento ou finalizado:</p>
     <input matInput [(ngModel)]="Desenho.status">
 </mat-form-field>
 
+<!-- checkbox ou lista de opcoes -->
 <mat-form-field appearance="fill" class="inputText">
     <p>Digite se você já assistiu ou não:</p>
     <input matInput [(ngModel)]="Desenho.statusVisto">
 </mat-form-field>
 
+<!-- numero -->
 <mat-form-field appearance="fill" class="inputText">
     <p>Digite o numero maximo de episódios:</p>
     <input matInput [(ngModel)]="Desenho.maxEps">
 </mat-form-field>
 
+<!-- numero -->
 <mat-form-field appearance="fill" class="inputText">
     <p>Digite o numero de temporadas:</p>
     <input matInput [(ngModel)]="Desenho.temps">
 </mat-form-field>
 
+<!-- data -->
 <mat-form-field appearance="fill" class="inputText">
     <p>Digite a data de lançamento:</p>
     <input matInput [(ngModel)]="Desenho.dtLancamento">
 </mat-form-field>
 
-<button (click)="enviaDados()"> Enviar </button>
+<button (click)="enviaDados()" class="envio"> Enviar </button>

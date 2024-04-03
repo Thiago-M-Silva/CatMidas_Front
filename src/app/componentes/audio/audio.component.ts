@@ -33,6 +33,7 @@ export class AudioComponent {
       dtLancamento: this.dtLancamento,
     }
 
+    Audios: Audio[] = [];
 
     constructor( private envioService: EnvioService){
       this.getDados();
@@ -42,10 +43,11 @@ export class AudioComponent {
       this.getDados();
     }
 
-    enviaDados(){
-      this.envioService.sendDados(this.Audio).subscribe();
+    adicionar(){
+      // criar o popup
+      // this.envioService.sendDados(this.Audio).subscribe();
       //fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Audio => this.Audio.funcao )
-      console.log(this.Audio);
+      // console.log(this.Audio);
     }
 
     getDados(): void{

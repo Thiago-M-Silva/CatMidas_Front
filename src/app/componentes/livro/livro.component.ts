@@ -36,8 +36,9 @@ export class LivroComponent {
     this.getDados();
   }
 
-  enviaDados(){
-    this.envioService.sendDados(this.Livro).subscribe();
+  adicionar(){
+    // popup
+    // this.envioService.sendDados(this.Livro).subscribe();
   }
 
   getDados(): void{

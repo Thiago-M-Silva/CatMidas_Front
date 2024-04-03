@@ -1,4 +1,119 @@
-<form >
+<button mat-raised-button (click)="adicionar()" class="adicionar"> Adicionar </button>
+
+<div *ngFor=" let novela of Novelas">
+    <div class="botoes">
+            <button mat-raised-button (click)="deletaDados( novela.id )" color="warn"> Apagar </button>
+            <button mat-raised-button (click)="editaDados( novela )" color="primary"> Editar </button>
+    </div>
+    
+    <div class="lista">
+            <mat-card class="imagem">
+                    <mat-card-content>
+                            <img src="../../../assets/gato1.jpg" alt="Midas" sizes="300px">
+                    </mat-card-content>
+            </mat-card>
+            <div class="item">
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Nome</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.nome }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Descricao</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.descricao }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>    
+                            <mat-card-header>
+                                    <mat-card-title>Autor</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.autor }}</mat-card-content>
+                    </mat-card>
+                    
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Numero de episodios</mat-card-title>        
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.maxEps }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Disponibilidade</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.disponibilidade }}</mat-card-content>
+                    </mat-card>
+                    
+
+                    <mat-card>        
+                            <mat-card-header>
+                                    <mat-card-title>Estudio</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.estudio }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>                
+                            <mat-card-header>
+                                    <mat-card-title>Nacionalidade</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.nacionalidade }}</mat-card-content>
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Status</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.status }}</mat-card-content>        
+                    </mat-card>
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Visto</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.statusVisto }}</mat-card-content>
+                    
+                    </mat-card>
+                    
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Numero de temporadas</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.temps }}</mat-card-content>
+                    </mat-card>
+                    
+
+                    <mat-card>
+                            <mat-card-header>
+                                    <mat-card-title>Lancamento</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{ novela.dtLancamento }}</mat-card-content>
+                    </mat-card>
+            </div>        
+    </div>
+</div>
+
+<!-- <form >
+    <div class="form-group">
+        <input type="text" [(ngModel)]="Audio.nome" name="nome">
+        <input type="text" [(ngModel)]="Audio.autor" name="autor" >
+        <input type="text" [(ngModel)]="Audio.descricao" name="descricao">
+        <input type="text" [(ngModel)]="Audio.disponibilidade" name="disponibilidade">
+        <input type="text" [(ngModel)]="Audio.estudio" name="estudio">
+        <input type="text" [(ngModel)]="Audio.duracao" name="nacionalidade">
+        <input type="text" [(ngModel)]="Audio.statusVisto" name="statusVisto">
+        <input type="number" [(ngModel)]="Audio.tipo" name="maxEps">
+        <input type="date" [(ngModel)]="Audio.dtLancamento" name="dtLancamento">
+
+        <input type="submit" value="Enviar" (click)="enviaDados()">
+    </div>
+</form> -->
+
+<!-- <form >
     <div class="form-group">
         <input type="text" [(ngModel)]="Novela.nome" name="nome">
         <input type="text" [(ngModel)]="Novela.autor" name="autor" >
@@ -12,4 +127,4 @@
 
         <input type="submit" value="Enviar" (click)="enviaDados()">
     </div>
-</form>
+</form> -->
