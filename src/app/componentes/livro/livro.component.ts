@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Livros } from 'src/app/interfaces/Livro';
 import { EnvioService } from 'src/app/service/envio.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { FormLivroComponent } from 'src/app/popups/form-livro/form-livro.component';
 
 @Component({
   selector: 'app-livro',
@@ -28,19 +31,16 @@ export class LivroComponent {
 
   Livros: Livros[] = [];
 
-  constructor( private envioService: EnvioService ){
+  constructor(private envioService: EnvioService,
+              public dialog: MatDialog
+   ){
     this.getDados();
   }
 
   ngOnInit(){
     this.getDados();
   }
-
-  adicionar(){
-    // popup
-    // this.envioService.sendDados(this.Livro).subscribe();
-  }
-
+  
   getDados(): void{
     this.envioService.getDados().subscribe((livros) => (this.Livros = livros))
   }
@@ -49,8 +49,13 @@ export class LivroComponent {
     console.log(id);
     this.envioService.deletaDados(id).subscribe();
   }
-
+  
   editaDados(livro: Livros){
     this.envioService.corrigeDados(livro, this.Livro.id).subscribe()
+  }
+  
+  adicionar(){
+    const dialogRef = this.dialog.open(FormLivroComponent, {height: '75vh', width: '75vh'})
+    dialogRef.afterClosed()
   }
 }

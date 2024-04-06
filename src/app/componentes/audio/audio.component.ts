@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Audio } from 'src/app/interfaces/Audio';
 import { EnvioService } from 'src/app/service/envio.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { FormAudioComponent } from 'src/app/popups/form-audio/form-audio.component';
 
 @Component({
   selector: 'app-audio',
@@ -35,7 +38,9 @@ export class AudioComponent {
 
     Audios: Audio[] = [];
 
-    constructor( private envioService: EnvioService){
+    constructor(private envioService: EnvioService,
+                public dialog: MatDialog
+    ){
       this.getDados();
     }
     
@@ -43,13 +48,7 @@ export class AudioComponent {
       this.getDados();
     }
 
-    adicionar(){
-      // criar o popup
-      // this.envioService.sendDados(this.Audio).subscribe();
-      //fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Audio => this.Audio.funcao )
-      // console.log(this.Audio);
-    }
-
+    
     getDados(): void{
       this.envioService.getDados().subscribe((audio) => (this.Audio = audio))
     }
@@ -58,10 +57,15 @@ export class AudioComponent {
       console.log(id);
       this.envioService.deletaDados(id).subscribe();
     }
-  
+    
     editaDados(audio: Audio){
       console.log(audio);
       console.log(this.Audio);
       this.envioService.corrigeDados(audio, this.Audio.id).subscribe();
     }
-}
+    
+    adicionar(){
+      const dialogRef = this.dialog.open(FormAudioComponent, {height: '75vh', width: '75vh'})
+      dialogRef.afterClosed()
+    }
+  }

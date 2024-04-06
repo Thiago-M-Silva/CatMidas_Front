@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class DesenhoComponent {
   // declaracao das variaveis com valores nulos 
+  // lembrar de apagar os testes
   id: number = 0;
   nome: string = 'teste';
   autor: string  =  'teste';
@@ -40,7 +41,7 @@ export class DesenhoComponent {
     temps: this.temps
   }
   
-  Desenhos: Desenho[] = [this.Desenho];
+  Desenhos: Desenho[] = [this.Desenho]; //aqui tbm deve ser um vetor vazio
 
   constructor(private envioService: EnvioService,
               public dialog: MatDialog){
@@ -56,17 +57,13 @@ export class DesenhoComponent {
   }
 
   deletaDados(id: number){
-	  console.log(id);
     this.envioService.deletaDados(id).subscribe();
   }
 
   editaDados(desenho: Desenho){
-    console.log(desenho);
-    console.log(this.Desenho);
     this.envioService.corrigeDados(desenho, this.Desenho.id).subscribe();
   }
 
-  //teste popup
   adicionar(){
    const dialogRef = this.dialog.open(FormDesenhoComponent, {height: '75vh', width: '75vw'})
 

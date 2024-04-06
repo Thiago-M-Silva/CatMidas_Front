@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Novela } from 'src/app/interfaces/Novela';
 import { EnvioService } from 'src/app/service/envio.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { FormNovelaComponent } from 'src/app/popups/form-novela/form-novela.component';
 
 @Component({
   selector: 'app-novela',
@@ -38,33 +41,33 @@ export class NovelaComponent {
 
   Novelas: Novela[] = [];
 
-  constructor( private envioService: EnvioService ){
+  constructor(private envioService: EnvioService,
+              public dialog: MatDialog
+   ){
     this.getDados();
   }
 
   ngOnInit(){
     this.getDados();
   }
-
-  adicionar(){
-    // popup
-    // this.envioService.sendDados(this.Novela).subscribe();
-    // fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Novela => this.Novela.funcao )
-    // console.log(this.Novela);
-  }
-
+  
   getDados(){
     this.envioService.getDados().subscribe((novela) => (this.Novela = novela))
   }
   
   deletaDados(id: number){
-	  console.log(id);
+    console.log(id);
     this.envioService.deletaDados(id).subscribe();
   }
-
+  
   editaDados(novela: Novela){
     console.log(novela);
     console.log(this.Novela);
     this.envioService.corrigeDados(novela, this.Novela.id).subscribe();
+  }
+
+  adicionar(){
+    const dialogRef = this.dialog.open(FormNovelaComponent, {height: '75vh', width: '75vh'})
+    dialogRef.afterClosed()
   }
 }

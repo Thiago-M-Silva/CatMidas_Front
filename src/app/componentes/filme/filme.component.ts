@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Filmes } from 'src/app/interfaces/Filme';
 import { EnvioService } from 'src/app/service/envio.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { FormFilmeComponent } from 'src/app/popups/form-filme/form-filme.component';
 
 @Component({
   selector: 'app-filme',
@@ -35,19 +38,16 @@ export class FilmeComponent {
 
     Filmes: Filmes[] = [];
 
-    constructor(private envioService: EnvioService){
+    constructor(private envioService: EnvioService,
+                public dialog: MatDialog
+    ){
       this.getDados();
     }
     
     ngOnInit(): void {
       this.getDados()
     }
-
-
-    adicionar(){
-      // popup
-    }
-
+    
     getDados(): void{
       this.envioService.getDados().subscribe((filme) => (this.Filme = filme))
     }
@@ -59,5 +59,10 @@ export class FilmeComponent {
 
     editaDados(filme: Filmes){
       this.envioService.corrigeDados(filme, this.Filme.id).subscribe();
+    }
+  
+    adicionar(){
+      const dialogRef = this.dialog.open(FormFilmeComponent, {height: '75vh', width: '75vh'})
+      dialogRef.afterClosed()
     }
 }

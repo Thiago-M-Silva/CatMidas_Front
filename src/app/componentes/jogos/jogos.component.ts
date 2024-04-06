@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Jogos } from 'src/app/interfaces/Jogos';
 import { EnvioService } from 'src/app/service/envio.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { FormJogosComponent } from 'src/app/popups/form-jogos/form-jogos.component';
 
 @Component({
   selector: 'app-jogos',
@@ -34,19 +37,15 @@ export class JogosComponent {
 
   Jogos: Jogos[] = [];
 
-  constructor( private envioService: EnvioService){
+  constructor(private envioService: EnvioService,
+              public dialog: MatDialog
+  ){
     this.getDados();
   }
   
   ngOnInit(): void {
     this.getDados();
   }
-
-  adicionar(){
-    // popup
-    // this.envioService.sendDados(this.Jogos).subscribe();
-  }
-
   getDados(): void{
     this.envioService.getDados().subscribe((jogos) => (this.Jogos = jogos))
   }
@@ -61,4 +60,10 @@ export class JogosComponent {
     console.log(this.Jogos);
     this.envioService.corrigeDados(jogos, this.Jogo.id).subscribe();
   }
+
+  adicionar(){
+    const dialogRef = this.dialog.open(FormJogosComponent, {height: '75vh', width: '75vh'})
+    dialogRef.afterClosed()
+  }
+
 }

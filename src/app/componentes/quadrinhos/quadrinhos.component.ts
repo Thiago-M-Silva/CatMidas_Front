@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Quadrinhos } from 'src/app/interfaces/Quadrinhos';
 import { EnvioService } from 'src/app/service/envio.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { FormQuadrinhoComponent } from 'src/app/popups/form-quadrinho/form-quadrinho.component';
+
 @Component({
   selector: 'app-quadrinhos',
   templateUrl: './quadrinhos.component.html',
@@ -33,21 +37,16 @@ export class QuadrinhosComponent {
 
   Quadrinhos: Quadrinhos[] = [];
   
-  constructor(private envioService: EnvioService ){
+  constructor(private envioService: EnvioService,
+              public dialog: MatDialog
+   ){
     this.getDados();
   }
 
   ngOnInit(){
     this.getDados();
   }
-
-  adicionar(){
-    // popup
-    // this.envioService.sendDados(this.Quadrinho).subscribe();
-    // fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Quadrinho => this.Quadrinho.funcao )
-    // console.log(this.Quadrinho);
-  }
-
+  
   getDados(): void{
     this.envioService.getDados().subscribe((quadrinho) => (this.Quadrinho = quadrinho))
   }
@@ -61,5 +60,10 @@ export class QuadrinhosComponent {
     console.log(quadrinho);
     console.log(this.Quadrinho);
     this.envioService.corrigeDados(quadrinho, this.Quadrinho.id).subscribe();
+  }
+  
+  adicionar(){
+    const dialogRef = this.dialog.open(FormQuadrinhoComponent, {height: '75vh', width: '75vw'})
+    dialogRef.afterClosed()
   }
 }

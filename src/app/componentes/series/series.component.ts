@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Serie } from 'src/app/interfaces/Serie';
 import { EnvioService } from 'src/app/service/envio.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+import { FormSerieComponent } from 'src/app/popups/form-serie/form-serie.component';
 
 @Component({
   selector: 'app-series',
@@ -8,15 +11,16 @@ import { EnvioService } from 'src/app/service/envio.service';
   styleUrls: ['./series.component.css']
 })
 export class SeriesComponent {
+  //lembrar de zerar
   id: number = 0;
-  nome: string = ' ';
-  autor: string  = ' ';
-  descricao: string  = ' ';
-  disponibilidade: string  = ' ';
-  estudio: string  = ' ';
-  nacionalidade: string  = ' ';
-  status: string  = ' ';
-  statusVisto: string  = ' ';
+  nome: string = 'a ';
+  autor: string  = 'a ';
+  descricao: string  = ' a';
+  disponibilidade: string  = 'a ';
+  estudio: string  = ' a';
+  nacionalidade: string  = 'a ';
+  status: string  = 'a ';
+  statusVisto: string  = ' a';
   maxEps: number  = 0;
   temps: number  = 0;
   dtLancamento: Date = new Date();
@@ -36,21 +40,15 @@ export class SeriesComponent {
     dtLancamento: this.dtLancamento,
   }
 
-  Series: Serie[] = [];
+  Series: Serie[] = [this.Serie];
 
-  constructor( private envioService: EnvioService ){
+  constructor(private envioService: EnvioService,
+              public dialog: MatDialog){
     this.getDados();
   }
 
   ngOnInit(): void{
     this.getDados();
-  }
-
-  adicionar(){
-    // popup
-    // this.envioService.sendDados(this.Serie).subscribe();
-    // fazer uma funcao para a atualizar a pagina, ao final do envio .subscribe(Serie => this.Serie.funcao )
-    // console.log(this.Serie);
   }
 
   getDados(){
@@ -66,5 +64,10 @@ export class SeriesComponent {
     console.log(serie);
     console.log(this.Serie);
     this.envioService.corrigeDados(serie, this.Serie.id).subscribe();
+  }
+  
+  adicionar(){
+   const dialogRef = this.dialog.open(FormSerieComponent, {height: '75vh', width: '75vw'})
+   dialogRef.afterClosed()
   }
 }
