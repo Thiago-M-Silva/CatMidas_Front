@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckbox } from '@angular/material/checkbox';
 
 import { AppComponent } from './app.component';
 import { DesenhoComponent } from './componentes/desenho/desenho.component';
@@ -47,7 +48,8 @@ import { FormDesenhoComponent } from './popups/form-desenho/form-desenho.compone
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckbox
   ],
   providers: [],
   bootstrap: [AppComponent]

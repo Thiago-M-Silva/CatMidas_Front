@@ -1,0 +1,39 @@
+form{
+    margin-left: 5%;
+}
+
+.checkbox{
+    display: flex;
+}
+
+.visto{
+    margin-left: 10%;
+}
+
+.numero{
+    display: flex;
+}
+
+.temps{
+    margin-left: 10%;
+}
+
+.data{
+    margin-left: 10%;
+}
+
+.fechar{
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    align-self: end;
+}
+
+.envio{
+    padding: 10px;
+    margin: 1%;
+    align-self: end;
+    position: relative;
+    background-color: #6a4ee6;
+    color: white;
+}

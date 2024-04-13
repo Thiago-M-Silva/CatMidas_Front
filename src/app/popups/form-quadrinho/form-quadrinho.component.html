@@ -1,1 +1,69 @@
-<p>form-quadrinho works!</p>
+<button mat-raised-button (click)="fechar()" class="fechar" color="warn">X</button>
+
+<form>
+    <p>Digite o nome do quadrinho:</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Digite o nome do quadrinho</mat-label>
+        <input matInput [(ngModel)]="Quadrinho.nome">
+    </mat-form-field>
+
+    <p>Digite o nome do autor:</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Digite o autor:</mat-label>
+        <input matInput [(ngModel)]="Quadrinho.autor" >
+    </mat-form-field>
+
+    <p>Digite a descricao:</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Digite a descricao:</mat-label>
+        <input matInput [(ngModel)]="Quadrinho.descricao">
+    </mat-form-field>
+
+    <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Site onde pode ser encontrada</mat-label>
+        <input matInput [(ngModel)]="Quadrinho.disponibilidade">
+    </mat-form-field>
+
+    <p>Qual a nacionalidade do quadrinho?</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>nacionalidade</mat-label>
+        <input matInput [(ngModel)]="Quadrinho.nacionalidade">
+    </mat-form-field>
+
+    <!-- checkbox ou lista de opcoes talvez agrupar com o proximo -->
+    <div class="checkbox">
+        <div class="status">
+            <p>Está em lançamento ou finalizado:</p>
+            <mat-checkbox>Lançamento</mat-checkbox>
+            <mat-checkbox>finalizado</mat-checkbox>
+        </div>
+
+        <!-- checkbox ou lista de opcoes -->
+        <div class="visto">
+            <p>Já assistiu ou não:</p>
+            <mat-checkbox>Já assisti</mat-checkbox>
+            <mat-checkbox>Não assisti</mat-checkbox>
+            <mat-checkbox>Ainda assistirei</mat-checkbox>
+        </div>
+    </div>
+
+    <div class="numero">
+        <p>Quantos capítulos tem?</p>
+        <mat-form-field>
+            <mat-label>Numero de capitulos</mat-label>
+            <input matInput type="number" [(ngModel)]="Quadrinho.caps">
+        </mat-form-field>
+        
+        <!-- data -->
+        <div class="data">
+            <p>Quando a serie lancou?</p>
+            <mat-form-field appearance="fill">
+                <mat-label>Digite o ...</mat-label>
+                <input matInput type="date" [(ngModel)]="Quadrinho.dtLancamento">
+            </mat-form-field>
+        </div>
+    </div>
+</form>
+
+<button mat-raised-button (click)="enviaDados()" class="envio"> Enviar </button>

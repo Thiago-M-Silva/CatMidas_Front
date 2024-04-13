@@ -1,1 +1,51 @@
-<p>form-livro works!</p>
+<button mat-raised-button (click)="fechar()" class="fechar" color="warn">X</button>
+
+<form>
+    <p>Digite o nome do livro:</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Digite o nome do audio</mat-label>
+        <input matInput [(ngModel)]="Livro.nome">
+    </mat-form-field>
+
+    <p>Digite o nome do autor:</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Digite o autor:</mat-label>
+        <input matInput [(ngModel)]="Livro.autor" >
+    </mat-form-field>
+
+    <p>Digite a descricao:</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Digite a descricao:</mat-label>
+        <input matInput [(ngModel)]="Livro.descricao">
+    </mat-form-field>
+
+    <div class="checkbox">
+        <div class="visto">
+            <p>Já leu ou não:</p>
+            <mat-checkbox>Já li</mat-checkbox>
+            <mat-checkbox>Não li</mat-checkbox>
+            <mat-checkbox>Ainda lerei</mat-checkbox>
+        </div>
+    </div>
+
+    <div class="numero">
+        <div class="pags">
+            <p>Quantas páginas tem?</p>
+            <mat-form-field appearance="fill">
+                <mat-label>Número de páginas</mat-label>
+                <input matInput type="number" [(ngModel)]="Livro.paginas">
+            </mat-form-field>
+        </div>
+        
+        <!-- data -->
+        <div class="data">
+            <p>Quando o livro lancou?</p>
+            <mat-form-field appearance="fill">
+                <mat-label>Digite a data de lancamento</mat-label>
+                <input matInput type="date" [(ngModel)]="Livro.dtLancamento">
+            </mat-form-field>
+        </div>
+    </div>
+</form>
+
+<button mat-raised-button (click)="enviaDados()" class="envio"> Enviar </button>

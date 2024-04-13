@@ -1,1 +1,60 @@
-<p>form-audio works!</p>
+<button mat-raised-button (click)="fechar()" class="fechar" color="warn">X</button>
+
+<form>
+    <p>Digite o nome do autor:</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Digite o nome do audio</mat-label>
+        <input matInput [(ngModel)]="Audio.nome">
+    </mat-form-field>
+
+    <p>Digite o nome do autor:</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Digite o autor:</mat-label>
+        <input matInput [(ngModel)]="Audio.autor" >
+    </mat-form-field>
+
+    <p>Digite a descricao:</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Digite a descricao:</mat-label>
+        <input matInput [(ngModel)]="Audio.descricao">
+    </mat-form-field>
+
+    <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Site onde pode ser encontrada</mat-label>
+        <input matInput [(ngModel)]="Audio.disponibilidade">
+    </mat-form-field>
+
+    <p>Digite o nome do estudio</p>
+    <mat-form-field appearance="fill" class="inputText">
+        <mat-label>Nome do estudio</mat-label>
+        <input matInput [(ngModel)]="Audio.estudio">
+    </mat-form-field>
+
+    <!-- checkbox ou lista de opcoes talvez agrupar com o proximo -->
+    <div class="checkbox">
+        <div class="status">
+            <p>Está em lançamento ou finalizado:</p>
+            <mat-checkbox>Lançamento</mat-checkbox>
+            <mat-checkbox>finalizado</mat-checkbox>
+        </div>
+
+        <!-- checkbox ou lista de opcoes -->
+        <div class="visto">
+            <p>Já assistiu ou não:</p>
+            <mat-checkbox>Já assisti</mat-checkbox>
+            <mat-checkbox>Não assisti</mat-checkbox>
+            <mat-checkbox>Ainda assistirei</mat-checkbox>
+        </div>
+    </div>
+        <!-- data -->
+        <div class="data">
+            <p>Quando a serie lancou?</p>
+            <mat-form-field appearance="fill">
+                <mat-label>Digite o ...</mat-label>
+                <input matInput type="date" [(ngModel)]="Audio.dtLancamento">
+        </mat-form-field>
+        </div>
+</form>
+
+<button mat-raised-button (click)="enviaDados()" class="envio"> Enviar </button>
