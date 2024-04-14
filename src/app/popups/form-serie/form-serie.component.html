@@ -35,16 +35,16 @@
     <div class="checkbox">
         <div class="status">
             <p>Está em lançamento ou finalizado:</p>
-            <mat-checkbox>Lançamento</mat-checkbox>
-            <mat-checkbox>finalizado</mat-checkbox>
+            <mat-checkbox value="L" [(ngModel)]="Serie.status">Lançamento</mat-checkbox>
+            <mat-checkbox value="F" [(ngModel)]="Serie.status">Finalizado</mat-checkbox>
         </div>
 
         <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já assistiu ou não:</p>
-            <mat-checkbox>Já assisti</mat-checkbox>
-            <mat-checkbox>Não assisti</mat-checkbox>
-            <mat-checkbox>Ainda assistirei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Serie.status">Já assisti</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Serie.status">Não assisti</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Serie.status">Ainda assistirei</mat-checkbox>
         </div>
     </div>
 
@@ -69,7 +69,7 @@
         <div class="data">
             <p>Quando a serie lancou?</p>
             <mat-form-field appearance="fill">
-                <mat-label>Digite o ...</mat-label>
+                <mat-label>Data de lancamento</mat-label>
                 <input matInput type="date" [(ngModel)]="Serie.dtLancamento">
             </mat-form-field>
         </div>

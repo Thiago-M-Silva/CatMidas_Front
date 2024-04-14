@@ -47,7 +47,8 @@ export class FormDesenhoComponent {
     ){}
 
   enviaDados(){
-    this.envioService.sendDados(this.Desenho).subscribe()
+    // this.envioService.sendDados(this.Desenho).subscribe()
+    console.log(this.Desenho)
   }
   
   fechar(){

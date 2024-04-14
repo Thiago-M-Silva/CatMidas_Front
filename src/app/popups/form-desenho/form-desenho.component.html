@@ -41,16 +41,16 @@
     <div class="checkbox">
         <div class="status">
             <p>Está em lançamento ou finalizado:</p>
-            <mat-checkbox>Lançamento</mat-checkbox>
-            <mat-checkbox>finalizado</mat-checkbox>
+            <mat-checkbox value="L" [(ngModel)]="Desenho.status">Lançamento</mat-checkbox>
+            <mat-checkbox value="F" [(ngModel)]="Desenho.status">finalizado</mat-checkbox>
         </div>
 
         <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já assistiu ou não:</p>
-            <mat-checkbox>Já assisti</mat-checkbox>
-            <mat-checkbox>Não assisti</mat-checkbox>
-            <mat-checkbox>Ainda assistirei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Desenho.statusVisto">Já assisti</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Desenho.statusVisto">Não assisti</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Desenho.statusVisto">Ainda assistirei</mat-checkbox>
         </div>
     </div>
 
@@ -59,7 +59,7 @@
         <div class="maxEps">
             <p>Quantos episodios a serie possui?</p>
             <mat-form-field appearance="fill">
-                <mat-label>Digite o ...</mat-label>
+                <mat-label>Numero de episodios</mat-label>
                 <input matInput type="number" [(ngModel)]="Desenho.maxEps">
             </mat-form-field>
         </div>
@@ -68,7 +68,7 @@
         <div class="temps">
             <p>Quantas temporadas a serie possui?</p>
             <mat-form-field appearance="fill">
-                <mat-label>Digite o ...</mat-label>
+                <mat-label>Numero de temporadas</mat-label>
                 <input matInput type="number" [(ngModel)]="Desenho.temps">
             </mat-form-field>
         </div>
@@ -77,7 +77,7 @@
         <div class="data">
             <p>Quando a serie lancou?</p>
             <mat-form-field appearance="fill">
-                <mat-label>Digite o ...</mat-label>
+                <mat-label>Data de lancamento</mat-label>
                 <input matInput type="date" [(ngModel)]="Desenho.dtLancamento">
         </mat-form-field>
         </div>

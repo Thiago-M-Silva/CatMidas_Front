@@ -35,16 +35,16 @@
     <div class="checkbox">
         <div class="status">
             <p>Está em lançamento ou finalizado:</p>
-            <mat-checkbox>Lançamento</mat-checkbox>
-            <mat-checkbox>finalizado</mat-checkbox>
+            <mat-checkbox value="L" [(ngModel)]="Audio.statusVisto">Lançamento</mat-checkbox>
+            <mat-checkbox value="L" [(ngModel)]="Audio.statusVisto">finalizado</mat-checkbox>
         </div>
 
         <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já assistiu ou não:</p>
-            <mat-checkbox>Já assisti</mat-checkbox>
-            <mat-checkbox>Não assisti</mat-checkbox>
-            <mat-checkbox>Ainda assistirei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Audio.statusVisto">Já assisti</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Audio.statusVisto">Não assisti</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Audio.statusVisto">Ainda assistirei</mat-checkbox>
         </div>
     </div>
         <!-- data -->

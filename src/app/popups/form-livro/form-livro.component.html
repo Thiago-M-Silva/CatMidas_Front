@@ -22,9 +22,9 @@
     <div class="checkbox">
         <div class="visto">
             <p>Já leu ou não:</p>
-            <mat-checkbox>Já li</mat-checkbox>
-            <mat-checkbox>Não li</mat-checkbox>
-            <mat-checkbox>Ainda lerei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Livro.statusLido">Já li</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Livro.statusLido">Não li</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Livro.statusLido">Ainda lerei</mat-checkbox>
         </div>
     </div>
 
