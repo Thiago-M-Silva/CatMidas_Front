@@ -4,55 +4,49 @@
     <p>Digite o nome do autor:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o nome do audio</mat-label>
-        <input matInput [(ngModel)]="Audio.nome">
+        <input matInput [(ngModel)]="Audio.nome" name="nome">
     </mat-form-field>
 
     <p>Digite o nome do autor:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o autor:</mat-label>
-        <input matInput [(ngModel)]="Audio.autor" >
+        <input matInput [(ngModel)]="Audio.autor" name="autor">
     </mat-form-field>
 
     <p>Digite a descricao:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite a descricao:</mat-label>
-        <input matInput [(ngModel)]="Audio.descricao">
+        <input matInput [(ngModel)]="Audio.descricao" name="descricao">
     </mat-form-field>
 
     <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Site onde pode ser encontrada</mat-label>
-        <input matInput [(ngModel)]="Audio.disponibilidade">
+        <input matInput [(ngModel)]="Audio.disponibilidade" name="disponibilidade">
     </mat-form-field>
 
     <p>Digite o nome do estudio</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Nome do estudio</mat-label>
-        <input matInput [(ngModel)]="Audio.estudio">
+        <input matInput [(ngModel)]="Audio.estudio" name="estudio">
     </mat-form-field>
 
     <!-- checkbox ou lista de opcoes talvez agrupar com o proximo -->
     <div class="checkbox">
-        <div class="status">
-            <p>Está em lançamento ou finalizado:</p>
-            <mat-checkbox value="L" [(ngModel)]="Audio.statusVisto">Lançamento</mat-checkbox>
-            <mat-checkbox value="L" [(ngModel)]="Audio.statusVisto">finalizado</mat-checkbox>
-        </div>
-
         <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já assistiu ou não:</p>
-            <mat-checkbox value="vi" [(ngModel)]="Audio.statusVisto">Já assisti</mat-checkbox>
-            <mat-checkbox value="nvi" [(ngModel)]="Audio.statusVisto">Não assisti</mat-checkbox>
-            <mat-checkbox value="ass" [(ngModel)]="Audio.statusVisto">Ainda assistirei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Audio.statusVisto" name="statusVisto">Já assisti</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Audio.statusVisto" name="statusVisto">Não assisti</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Audio.statusVisto" name="statusVisto">Ainda assistirei</mat-checkbox>
         </div>
     </div>
         <!-- data -->
         <div class="data">
-            <p>Quando a serie lancou?</p>
+            <p>Quando lancou?</p>
             <mat-form-field appearance="fill">
-                <mat-label>Digite o ...</mat-label>
-                <input matInput type="date" [(ngModel)]="Audio.dtLancamento">
+                <mat-label>Digite a data de lançamento</mat-label>
+                <input matInput type="date" [(ngModel)]="Audio.dtLancamento" name="dtLancamento">
         </mat-form-field>
         </div>
 </form>

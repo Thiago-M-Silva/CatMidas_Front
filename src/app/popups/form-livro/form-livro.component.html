@@ -4,27 +4,27 @@
     <p>Digite o nome do livro:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o nome do audio</mat-label>
-        <input matInput [(ngModel)]="Livro.nome">
+        <input matInput [(ngModel)]="Livro.nome" name="nome">
     </mat-form-field>
 
     <p>Digite o nome do autor:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o autor:</mat-label>
-        <input matInput [(ngModel)]="Livro.autor" >
+        <input matInput [(ngModel)]="Livro.autor" name="autor">
     </mat-form-field>
 
     <p>Digite a descricao:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite a descricao:</mat-label>
-        <input matInput [(ngModel)]="Livro.descricao">
+        <input matInput [(ngModel)]="Livro.descricao" name="descricao">
     </mat-form-field>
 
     <div class="checkbox">
         <div class="visto">
             <p>Já leu ou não:</p>
-            <mat-checkbox value="vi" [(ngModel)]="Livro.statusLido">Já li</mat-checkbox>
-            <mat-checkbox value="nvi" [(ngModel)]="Livro.statusLido">Não li</mat-checkbox>
-            <mat-checkbox value="ass" [(ngModel)]="Livro.statusLido">Ainda lerei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Livro.statusLido" name="statusLido">Já li</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Livro.statusLido" name="statusLido">Não li</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Livro.statusLido" name="statusLido">Ainda lerei</mat-checkbox>
         </div>
     </div>
 
@@ -33,7 +33,7 @@
             <p>Quantas páginas tem?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Número de páginas</mat-label>
-                <input matInput type="number" [(ngModel)]="Livro.paginas">
+                <input matInput type="number" [(ngModel)]="Livro.paginas" name="paginas">
             </mat-form-field>
         </div>
         
@@ -42,7 +42,7 @@
             <p>Quando o livro lancou?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Digite a data de lancamento</mat-label>
-                <input matInput type="date" [(ngModel)]="Livro.dtLancamento">
+                <input matInput type="date" [(ngModel)]="Livro.dtLancamento" name="dtLancamento">
             </mat-form-field>
         </div>
     </div>

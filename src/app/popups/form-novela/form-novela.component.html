@@ -4,47 +4,47 @@
     <p>Digite o nome do autor:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o nome da novela</mat-label>
-        <input matInput [(ngModel)]="Novela.nome">
+        <input matInput [(ngModel)]="Novela.nome" name="nome">
     </mat-form-field>
 
     <p>Digite o nome do autor:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o autor:</mat-label>
-        <input matInput [(ngModel)]="Novela.autor" >
+        <input matInput [(ngModel)]="Novela.autor" name="autor">
     </mat-form-field>
 
     <p>Digite a descricao:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite a descricao:</mat-label>
-        <input matInput [(ngModel)]="Novela.descricao">
+        <input matInput [(ngModel)]="Novela.descricao" name="descricao">
     </mat-form-field>
 
     <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Site onde pode ser encontrada</mat-label>
-        <input matInput [(ngModel)]="Novela.disponibilidade">
+        <input matInput [(ngModel)]="Novela.disponibilidade" name="disponibilidade">
     </mat-form-field>
 
     <p>Digite o nome do estudio</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Nome do estudio</mat-label>
-        <input matInput [(ngModel)]="Novela.estudio">
+        <input matInput [(ngModel)]="Novela.estudio" name="estudio">
     </mat-form-field>
 
     <!-- checkbox ou lista de opcoes talvez agrupar com o proximo -->
     <div class="checkbox">
         <div class="status">
             <p>Está em lançamento ou finalizado:</p>
-            <mat-checkbox value="L" [(ngModel)]="Novela.status">Lançamento</mat-checkbox>
-            <mat-checkbox value="F" [(ngModel)]="Novela.status">Finalizado</mat-checkbox>
+            <mat-checkbox value="L" [(ngModel)]="Novela.status" name="status">Lançamento</mat-checkbox>
+            <mat-checkbox value="F" [(ngModel)]="Novela.status" name="status">Finalizado</mat-checkbox>
         </div>
 
         <!-- checkbox ou lista de opcoes -->
-        <div class="visto">
+        <div class="visto"> 
             <p>Já assistiu ou não:</p>
-            <mat-checkbox value="vi" [(ngModel)]="Novela.status">Já assisti</mat-checkbox>
-            <mat-checkbox value="nvi" [(ngModel)]="Novela.status">Não assisti</mat-checkbox>
-            <mat-checkbox value="ass" [(ngModel)]="Novela.status">Ainda assistirei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Novela.statusVisto" name="statusVisto">Já assisti</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Novela.statusVisto" name="statusVisto">Não assisti</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Novela.statusVisto" name="statusVisto">Ainda assistirei</mat-checkbox>
         </div>
     </div>
     <div class="numero">
@@ -52,7 +52,7 @@
             <p>Quantas temporadas tem?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Numero de temporadas</mat-label>
-                <input mat-input type="number" [(ngModel)]="Novela.temps">
+                <input mat-input type="number" [(ngModel)]="Novela.temps" name="temps">
             </mat-form-field>
         </div>
         
@@ -60,7 +60,7 @@
             <p>Quantas episodios tem?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Numero de episodios</mat-label>
-                <input mat-input type="number" [(ngModel)]="Novela.maxEps">
+                <input mat-input type="number" [(ngModel)]="Novela.maxEps" name="maxEps">
             </mat-form-field>
         </div>
         
@@ -69,7 +69,7 @@
             <p>Quando a novela lancou?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Digite o ...</mat-label>
-                <input matInput type="date" [(ngModel)]="Novela.dtLancamento">
+                <input matInput type="date" [(ngModel)]="Novela.dtLancamento" name="dtLancamento">
             </mat-form-field>
         </div>
     </div>

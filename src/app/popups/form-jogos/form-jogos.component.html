@@ -4,47 +4,47 @@
     <p>Digite o nome do jogo:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o nome do jogo</mat-label>
-        <input matInput [(ngModel)]="Jogo.nome">
+        <input matInput [(ngModel)]="Jogo.nome" name="nome">
     </mat-form-field>
 
     <p>Digite o nome do autor:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o autor:</mat-label>
-        <input matInput [(ngModel)]="Jogo.autor" >
+        <input matInput [(ngModel)]="Jogo.autor" name="autor">
     </mat-form-field>
 
     <p>Digite a descricao:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite a descricao:</mat-label>
-        <input matInput [(ngModel)]="Jogo.descricao">
+        <input matInput [(ngModel)]="Jogo.descricao" name="descricao">
     </mat-form-field>
 
     <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Site onde pode ser encontrada</mat-label>
-        <input matInput [(ngModel)]="Jogo.disponibilidade">
+        <input matInput [(ngModel)]="Jogo.disponibilidade" name="disponibilidade">
     </mat-form-field>
 
     <p>Digite o nome do estudio</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Nome do estudio</mat-label>
-        <input matInput [(ngModel)]="Jogo.estudio">
+        <input matInput [(ngModel)]="Jogo.estudio" name="estudio">
     </mat-form-field>
 
     <!-- checkbox ou lista de opcoes talvez agrupar com o proximo -->
     <div class="checkbox">
         <div class="status">
             <p>Está em lançamento ou finalizado:</p>
-            <mat-checkbox value="L" [(ngModel)]="Jogo.status">Lançamento</mat-checkbox>
-            <mat-checkbox value="F" [(ngModel)]="Jogo.status">Finalizado</mat-checkbox>
+            <mat-checkbox value="L" [(ngModel)]="Jogo.status" name="status">Lançamento</mat-checkbox>
+            <mat-checkbox value="F" [(ngModel)]="Jogo.status" name="status">Finalizado</mat-checkbox>
         </div>
 
         <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já jogou ou não:</p>
-            <mat-checkbox value="vi" [(ngModel)]="Jogo.status">Já assisti</mat-checkbox>
-            <mat-checkbox value="nvi" [(ngModel)]="Jogo.status">Não assisti</mat-checkbox>
-            <mat-checkbox value="ass" [(ngModel)]="Jogo.status">Ainda assistirei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Jogo.statusVisto" name="statusVisto">Já assisti</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Jogo.statusVisto" name="statusVisto">Não assisti</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Jogo.statusVisto" name="statusVisto">Ainda assistirei</mat-checkbox>
         </div>
     </div>
 
@@ -53,7 +53,7 @@
             <p>Quanto tempo até zerar?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Tempo medio da campanha</mat-label>
-                <input matInput type="number" [(ngModel)]="Jogo.duracaoMedia">
+                <input matInput type="number" [(ngModel)]="Jogo.duracaoMedia" name="duracaoMedia">
             </mat-form-field>
         </div>
     </div>
@@ -62,7 +62,7 @@
         <p>Quando a serie lancou?</p>
         <mat-form-field appearance="fill">
             <mat-label>Data de lançamento</mat-label>
-            <input matInput type="date" [(ngModel)]="Jogo.dtLancamento">
+            <input matInput type="date" [(ngModel)]="Jogo.dtLancamento" name="dtLancamento">
     </mat-form-field>
     </div>
 </form>

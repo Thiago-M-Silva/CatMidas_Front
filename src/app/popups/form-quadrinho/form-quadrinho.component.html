@@ -4,47 +4,47 @@
     <p>Digite o nome do quadrinho:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o nome do quadrinho</mat-label>
-        <input matInput [(ngModel)]="Quadrinho.nome">
+        <input matInput [(ngModel)]="Quadrinho.nome" name="nome">
     </mat-form-field>
 
     <p>Digite o nome do autor:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o autor:</mat-label>
-        <input matInput [(ngModel)]="Quadrinho.autor" >
+        <input matInput [(ngModel)]="Quadrinho.autor" name="autor">
     </mat-form-field>
 
     <p>Digite a descricao:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite a descricao:</mat-label>
-        <input matInput [(ngModel)]="Quadrinho.descricao">
+        <input matInput [(ngModel)]="Quadrinho.descricao" name="descricao">
     </mat-form-field>
 
     <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Site onde pode ser encontrada</mat-label>
-        <input matInput [(ngModel)]="Quadrinho.disponibilidade">
+        <input matInput [(ngModel)]="Quadrinho.disponibilidade" name="disnibilidade">
     </mat-form-field>
 
     <p>Qual a nacionalidade do quadrinho?</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>nacionalidade</mat-label>
-        <input matInput [(ngModel)]="Quadrinho.nacionalidade">
+        <input matInput [(ngModel)]="Quadrinho.nacionalidade" name="nacionalidade">
     </mat-form-field>
 
     <!-- checkbox ou lista de opcoes talvez agrupar com o proximo -->
     <div class="checkbox">
         <div class="status">
             <p>Está em lançamento ou finalizado:</p>
-            <mat-checkbox value="L" [(ngModel)]="Quadrinho.status">Lançamento</mat-checkbox>
-            <mat-checkbox value="F" [(ngModel)]="Quadrinho.status">Finalizado</mat-checkbox>
+            <mat-checkbox value="L" [(ngModel)]="Quadrinho.status" name="status">Lançamento</mat-checkbox>
+            <mat-checkbox value="F" [(ngModel)]="Quadrinho.status" name="status">Finalizado</mat-checkbox>
         </div>
 
         <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já assistiu ou não:</p>
-            <mat-checkbox value="vi" [(ngModel)]="Quadrinho.status">Já assisti</mat-checkbox>
-            <mat-checkbox value="nvi" [(ngModel)]="Quadrinho.status">Não assisti</mat-checkbox>
-            <mat-checkbox value="ass" [(ngModel)]="Quadrinho.status">Ainda assistirei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Quadrinho.statusVisto" name="statusVisto">Já assisti</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Quadrinho.statusVisto" name="statusVisto">Não assisti</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Quadrinho.statusVisto" name="statusVisto">Ainda assistirei</mat-checkbox>
         </div>
     </div>
 
@@ -52,7 +52,7 @@
         <p>Quantos capítulos tem?</p>
         <mat-form-field>
             <mat-label>Numero de capitulos</mat-label>
-            <input matInput type="number" [(ngModel)]="Quadrinho.caps">
+            <input matInput type="number" [(ngModel)]="Quadrinho.caps" name="caps">
         </mat-form-field>
         
         <!-- data -->
@@ -60,7 +60,7 @@
             <p>Quando a serie lancou?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Data de lançamento </mat-label>
-                <input matInput type="date" [(ngModel)]="Quadrinho.dtLancamento">
+                <input matInput type="date" [(ngModel)]="Quadrinho.dtLancamento" name="dtLancamento">
             </mat-form-field>
         </div>
     </div>

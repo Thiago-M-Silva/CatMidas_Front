@@ -4,47 +4,47 @@
     <p>Digite o nome do filme:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o nome do filme</mat-label>
-        <input matInput [(ngModel)]="Filme.nome">
+        <input matInput [(ngModel)]="Filme.nome" name="nome">
     </mat-form-field>
 
     <p>Digite o nome do diretor:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o diretor:</mat-label>
-        <input matInput [(ngModel)]="Filme.diretor" >
+        <input matInput [(ngModel)]="Filme.diretor" name="diretor">
     </mat-form-field>
 
     <p>Digite a descricao:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite a descricao:</mat-label>
-        <input matInput [(ngModel)]="Filme.descricao">
+        <input matInput [(ngModel)]="Filme.descricao" name="descricao">
     </mat-form-field>
 
     <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Site onde pode ser encontrada</mat-label>
-        <input matInput [(ngModel)]="Filme.disponibilidade">
+        <input matInput [(ngModel)]="Filme.disponibilidade" name="disponibilidade">
     </mat-form-field>
 
     <p>Digite o nome do estudio</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Nome do estudio</mat-label>
-        <input matInput [(ngModel)]="Filme.estudio">
+        <input matInput [(ngModel)]="Filme.estudio" name="estudio">
     </mat-form-field>
 
     <!-- checkbox ou lista de opcoes talvez agrupar com o proximo -->
     <div class="checkbox">
         <div class="status">
             <p>Está em lançamento ou finalizado:</p>
-            <mat-checkbox value="L" [(ngModel)]="Filme.status">Lançamento</mat-checkbox>
-            <mat-checkbox value="F" [(ngModel)]="Filme.status">Finalizado</mat-checkbox>
+            <mat-checkbox value="L" [(ngModel)]="Filme.status" name="status">Lançamento</mat-checkbox>
+            <mat-checkbox value="F" [(ngModel)]="Filme.status" name="status">Finalizado</mat-checkbox>
         </div>
 
         <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já assistiu ou não:</p>
-            <mat-checkbox value="vi" [(ngModel)]="Filme.statusVisto">Já assisti</mat-checkbox>
-            <mat-checkbox value="nvi" [(ngModel)]="Filme.statusVisto">Não assisti</mat-checkbox>
-            <mat-checkbox value="ass" [(ngModel)]="Filme.statusVisto">Ainda assistirei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Filme.statusVisto" name="statusVisto">Já assisti</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Filme.statusVisto" name="statusVisto">Não assisti</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Filme.statusVisto" name="statusVisto">Ainda assistirei</mat-checkbox>
         </div>
     </div>
 
@@ -53,7 +53,7 @@
             <p>Quanto tempo dura o filme?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Digite o tempo em minutos</mat-label>
-                <input type="number" [(ngModel)]="Filme.duracao">
+                <input type="number" [(ngModel)]="Filme.duracao" name="duracao">
             </mat-form-field>
         </div>
 
@@ -62,7 +62,7 @@
             <p>Quando a serie lancou?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Data de lançamento</mat-label>
-                <input matInput type="date" [(ngModel)]="Filme.dtLancamento">
+                <input matInput type="date" [(ngModel)]="Filme.dtLancamento" name="dtLancamento">
         </mat-form-field>
         </div>
     </div>

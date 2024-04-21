@@ -66,6 +66,7 @@ export class DesenhoComponent {
 
   adicionar(){
    const dialogRef = this.dialog.open(FormDesenhoComponent, {height: '75vh', width: '75vw'})
+   
 
    dialogRef.afterClosed() //implementar funcao para reiniciar a pagina
   }

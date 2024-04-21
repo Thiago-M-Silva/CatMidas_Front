@@ -13,9 +13,10 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./form-desenho.component.css']
 })
 export class FormDesenhoComponent {
+  
   id: number = 0;
   nome: string = ' ';
-  autor: string  =  ' ';
+  autor: string  = ' ';
   descricao: string =' ';
   disponibilidade: string =' ';
   estudio: string =' ';
@@ -25,7 +26,7 @@ export class FormDesenhoComponent {
   status: string =' ';
   statusVisto: string =' ';
   temps: number = 0;
-
+  
   Desenho: Desenho = {
     id: this.id,
     nome: this.nome,
@@ -47,7 +48,7 @@ export class FormDesenhoComponent {
     ){}
 
   enviaDados(){
-    // this.envioService.sendDados(this.Desenho).subscribe()
+    this.envioService.sendDados(this.Desenho).subscribe()
     console.log(this.Desenho)
   }
   

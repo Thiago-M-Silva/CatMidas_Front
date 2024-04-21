@@ -4,64 +4,64 @@
     <p>Digite o nome da serie:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o nome da serie</mat-label>
-        <input matInput [(ngModel)]="Serie.nome">
+        <input matInput [(ngModel)]="Serie.nome" name="nome">
     </mat-form-field>
 
     <p>Digite o nome do autor:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite o autor:</mat-label>
-        <input matInput [(ngModel)]="Serie.autor" >
+        <input matInput [(ngModel)]="Serie.autor" name="autor">
     </mat-form-field>
 
     <p>Digite a descricao:</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Digite a descricao:</mat-label>
-        <input matInput [(ngModel)]="Serie.descricao">
+        <input matInput [(ngModel)]="Serie.descricao" name="descricao">
     </mat-form-field>
 
     <p>Digite onde pode ser encontrada: <br>(nome do serviço de streaming ou site alternativo)</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Site onde pode ser encontrada</mat-label>
-        <input matInput [(ngModel)]="Serie.disponibilidade">
+        <input matInput [(ngModel)]="Serie.disponibilidade" name="disponibilidade">
     </mat-form-field>
 
     <p>Digite o nome do estudio</p>
     <mat-form-field appearance="fill" class="inputText">
         <mat-label>Nome do estudio</mat-label>
-        <input matInput [(ngModel)]="Serie.estudio">
+        <input matInput [(ngModel)]="Serie.estudio" name="estudio">
     </mat-form-field>
 
     <!-- checkbox ou lista de opcoes talvez agrupar com o proximo -->
     <div class="checkbox">
         <div class="status">
             <p>Está em lançamento ou finalizado:</p>
-            <mat-checkbox value="L" [(ngModel)]="Serie.status">Lançamento</mat-checkbox>
-            <mat-checkbox value="F" [(ngModel)]="Serie.status">Finalizado</mat-checkbox>
+            <mat-checkbox value="L" [(ngModel)]="Serie.status" name="status">Lançamento</mat-checkbox>
+            <mat-checkbox value="F" [(ngModel)]="Serie.status" name="status">Finalizado</mat-checkbox>
         </div>
 
         <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já assistiu ou não:</p>
-            <mat-checkbox value="vi" [(ngModel)]="Serie.status">Já assisti</mat-checkbox>
-            <mat-checkbox value="nvi" [(ngModel)]="Serie.status">Não assisti</mat-checkbox>
-            <mat-checkbox value="ass" [(ngModel)]="Serie.status">Ainda assistirei</mat-checkbox>
+            <mat-checkbox value="vi" [(ngModel)]="Serie.status" name="statusVisto">Já assisti</mat-checkbox>
+            <mat-checkbox value="nvi" [(ngModel)]="Serie.status" name="statusVisto">Não assisti</mat-checkbox>
+            <mat-checkbox value="ass" [(ngModel)]="Serie.status" name="statusVisto">Ainda assistirei</mat-checkbox>
         </div>
     </div>
 
     <div class="numero">
-        <div class="temps">
-            <p>Quantas temporadas tem?</p>
-            <mat-form-field appearance="fill">
-                <mat-label>Numero de temporadas</mat-label>
-                <input mat-input type="number" [(ngModel)]="Serie.temps">
-            </mat-form-field>
-        </div>
-        
         <div class="maxEps">
             <p>Quantas episodios tem?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Numero de episodios</mat-label>
-                <input mat-input type="number" [(ngModel)]="Serie.maxEps">
+                <input mat-input type="number" [(ngModel)]="Serie.maxEps" name="maxEps">
+            </mat-form-field>
+        </div>
+
+        <div class="temps">
+            <p>Quantas temporadas tem?</p>
+            <mat-form-field appearance="fill">
+                <mat-label>Numero de temporadas</mat-label>
+                <input mat-input type="number" [(ngModel)]="Serie.temps" name="temps">
             </mat-form-field>
         </div>
         
@@ -70,7 +70,7 @@
             <p>Quando a serie lancou?</p>
             <mat-form-field appearance="fill">
                 <mat-label>Data de lancamento</mat-label>
-                <input matInput type="date" [(ngModel)]="Serie.dtLancamento">
+                <input matInput type="date" [(ngModel)]="Serie.dtLancamento" name="dtLancamento">
             </mat-form-field>
         </div>
     </div>
