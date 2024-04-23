@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatCheckbox } from '@angular/material/checkbox';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 import { Quadrinhos } from 'src/app/interfaces/Quadrinhos';
 import { EnvioService } from 'src/app/service/envio.service';
 
 @Component({
   selector: 'app-form-quadrinho',
   standalone: true,
-  imports: [MatFormFieldModule, MatCheckbox, MatInput, FormsModule],
+  imports: [MatFormFieldModule, MatRadioModule, MatInput, FormsModule],
   templateUrl: './form-quadrinho.component.html',
   styleUrl: './form-quadrinho.component.css'
 })

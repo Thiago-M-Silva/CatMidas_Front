@@ -36,9 +36,11 @@
         <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já assistiu ou não:</p>
-            <mat-checkbox value="vi" [(ngModel)]="Audio.statusVisto" name="statusVisto">Já assisti</mat-checkbox>
-            <mat-checkbox value="nvi" [(ngModel)]="Audio.statusVisto" name="statusVisto">Não assisti</mat-checkbox>
-            <mat-checkbox value="ass" [(ngModel)]="Audio.statusVisto" name="statusVisto">Ainda assistirei</mat-checkbox>
+            <mat-radio-group>
+                <mat-radio-button value="vi" [(ngModel)]="Audio.statusVisto" name="statusVisto">Já assisti</mat-radio-button>
+                <mat-radio-button value="nvi" [(ngModel)]="Audio.statusVisto" name="statusVisto">Não assisti</mat-radio-button>
+                <mat-radio-button value="ass" [(ngModel)]="Audio.statusVisto" name="statusVisto">Ainda Assistirei</mat-radio-button>
+            </mat-radio-group>
         </div>
     </div>
         <!-- data -->

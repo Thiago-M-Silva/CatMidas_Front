@@ -35,16 +35,20 @@
     <div class="checkbox">
         <div class="status">
             <p>Está em lançamento ou finalizado:</p>
-            <mat-checkbox value="L" [(ngModel)]="Serie.status" name="status">Lançamento</mat-checkbox>
-            <mat-checkbox value="F" [(ngModel)]="Serie.status" name="status">Finalizado</mat-checkbox>
+            <mat-radio-group>
+                <mat-radio-button value="L" [(ngModel)]="Serie.status" name="statusL">Lançamento</mat-radio-button>
+                <mat-radio-button value="F" [(ngModel)]="Serie.status" name="statusF">Finalizado</mat-radio-button>
+            </mat-radio-group>
         </div>
 
         <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já assistiu ou não:</p>
-            <mat-checkbox value="vi" [(ngModel)]="Serie.status" name="statusVisto">Já assisti</mat-checkbox>
-            <mat-checkbox value="nvi" [(ngModel)]="Serie.status" name="statusVisto">Não assisti</mat-checkbox>
-            <mat-checkbox value="ass" [(ngModel)]="Serie.status" name="statusVisto">Ainda assistirei</mat-checkbox>
+            <mat-radio-group>
+                <mat-radio-button value="vi" [(ngModel)]="Serie.statusVisto" name="statusVisto">Já assisti</mat-radio-button>
+                <mat-radio-button value="nvi" [(ngModel)]="Serie.statusVisto" name="statusVisto">Não assisti</mat-radio-button>
+                <mat-radio-button value="ass" [(ngModel)]="Serie.statusVisto" name="statusVisto">Ainda Assistirei</mat-radio-button>
+            </mat-radio-group>
         </div>
     </div>
 

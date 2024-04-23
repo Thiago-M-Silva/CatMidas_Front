@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatCheckbox } from '@angular/material/checkbox';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 import { Livros } from 'src/app/interfaces/Livro';
 import { EnvioService } from 'src/app/service/envio.service';
 
 @Component({
   selector: 'app-form-livro',
   standalone: true,
-  imports: [MatFormFieldModule, MatCheckbox, MatInput, FormsModule],
+  imports: [MatFormFieldModule, MatRadioModule, MatInput, FormsModule],
   templateUrl: './form-livro.component.html',
   styleUrl: './form-livro.component.css'
 })

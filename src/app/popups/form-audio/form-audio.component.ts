@@ -4,15 +4,14 @@ import { Audio } from 'src/app/interfaces/Audio';
 import { EnvioService } from 'src/app/service/envio.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { MatCheckbox } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-form-audio',
   templateUrl: './form-audio.component.html',
   standalone: true,
-  imports: [MatFormFieldModule, MatCheckbox, MatInputModule, FormsModule],
+  imports: [MatFormFieldModule, MatRadioModule, MatInputModule, FormsModule],
   styleUrl: './form-audio.component.css'
 })
 export class FormAudioComponent {

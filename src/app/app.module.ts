@@ -10,7 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCheckbox } from '@angular/material/checkbox';
+import { MatCheckbox } from '@angular/material/checkbox'; //apagar dps
+import { MatRadioModule } from '@angular/material/radio';
 
 import { AppComponent } from './app.component';
 import { DesenhoComponent } from './componentes/desenho/desenho.component';
@@ -49,7 +50,8 @@ import { FormDesenhoComponent } from './popups/form-desenho/form-desenho.compone
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatCheckbox
+    MatCheckbox, //apagar
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

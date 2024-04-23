@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatCheckbox } from '@angular/material/checkbox';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
 import { Serie } from 'src/app/interfaces/Serie';
 import { EnvioService } from 'src/app/service/envio.service';
 
 @Component({
   selector: 'app-form-serie',
   standalone: true,
-  imports: [MatFormFieldModule, MatCheckbox, MatInputModule, FormsModule],
+  imports: [MatFormFieldModule, MatRadioModule, MatInputModule, FormsModule],
   templateUrl: './form-serie.component.html',
   styleUrl: './form-serie.component.css'
 })
