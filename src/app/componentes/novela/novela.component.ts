@@ -61,9 +61,7 @@ export class NovelaComponent {
   }
   
   editaDados(novela: Novela){
-    console.log(novela);
-    console.log(this.Novela);
-    this.envioService.corrigeDados(novela, this.Novela.id).subscribe();
+    const dialogRef = this.dialog.open(FormNovelaComponent, {data: novela, height: '75vh', width: '75vh'})
   }
 
   adicionar(){

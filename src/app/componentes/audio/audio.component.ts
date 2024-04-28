@@ -59,9 +59,7 @@ export class AudioComponent {
     }
     
     editaDados(audio: Audio){
-      console.log(audio);
-      console.log(this.Audio);
-      this.envioService.corrigeDados(audio, this.Audio.id).subscribe();
+      const dialogRef = this.dialog.open(FormAudioComponent, {data: audio, height: '75vh', width: '75vw'})
     }
     
     adicionar(){

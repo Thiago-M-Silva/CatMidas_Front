@@ -56,9 +56,7 @@ export class JogosComponent {
   }
 
   editaDados(jogos: Jogos){
-    console.log(jogos);
-    console.log(this.Jogos);
-    this.envioService.corrigeDados(jogos, this.Jogo.id).subscribe();
+    const dialogRef = this.dialog.open(FormJogosComponent, {data: jogos, height: '75vh', width: '75vh'})
   }
 
   adicionar(){

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
@@ -40,11 +40,21 @@ export class FormQuadrinhoComponent {
   }
   constructor(
     private envioService: EnvioService,
-    public dialogRef: MatDialogRef<FormQuadrinhoComponent>
-  ){}
+    public dialogRef: MatDialogRef<FormQuadrinhoComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Quadrinhos,
+  ){
+    if(data !== null)
+      this.Quadrinho = data
+  }
 
   enviaDados(){
-    this.envioService.sendDados(this.Quadrinho).subscribe()
+    if(this.Quadrinho === null){
+      this.envioService.sendDados(this.Quadrinho).subscribe()
+    }else{
+      this.envioService.corrigeDados(this.Quadrinho, this.Quadrinho.id).subscribe()
+    }
+    console.log(this.Quadrinho)
+    this.fechar()  
   }
   
   fechar(){

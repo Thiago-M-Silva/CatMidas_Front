@@ -57,9 +57,7 @@ export class QuadrinhosComponent {
   }
 
   editaDados(quadrinho: Quadrinhos){
-    console.log(quadrinho);
-    console.log(this.Quadrinho);
-    this.envioService.corrigeDados(quadrinho, this.Quadrinho.id).subscribe();
+    const dialogRef = this.dialog.open(FormQuadrinhoComponent, {data: quadrinho ,height: '75vh', width: '75vw'})
   }
   
   adicionar(){

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
@@ -45,11 +45,21 @@ export class FormSerieComponent {
 
   constructor(
     private envioService: EnvioService,
-    public dialogRef: MatDialogRef<FormSerieComponent>
-  ){}
+    public dialogRef: MatDialogRef<FormSerieComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Serie,
+  ){
+    if(data !== null)
+      this.Serie = data
+  }
 
   enviaDados(){
-    this.envioService.sendDados(this.Serie).subscribe()
+    if(this.Serie === null){
+      this.envioService.sendDados(this.Serie).subscribe()
+    }else{
+      this.envioService.corrigeDados(this.Serie, this.Serie.id).subscribe()
+    }
+    console.log(this.Serie)
+    this.fechar()  
   }
   
   fechar(){

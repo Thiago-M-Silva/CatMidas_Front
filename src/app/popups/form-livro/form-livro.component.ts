@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
@@ -35,11 +35,18 @@ export class FormLivroComponent {
 
   constructor(
     private envioService: EnvioService,
-    public dialogRef: MatDialogRef<FormLivroComponent>
+    public dialogRef: MatDialogRef<FormLivroComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Livros,
   ){}
 
   enviaDados(){
-    this.envioService.sendDados(this.Livro).subscribe()
+    if(this.Livro === null){
+      this.envioService.sendDados(this.Livro).subscribe()
+    }else{
+      this.envioService.corrigeDados(this.Livro, this.Livro.id).subscribe()
+    }
+    console.log(this.Livro)
+    this.fechar() 
   }
   
   fechar(){

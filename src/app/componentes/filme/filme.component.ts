@@ -58,7 +58,7 @@ export class FilmeComponent {
     }
 
     editaDados(filme: Filmes){
-      this.envioService.corrigeDados(filme, this.Filme.id).subscribe();
+      const dialogRef = this.dialog.open(FormFilmeComponent, {data: filme, height: '75vh', width: '75vh'})
     }
   
     adicionar(){

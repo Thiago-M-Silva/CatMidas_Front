@@ -51,7 +51,7 @@ export class LivroComponent {
   }
   
   editaDados(livro: Livros){
-    this.envioService.corrigeDados(livro, this.Livro.id).subscribe()
+    const dialogRef = this.dialog.open(FormLivroComponent, {data: livro, height: '75vh', width: '75vh'})
   }
   
   adicionar(){

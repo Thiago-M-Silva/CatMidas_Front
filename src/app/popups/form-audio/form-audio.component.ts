@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Audio } from 'src/app/interfaces/Audio';
 import { EnvioService } from 'src/app/service/envio.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -42,11 +42,22 @@ export class FormAudioComponent {
 
   constructor(
     private envioService: EnvioService,
-    public dialogRef: MatDialogRef<FormAudioComponent>
-    ){}
+    public dialogRef: MatDialogRef<FormAudioComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Audio,
+  ){
+    if(data !== null)
+      this.Audio = data;
+  }
 
   enviaDados(){
-    this.envioService.sendDados(this.Audio).subscribe()
+    if(this.Audio === null){
+      this.envioService.sendDados(this.Audio).subscribe()
+    }else{
+      this.envioService.corrigeDados(this.Audio, this.Audio.id).subscribe
+    }
+
+    console.log(this.Audio)
+    this.fechar()
   }
   
   fechar(){

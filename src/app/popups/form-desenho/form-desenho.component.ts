@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Desenho } from 'src/app/interfaces/Desenho';
 import { EnvioService } from 'src/app/service/envio.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./form-desenho.component.css']
 })
 export class FormDesenhoComponent {
+  // esse componente foi criado em uma versão anterior do angular
+  // deste modo é um dos únicos que funcionam sem o standalone
   
   id: number = 0;
   nome: string = ' ';
@@ -26,7 +28,7 @@ export class FormDesenhoComponent {
   status: string =' ';
   statusVisto: string =' ';
   temps: number = 0;
-  
+
   Desenho: Desenho = {
     id: this.id,
     nome: this.nome,
@@ -41,15 +43,25 @@ export class FormDesenhoComponent {
     statusVisto: this.statusVisto,
     temps: this.temps
   }
-
+  
   constructor(
     private envioService: EnvioService,
-    public dialogRef: MatDialogRef<FormDesenhoComponent>
-    ){}
+    public dialogRef: MatDialogRef<FormDesenhoComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Desenho,
+  ){ 
+    if(data !== null)
+      this.Desenho = data
+  }
+  
 
   enviaDados(){
-    this.envioService.sendDados(this.Desenho).subscribe()
+    if(this.Desenho === null){
+      this.envioService.sendDados(this.Desenho).subscribe()
+    }else{
+      this.envioService.corrigeDados(this.Desenho, this.Desenho.id).subscribe()
+    }
     console.log(this.Desenho)
+    this.fechar()    
   }
   
   fechar(){

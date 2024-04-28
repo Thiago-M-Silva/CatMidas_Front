@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
@@ -41,11 +41,21 @@ export class FormJogosComponent {
   
   constructor(
     private envioService: EnvioService,
-    public dialogRef: MatDialogRef<FormJogosComponent>
-  ){}
+    public dialogRef: MatDialogRef<FormJogosComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Jogos
+  ){
+    if(data !== null)
+        this.Jogo = data
+  }
 
   enviaDados(){
-    this.envioService.sendDados(this.Jogo).subscribe()
+    if(this.Jogo === null){
+      this.envioService.sendDados(this.Jogo).subscribe()
+    }else{
+      this.envioService.corrigeDados(this.Jogo, this.Jogo.id).subscribe()
+    }
+    console.log(this.Jogo)
+    this.fechar() 
   }
   
   fechar(){

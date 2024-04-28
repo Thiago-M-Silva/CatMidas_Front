@@ -61,9 +61,7 @@ export class SeriesComponent {
   }
 
   editaDados(serie: Serie){
-    console.log(serie);
-    console.log(this.Serie);
-    this.envioService.corrigeDados(serie, this.Serie.id).subscribe();
+    const dialogRef = this.dialog.open(FormSerieComponent, {data: serie, height: '75vh', width: '75vw'})
   }
   
   adicionar(){

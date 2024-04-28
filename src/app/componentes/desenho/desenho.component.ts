@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Desenho } from 'src/app/interfaces/Desenho';
 import { EnvioService } from 'src/app/service/envio.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog,  MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormDesenhoComponent } from 'src/app/popups/form-desenho/form-desenho.component';
 import { MatCardModule } from '@angular/material/card';
 
@@ -61,7 +61,7 @@ export class DesenhoComponent {
   }
 
   editaDados(desenho: Desenho){
-    this.envioService.corrigeDados(desenho, this.Desenho.id).subscribe();
+    const dialogRef = this.dialog.open(FormDesenhoComponent, {data: desenho, height: '75vh', width: '75vw'})
   }
 
   adicionar(){

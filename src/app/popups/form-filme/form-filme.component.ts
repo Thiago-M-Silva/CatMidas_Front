@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { EnvioService } from 'src/app/service/envio.service';
 import { Filmes } from 'src/app/interfaces/Filme';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -42,11 +42,21 @@ export class FormFilmeComponent {
 
   constructor(
     private envioService: EnvioService,
-    public dialogRef: MatDialogRef<FormFilmeComponent>
-    ){}
+    public dialogRef: MatDialogRef<FormFilmeComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: Filmes
+  ){
+    if(data !== null)
+      this.Filme = data
+  }
 
   enviaDados(){
-    this.envioService.sendDados(this.Filme).subscribe()
+    if(this.Filme === null){
+      this.envioService.sendDados(this.Filme).subscribe()
+    }else{
+      this.envioService.corrigeDados(this.Filme, this.Filme.id).subscribe()
+    }
+    console.log(this.Filme)
+    this.fechar() 
   }
   
   fechar(){
