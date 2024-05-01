@@ -11,6 +11,8 @@ import { FormQuadrinhoComponent } from 'src/app/popups/form-quadrinho/form-quadr
   styleUrls: ['./quadrinhos.component.css']
 })
 export class QuadrinhosComponent {
+  private origem: string = 'quadrinhos'; //identifica qual componente faz a requisicao
+
   id: number = 0;
   nome: string = ' ';
   autor: string = ' ';
@@ -48,12 +50,12 @@ export class QuadrinhosComponent {
   }
   
   getDados(): void{
-    this.envioService.getDados().subscribe((quadrinho) => (this.Quadrinho = quadrinho))
+    this.envioService.getDados(this.origem).subscribe((quadrinho) => (this.Quadrinho = quadrinho))
   }
 
   deletaDados(id: number){
 	  console.log(id);
-    this.envioService.deletaDados(id).subscribe();
+    this.envioService.deletaDados(id, this.origem).subscribe();
   }
 
   editaDados(quadrinho: Quadrinhos){

@@ -1,20 +1,16 @@
 import { Component, Inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
 import { Quadrinhos } from 'src/app/interfaces/Quadrinhos';
 import { EnvioService } from 'src/app/service/envio.service';
 
 @Component({
   selector: 'app-form-quadrinho',
-  standalone: true,
-  imports: [MatFormFieldModule, MatRadioModule, MatInput, FormsModule],
   templateUrl: './form-quadrinho.component.html',
   styleUrl: './form-quadrinho.component.css'
 })
 export class FormQuadrinhoComponent {
+  private origem: string = 'quadrinho'; //identifica qual componente faz a requisicao
+
   id: number = 0;
   nome: string = ' ';
   autor: string = ' ';
@@ -40,6 +36,7 @@ export class FormQuadrinhoComponent {
   }
   constructor(
     private envioService: EnvioService,
+    private Location: Location,
     public dialogRef: MatDialogRef<FormQuadrinhoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Quadrinhos,
   ){
@@ -49,9 +46,9 @@ export class FormQuadrinhoComponent {
 
   enviaDados(){
     if(this.Quadrinho === null){
-      this.envioService.sendDados(this.Quadrinho).subscribe()
+      this.envioService.sendDados(this.Quadrinho, this.origem).subscribe()
     }else{
-      this.envioService.corrigeDados(this.Quadrinho, this.Quadrinho.id).subscribe()
+      this.envioService.corrigeDados(this.Quadrinho, this.Quadrinho.id, this.origem).subscribe()
     }
     console.log(this.Quadrinho)
     this.fechar()  
@@ -59,6 +56,7 @@ export class FormQuadrinhoComponent {
   
   fechar(){
     this.dialogRef.close()
+    this.Location.reload()
   }
 
 }

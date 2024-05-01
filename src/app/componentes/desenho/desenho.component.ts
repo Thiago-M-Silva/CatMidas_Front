@@ -11,19 +11,22 @@ import { MatCardModule } from '@angular/material/card';
   styleUrls: ['./desenho.component.css']
 })
 export class DesenhoComponent {
+  //este componente esta mapeado como "Anime" no backend
+
+  private origem: string = 'anime'; //identifica qual componente faz a requisicao
+  
   // declaracao das variaveis com valores nulos 
-  // lembrar de apagar os testes
   id: number = 0;
-  nome: string = 'teste';
-  autor: string  =  'teste';
-  descricao: string ='teste';
-  disponibilidade: string ='teste';
-  estudio: string ='teste';
+  nome: string = ' ';
+  autor: string  =  ' ';
+  descricao: string =' ';
+  disponibilidade: string =' ';
+  estudio: string =' ';
   maxEps: number = 0;
   dtLancamento: Date = new Date();
-  nacionalidade: string = 'teste';
-  status: string = 'teste'; //em lancamento, finalizado
-  statusVisto: string = 'teste';
+  nacionalidade: string = ' ';
+  status: string = ' '; //em lancamento, finalizado
+  statusVisto: string = ' ';
   temps: number = 0;
 
   Desenho: Desenho = {
@@ -41,7 +44,7 @@ export class DesenhoComponent {
     temps: this.temps
   }
   
-  Desenhos: Desenho[] = [this.Desenho]; //aqui tbm deve ser um vetor vazio
+  Desenhos: Desenho[] = []; 
 
   constructor(private envioService: EnvioService,
               public dialog: MatDialog){
@@ -53,11 +56,11 @@ export class DesenhoComponent {
   }
 
   getDados(){
-    this.envioService.getDados().subscribe((desenhos) => (this.Desenhos = desenhos));
+    this.envioService.getDados(this.origem).subscribe((desenhos) => (this.Desenhos = desenhos));
   }
 
   deletaDados(id: number){
-    this.envioService.deletaDados(id).subscribe();
+    this.envioService.deletaDados(id, this.origem).subscribe();
   }
 
   editaDados(desenho: Desenho){

@@ -1,20 +1,16 @@
 import { Component, Inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
 import { Novela } from 'src/app/interfaces/Novela';
 import { EnvioService } from 'src/app/service/envio.service';
 
 @Component({
   selector: 'app-form-novela',
-  standalone: true,
-  imports: [MatFormFieldModule, MatRadioModule, MatInput, FormsModule],
   templateUrl: './form-novela.component.html',
   styleUrl: './form-novela.component.css'
 })
 export class FormNovelaComponent {
+  private origem: string = 'novela'; //identifica qual componente faz a requisicao
+
   id: number = 0;
   nome: string = ' ';
   autor: string = ' ';
@@ -45,6 +41,7 @@ export class FormNovelaComponent {
 
   constructor(
     private envioService: EnvioService,
+    private Location: Location,
     public dialogRef: MatDialogRef<FormNovelaComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Novela,
   ){
@@ -54,9 +51,9 @@ export class FormNovelaComponent {
 
   enviaDados(){
     if(this.Novela === null){
-      this.envioService.sendDados(this.Novela).subscribe()
+      this.envioService.sendDados(this.Novela, this.origem).subscribe()
     }else{
-      this.envioService.corrigeDados(this.Novela, this.Novela.id).subscribe()
+      this.envioService.corrigeDados(this.Novela, this.Novela.id, this.origem).subscribe()
     }
     console.log(this.Novela)
     this.fechar() 
@@ -64,6 +61,7 @@ export class FormNovelaComponent {
   
   fechar(){
     this.dialogRef.close()
+    this.Location.reload()
   }
 
 }

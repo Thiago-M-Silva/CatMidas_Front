@@ -11,16 +11,18 @@ import { FormSerieComponent } from 'src/app/popups/form-serie/form-serie.compone
   styleUrls: ['./series.component.css']
 })
 export class SeriesComponent {
+  private origem: string = 'series'; //identifica qual componente faz a requisicao
+
   //lembrar de zerar
   id: number = 0;
-  nome: string = 'a ';
-  autor: string  = 'a ';
-  descricao: string  = ' a';
-  disponibilidade: string  = 'a ';
-  estudio: string  = ' a';
-  nacionalidade: string  = 'a ';
-  status: string  = 'a ';
-  statusVisto: string  = ' a';
+  nome: string = ' ';
+  autor: string  = ' ';
+  descricao: string  = ' ';
+  disponibilidade: string  = ' ';
+  estudio: string  = ' ';
+  nacionalidade: string  = ' ';
+  status: string  = ' ';
+  statusVisto: string  = ' ';
   maxEps: number  = 0;
   temps: number  = 0;
   dtLancamento: Date = new Date();
@@ -40,10 +42,13 @@ export class SeriesComponent {
     dtLancamento: this.dtLancamento,
   }
 
-  Series: Serie[] = [this.Serie];
+  Series: Serie[] = [];
 
-  constructor(private envioService: EnvioService,
-              public dialog: MatDialog){
+  constructor(
+    private envioService: EnvioService,
+    private Location: Location,
+    public dialog: MatDialog
+  ){
     this.getDados();
   }
 
@@ -52,12 +57,13 @@ export class SeriesComponent {
   }
 
   getDados(){
-    this.envioService.getDados().subscribe((serie) => (this.Series = serie))
+    this.envioService.getDados(this.origem).subscribe((serie) => (this.Series = serie))
   }
 
   deletaDados(id: number){
 	  console.log(id);
-    this.envioService.deletaDados(id).subscribe();
+    this.envioService.deletaDados(id, this.origem).subscribe();
+    // this.Location.reload()
   }
 
   editaDados(serie: Serie){
@@ -66,6 +72,5 @@ export class SeriesComponent {
   
   adicionar(){
    const dialogRef = this.dialog.open(FormSerieComponent, {height: '75vh', width: '75vw'})
-   dialogRef.afterClosed()
   }
 }

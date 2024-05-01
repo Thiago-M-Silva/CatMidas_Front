@@ -1,20 +1,16 @@
 import { Component, Inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
 import { Livros } from 'src/app/interfaces/Livro';
 import { EnvioService } from 'src/app/service/envio.service';
 
 @Component({
   selector: 'app-form-livro',
-  standalone: true,
-  imports: [MatFormFieldModule, MatRadioModule, MatInput, FormsModule],
   templateUrl: './form-livro.component.html',
   styleUrl: './form-livro.component.css'
 })
 export class FormLivroComponent {
+  private origem: string = 'livro'; //identifica qual componente faz a requisicao
+
   id: number = 0;
   nome: string = ' ';
   autor: string = ' ';
@@ -35,15 +31,16 @@ export class FormLivroComponent {
 
   constructor(
     private envioService: EnvioService,
+    private Location: Location,
     public dialogRef: MatDialogRef<FormLivroComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Livros,
   ){}
 
   enviaDados(){
     if(this.Livro === null){
-      this.envioService.sendDados(this.Livro).subscribe()
+      this.envioService.sendDados(this.Livro, this.origem).subscribe()
     }else{
-      this.envioService.corrigeDados(this.Livro, this.Livro.id).subscribe()
+      this.envioService.corrigeDados(this.Livro, this.Livro.id, this.origem).subscribe()
     }
     console.log(this.Livro)
     this.fechar() 
@@ -51,5 +48,6 @@ export class FormLivroComponent {
   
   fechar(){
     this.dialogRef.close()
+    this.Location.reload()
   }
 }

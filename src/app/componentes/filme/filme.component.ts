@@ -11,6 +11,8 @@ import { FormFilmeComponent } from 'src/app/popups/form-filme/form-filme.compone
   styleUrls: ['./filme.component.css']
 })
 export class FilmeComponent {
+  private origem: string = 'filme'; //identifica qual componente faz a requisicao
+
 // declaracao das variaveis com valores nulos
     id: number = 0;
     nome: string = ' ';
@@ -49,12 +51,12 @@ export class FilmeComponent {
     }
     
     getDados(): void{
-      this.envioService.getDados().subscribe((filme) => (this.Filme = filme))
+      this.envioService.getDados(this.origem).subscribe((filme) => (this.Filme = filme))
     }
 
     deletaDados(id: number){
       console.log(id);
-      this.envioService.deletaDados(id).subscribe();
+      this.envioService.deletaDados(id, this.origem).subscribe();
     }
 
     editaDados(filme: Filmes){

@@ -11,6 +11,8 @@ import { FormLivroComponent } from 'src/app/popups/form-livro/form-livro.compone
   styleUrls: ['./livro.component.css']
 })
 export class LivroComponent {
+  private origem: string = 'livro'; //identifica qual componente faz a requisicao
+
   id: number = 0;
   nome: string = ' ';
   autor: string = ' ';
@@ -42,12 +44,12 @@ export class LivroComponent {
   }
   
   getDados(): void{
-    this.envioService.getDados().subscribe((livros) => (this.Livros = livros))
+    this.envioService.getDados(this.origem).subscribe((livros) => (this.Livros = livros))
   }
 
   deletaDados(id: number){
     console.log(id);
-    this.envioService.deletaDados(id).subscribe();
+    this.envioService.deletaDados(id, this.origem).subscribe();
   }
   
   editaDados(livro: Livros){

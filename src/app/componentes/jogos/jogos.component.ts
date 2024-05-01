@@ -11,6 +11,8 @@ import { FormJogosComponent } from 'src/app/popups/form-jogos/form-jogos.compone
   styleUrls: ['./jogos.component.css']
 })
 export class JogosComponent {
+  private origem: string = 'jogos'; //identifica qual componente faz a requisicao
+
   id: number = 0;
   nome: string = ' ';
   autor: string  = ' ';
@@ -47,12 +49,12 @@ export class JogosComponent {
     this.getDados();
   }
   getDados(): void{
-    this.envioService.getDados().subscribe((jogos) => (this.Jogos = jogos))
+    this.envioService.getDados(this.origem).subscribe((jogos) => (this.Jogos = jogos))
   }
 
   deletaDados(id: number){
 	  console.log(id);
-    this.envioService.deletaDados(id).subscribe();
+    this.envioService.deletaDados(id, this.origem).subscribe();
   }
 
   editaDados(jogos: Jogos){

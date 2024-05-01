@@ -1,20 +1,16 @@
 import { Component, Inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInput } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
 import { Jogos } from 'src/app/interfaces/Jogos';
 import { EnvioService } from 'src/app/service/envio.service';
 
 @Component({
   selector: 'app-form-jogos',
-  standalone: true,
-  imports: [MatFormFieldModule, MatRadioModule, MatInput, FormsModule],
   templateUrl: './form-jogos.component.html',
   styleUrl: './form-jogos.component.css'
 })
 export class FormJogosComponent {
+  private origem: string = 'jogos'; //identifica qual componente faz a requisicao
+
   id: number = 0;
   nome: string = ' ';
   autor: string  = ' ';
@@ -41,6 +37,7 @@ export class FormJogosComponent {
   
   constructor(
     private envioService: EnvioService,
+    private Location: Location,
     public dialogRef: MatDialogRef<FormJogosComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Jogos
   ){
@@ -50,9 +47,9 @@ export class FormJogosComponent {
 
   enviaDados(){
     if(this.Jogo === null){
-      this.envioService.sendDados(this.Jogo).subscribe()
+      this.envioService.sendDados(this.Jogo, this.origem).subscribe()
     }else{
-      this.envioService.corrigeDados(this.Jogo, this.Jogo.id).subscribe()
+      this.envioService.corrigeDados(this.Jogo, this.Jogo.id, this.origem).subscribe()
     }
     console.log(this.Jogo)
     this.fechar() 
@@ -60,5 +57,6 @@ export class FormJogosComponent {
   
   fechar(){
     this.dialogRef.close()
+    this.Location.reload()
   }
 }

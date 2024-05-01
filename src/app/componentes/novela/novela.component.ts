@@ -11,6 +11,8 @@ import { FormNovelaComponent } from 'src/app/popups/form-novela/form-novela.comp
   styleUrls: ['./novela.component.css']
 })
 export class NovelaComponent {
+  private origem: string = 'novela'; //identifica qual componente faz a requisicao
+
   id: number = 0;
   nome: string = ' ';
   autor: string = ' ';
@@ -52,12 +54,12 @@ export class NovelaComponent {
   }
   
   getDados(){
-    this.envioService.getDados().subscribe((novela) => (this.Novela = novela))
+    this.envioService.getDados(this.origem).subscribe((novela) => (this.Novela = novela))
   }
   
   deletaDados(id: number){
     console.log(id);
-    this.envioService.deletaDados(id).subscribe();
+    this.envioService.deletaDados(id, this.origem).subscribe();
   }
   
   editaDados(novela: Novela){

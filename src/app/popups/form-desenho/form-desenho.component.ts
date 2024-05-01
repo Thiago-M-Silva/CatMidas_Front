@@ -2,19 +2,16 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Desenho } from 'src/app/interfaces/Desenho';
 import { EnvioService } from 'src/app/service/envio.service';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form-desenho',
   templateUrl: './form-desenho.component.html',
   styleUrls: ['./form-desenho.component.css']
 })
-export class FormDesenhoComponent {
-  // esse componente foi criado em uma versão anterior do angular
-  // deste modo é um dos únicos que funcionam sem o standalone
+export class FormDesenhoComponent {  
+  // no backend esse componente está mapeado como "Anime"
+  
+  private origem: string = 'anime'; //identifica qual componente faz a requisicao
   
   id: number = 0;
   nome: string = ' ';
@@ -46,6 +43,7 @@ export class FormDesenhoComponent {
   
   constructor(
     private envioService: EnvioService,
+    private Location: Location,
     public dialogRef: MatDialogRef<FormDesenhoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Desenho,
   ){ 
@@ -56,9 +54,9 @@ export class FormDesenhoComponent {
 
   enviaDados(){
     if(this.Desenho === null){
-      this.envioService.sendDados(this.Desenho).subscribe()
+      this.envioService.sendDados(this.Desenho, this.origem).subscribe()
     }else{
-      this.envioService.corrigeDados(this.Desenho, this.Desenho.id).subscribe()
+      this.envioService.corrigeDados(this.Desenho, this.Desenho.id, this.origem).subscribe()
     }
     console.log(this.Desenho)
     this.fechar()    
@@ -66,5 +64,6 @@ export class FormDesenhoComponent {
   
   fechar(){
     this.dialogRef.close()
+    this.Location.reload()
   }
 }

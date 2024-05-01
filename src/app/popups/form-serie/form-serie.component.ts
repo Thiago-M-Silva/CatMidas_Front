@@ -1,20 +1,16 @@
 import { Component, Inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
 import { Serie } from 'src/app/interfaces/Serie';
 import { EnvioService } from 'src/app/service/envio.service';
 
 @Component({
   selector: 'app-form-serie',
-  standalone: true,
-  imports: [MatFormFieldModule, MatRadioModule, MatInputModule, FormsModule],
   templateUrl: './form-serie.component.html',
   styleUrl: './form-serie.component.css'
 })
 export class FormSerieComponent {
+  private origem: string = 'serie'; //identifica qual componente faz a requisicao
+
   id: number = 0;
   nome: string = ' ';
   autor: string  = ' ';
@@ -45,6 +41,7 @@ export class FormSerieComponent {
 
   constructor(
     private envioService: EnvioService,
+    private Location: Location,
     public dialogRef: MatDialogRef<FormSerieComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Serie,
   ){
@@ -54,9 +51,9 @@ export class FormSerieComponent {
 
   enviaDados(){
     if(this.Serie === null){
-      this.envioService.sendDados(this.Serie).subscribe()
+      this.envioService.sendDados(this.Serie, this.origem).subscribe()
     }else{
-      this.envioService.corrigeDados(this.Serie, this.Serie.id).subscribe()
+      this.envioService.corrigeDados(this.Serie, this.Serie.id, this.origem).subscribe()
     }
     console.log(this.Serie)
     this.fechar()  
@@ -64,6 +61,7 @@ export class FormSerieComponent {
   
   fechar(){
     this.dialogRef.close()
+    this.Location.reload()
   }
 
 }

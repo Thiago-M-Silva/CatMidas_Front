@@ -11,6 +11,8 @@ import { FormAudioComponent } from 'src/app/popups/form-audio/form-audio.compone
   styleUrls: ['./audio.component.css']
 })
 export class AudioComponent {
+  private origem: string = 'audio'; //identifica qual componente faz a requisicao
+
 // declaracao das variaveis com valores nulos
     id: number = 0;
     nome: string = ' ';
@@ -39,7 +41,8 @@ export class AudioComponent {
     Audios: Audio[] = [];
 
     constructor(private envioService: EnvioService,
-                public dialog: MatDialog
+                public dialog: MatDialog,
+                private Location: Location
     ){
       this.getDados();
     }
@@ -48,14 +51,18 @@ export class AudioComponent {
       this.getDados();
     }
 
-    
+    atualizaPag(){
+      this.Location.reload();
+    }
+
     getDados(): void{
-      this.envioService.getDados().subscribe((audio) => (this.Audio = audio))
+      this.envioService.getDados(this.origem).subscribe((audio) => (this.Audio = audio))
     }
 
     deletaDados(id: number){
       console.log(id);
-      this.envioService.deletaDados(id).subscribe();
+      this.envioService.deletaDados(id, this.origem).subscribe();
+      // this.Location.reload()
     }
     
     editaDados(audio: Audio){
@@ -64,6 +71,5 @@ export class AudioComponent {
     
     adicionar(){
       const dialogRef = this.dialog.open(FormAudioComponent, {height: '75vh', width: '75vh'})
-      dialogRef.afterClosed()
     }
   }

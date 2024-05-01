@@ -1,20 +1,15 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { EnvioService } from 'src/app/service/envio.service';
 import { Filmes } from 'src/app/interfaces/Filme';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatInput } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
-
+import { EnvioService } from 'src/app/service/envio.service';
 @Component({
   selector: 'app-form-filme',
-  standalone: true,
-  imports: [MatFormFieldModule, MatRadioModule, MatInput, FormsModule],
   templateUrl: './form-filme.component.html',
   styleUrl: './form-filme.component.css'
 })
 export class FormFilmeComponent {
+  private origem: string = 'filme'; //identifica qual componente faz a requisicao
+
 // declaracao das variaveis com valores nulos
   id: number = 0;
   nome: string = ' ';
@@ -42,6 +37,7 @@ export class FormFilmeComponent {
 
   constructor(
     private envioService: EnvioService,
+    private Location: Location,
     public dialogRef: MatDialogRef<FormFilmeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Filmes
   ){
@@ -51,9 +47,9 @@ export class FormFilmeComponent {
 
   enviaDados(){
     if(this.Filme === null){
-      this.envioService.sendDados(this.Filme).subscribe()
+      this.envioService.sendDados(this.Filme, this.origem).subscribe()
     }else{
-      this.envioService.corrigeDados(this.Filme, this.Filme.id).subscribe()
+      this.envioService.corrigeDados(this.Filme, this.Filme.id, this.origem).subscribe()
     }
     console.log(this.Filme)
     this.fechar() 
@@ -61,5 +57,6 @@ export class FormFilmeComponent {
   
   fechar(){
     this.dialogRef.close()
+    this.Location.reload()
   }
 }

@@ -10,8 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCheckbox } from '@angular/material/checkbox'; //apagar dps
 import { MatRadioModule } from '@angular/material/radio';
+import { Location } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { DesenhoComponent } from './componentes/desenho/desenho.component';
@@ -24,6 +24,13 @@ import { HomeComponent } from './componentes/home/home.component';
 import { JogosComponent } from './componentes/jogos/jogos.component';
 import { AudioComponent } from './componentes/audio/audio.component';
 import { FormDesenhoComponent } from './popups/form-desenho/form-desenho.component';
+import { FormAudioComponent } from './popups/form-audio/form-audio.component';
+import { FormFilmeComponent } from './popups/form-filme/form-filme.component';
+import { FormJogosComponent } from './popups/form-jogos/form-jogos.component';
+import { FormLivroComponent } from './popups/form-livro/form-livro.component';
+import { FormNovelaComponent } from './popups/form-novela/form-novela.component';
+import { FormQuadrinhoComponent } from './popups/form-quadrinho/form-quadrinho.component';
+import { FormSerieComponent } from './popups/form-serie/form-serie.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +44,14 @@ import { FormDesenhoComponent } from './popups/form-desenho/form-desenho.compone
     HomeComponent,
     JogosComponent,
     AudioComponent,
-    FormDesenhoComponent
+    FormDesenhoComponent,
+    FormAudioComponent,
+    FormFilmeComponent,
+    FormJogosComponent,
+    FormLivroComponent,
+    FormNovelaComponent,
+    FormQuadrinhoComponent,
+    FormSerieComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +64,6 @@ import { FormDesenhoComponent } from './popups/form-desenho/form-desenho.compone
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatCheckbox, //apagar
     MatRadioModule
   ],
   providers: [],

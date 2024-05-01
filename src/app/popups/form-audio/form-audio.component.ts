@@ -2,19 +2,14 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Audio } from 'src/app/interfaces/Audio';
 import { EnvioService } from 'src/app/service/envio.service';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
-import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-form-audio',
   templateUrl: './form-audio.component.html',
-  standalone: true,
-  imports: [MatFormFieldModule, MatRadioModule, MatInputModule, FormsModule],
   styleUrl: './form-audio.component.css'
 })
 export class FormAudioComponent {
+  private origem: string = 'audio'; //identifica qual componente faz a requisicao
   // declaracao das variaveis com valores nulos
   id: number = 0;
   nome: string = ' ';
@@ -42,6 +37,7 @@ export class FormAudioComponent {
 
   constructor(
     private envioService: EnvioService,
+    private Location: Location,
     public dialogRef: MatDialogRef<FormAudioComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Audio,
   ){
@@ -51,9 +47,9 @@ export class FormAudioComponent {
 
   enviaDados(){
     if(this.Audio === null){
-      this.envioService.sendDados(this.Audio).subscribe()
+      this.envioService.sendDados(this.Audio, this.origem).subscribe()
     }else{
-      this.envioService.corrigeDados(this.Audio, this.Audio.id).subscribe
+      this.envioService.corrigeDados(this.Audio, this.Audio.id, this.origem).subscribe
     }
 
     console.log(this.Audio)
@@ -62,5 +58,6 @@ export class FormAudioComponent {
   
   fechar(){
     this.dialogRef.close()
+    this.Location.reload()
   }
 }
