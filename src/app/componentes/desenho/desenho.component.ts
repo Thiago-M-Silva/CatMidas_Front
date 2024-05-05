@@ -14,6 +14,7 @@ export class DesenhoComponent {
   //este componente esta mapeado como "Anime" no backend
 
   private origem: string = 'anime'; //identifica qual componente faz a requisicao
+  private location!: Location; //para reiniciar a pagina
   
   // declaracao das variaveis com valores nulos 
   id: number = 0;
@@ -46,8 +47,11 @@ export class DesenhoComponent {
   
   Desenhos: Desenho[] = []; 
 
-  constructor(private envioService: EnvioService,
-              public dialog: MatDialog){
+  constructor(
+    private envioService: EnvioService,
+    // private location: Location,
+    public dialog: MatDialog)
+  {
     this.getDados();
   }
 
@@ -61,6 +65,7 @@ export class DesenhoComponent {
 
   deletaDados(id: number){
     this.envioService.deletaDados(id, this.origem).subscribe();
+    this.location.reload()
   }
 
   editaDados(desenho: Desenho){
@@ -68,9 +73,6 @@ export class DesenhoComponent {
   }
 
   adicionar(){
-   const dialogRef = this.dialog.open(FormDesenhoComponent, {height: '75vh', width: '75vw'})
-   
-
-   dialogRef.afterClosed() //implementar funcao para reiniciar a pagina
+    const dialogRef = this.dialog.open(FormDesenhoComponent, {height: '75vh', width: '75vw'})
   }
 }

@@ -10,6 +10,7 @@ import { EnvioService } from 'src/app/service/envio.service';
 })
 export class FormNovelaComponent {
   private origem: string = 'novela'; //identifica qual componente faz a requisicao
+  private Location!: Location;
 
   id: number = 0;
   nome: string = ' ';
@@ -41,7 +42,6 @@ export class FormNovelaComponent {
 
   constructor(
     private envioService: EnvioService,
-    private Location: Location,
     public dialogRef: MatDialogRef<FormNovelaComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Novela,
   ){

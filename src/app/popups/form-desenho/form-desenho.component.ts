@@ -12,6 +12,7 @@ export class FormDesenhoComponent {
   // no backend esse componente está mapeado como "Anime"
   
   private origem: string = 'anime'; //identifica qual componente faz a requisicao
+  private location!: Location;
   
   id: number = 0;
   nome: string = ' ';
@@ -43,9 +44,8 @@ export class FormDesenhoComponent {
   
   constructor(
     private envioService: EnvioService,
-    private Location: Location,
     public dialogRef: MatDialogRef<FormDesenhoComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Desenho,
+    @Inject(MAT_DIALOG_DATA) public data: Desenho
   ){ 
     if(data !== null)
       this.Desenho = data
@@ -64,6 +64,6 @@ export class FormDesenhoComponent {
   
   fechar(){
     this.dialogRef.close()
-    this.Location.reload()
+    this.location.reload()
   }
 }

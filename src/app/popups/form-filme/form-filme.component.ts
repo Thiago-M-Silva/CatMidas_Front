@@ -37,7 +37,6 @@ export class FormFilmeComponent {
 
   constructor(
     private envioService: EnvioService,
-    private Location: Location,
     public dialogRef: MatDialogRef<FormFilmeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Filmes
   ){
@@ -57,6 +56,5 @@ export class FormFilmeComponent {
   
   fechar(){
     this.dialogRef.close()
-    this.Location.reload()
   }
 }

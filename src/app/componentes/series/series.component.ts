@@ -11,9 +11,8 @@ import { FormSerieComponent } from 'src/app/popups/form-serie/form-serie.compone
   styleUrls: ['./series.component.css']
 })
 export class SeriesComponent {
-  private origem: string = 'series'; //identifica qual componente faz a requisicao
-
-  //lembrar de zerar
+  private origem: string = 'serie'; //identifica qual componente faz a requisicao
+  
   id: number = 0;
   nome: string = ' ';
   autor: string  = ' ';
@@ -46,7 +45,6 @@ export class SeriesComponent {
 
   constructor(
     private envioService: EnvioService,
-    private Location: Location,
     public dialog: MatDialog
   ){
     this.getDados();
@@ -63,7 +61,6 @@ export class SeriesComponent {
   deletaDados(id: number){
 	  console.log(id);
     this.envioService.deletaDados(id, this.origem).subscribe();
-    // this.Location.reload()
   }
 
   editaDados(serie: Serie){

@@ -11,7 +11,7 @@ import { FormJogosComponent } from 'src/app/popups/form-jogos/form-jogos.compone
   styleUrls: ['./jogos.component.css']
 })
 export class JogosComponent {
-  private origem: string = 'jogos'; //identifica qual componente faz a requisicao
+  private origem: string = 'jogo'; //identifica qual componente faz a requisicao
 
   id: number = 0;
   nome: string = ' ';

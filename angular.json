@@ -83,7 +83,7 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/midas.ico",
+              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [

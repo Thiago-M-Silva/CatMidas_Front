@@ -11,7 +11,8 @@ import { FormQuadrinhoComponent } from 'src/app/popups/form-quadrinho/form-quadr
   styleUrls: ['./quadrinhos.component.css']
 })
 export class QuadrinhosComponent {
-  private origem: string = 'quadrinhos'; //identifica qual componente faz a requisicao
+  //no backend este componente está mapeado como manga
+  private origem: string = 'manga'; //identifica qual componente faz a requisicao
 
   id: number = 0;
   nome: string = ' ';
@@ -59,7 +60,7 @@ export class QuadrinhosComponent {
   }
 
   editaDados(quadrinho: Quadrinhos){
-    const dialogRef = this.dialog.open(FormQuadrinhoComponent, {data: quadrinho ,height: '75vh', width: '75vw'})
+    const dialogRef = this.dialog.open(FormQuadrinhoComponent, {data: quadrinho, height: '75vh', width: '75vw'})
   }
   
   adicionar(){

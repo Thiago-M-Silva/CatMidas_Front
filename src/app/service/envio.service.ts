@@ -24,7 +24,7 @@ export class EnvioService {
   }
 
   getDados(origem: string): Observable<any>{
-    return this.http.get<any>(this.apiUrl + {origem});
+    return this.http.get<any>(this.apiUrl + origem);
   }
 
   sendDados(dados: any, origem: string): Observable<any>{

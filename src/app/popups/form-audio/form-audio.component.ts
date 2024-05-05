@@ -10,6 +10,8 @@ import { EnvioService } from 'src/app/service/envio.service';
 })
 export class FormAudioComponent {
   private origem: string = 'audio'; //identifica qual componente faz a requisicao
+  private Location!: Location;
+
   // declaracao das variaveis com valores nulos
   id: number = 0;
   nome: string = ' ';
@@ -37,7 +39,6 @@ export class FormAudioComponent {
 
   constructor(
     private envioService: EnvioService,
-    private Location: Location,
     public dialogRef: MatDialogRef<FormAudioComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Audio,
   ){

@@ -42,17 +42,12 @@ export class AudioComponent {
 
     constructor(private envioService: EnvioService,
                 public dialog: MatDialog,
-                private Location: Location
     ){
       this.getDados();
     }
     
     ngOnInit(): void {
       this.getDados();
-    }
-
-    atualizaPag(){
-      this.Location.reload();
     }
 
     getDados(): void{
@@ -62,7 +57,6 @@ export class AudioComponent {
     deletaDados(id: number){
       console.log(id);
       this.envioService.deletaDados(id, this.origem).subscribe();
-      // this.Location.reload()
     }
     
     editaDados(audio: Audio){
