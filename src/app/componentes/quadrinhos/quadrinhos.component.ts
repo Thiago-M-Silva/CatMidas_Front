@@ -51,7 +51,7 @@ export class QuadrinhosComponent {
   }
   
   getDados(): void{
-    this.envioService.getDados(this.origem).subscribe((quadrinho) => (this.Quadrinho = quadrinho))
+    this.envioService.getDados(this.origem).subscribe((quadrinho) => (this.Quadrinhos = quadrinho))
   }
 
   deletaDados(id: number){

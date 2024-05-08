@@ -1,27 +1,28 @@
 <main class="conteudo">
     <h2>Ultimas adições</h2>
-    <div *ngFor="let audio in audios" class="resumo">
+    <div *ngFor="let audio of Audios" class="resumo">
         <p>{{audio.nome}} - {{audio.autor}}</p>
     </div>
-    <div *ngFor="let desenho in desenhos" class="resumo">
+
+    <div *ngFor="let desenho of desenhos" class="resumo">
         <p>{{desenho.nome}} - {{desenho.autor}}</p>
     </div>
-    <div *ngFor="let filme in filmes" class="resumo">
-        <p>{{filme.nome}} - {{filme.autor}}</p>
+    <div *ngFor="let filme of filmes" class="resumo">
+        <p>{{filme.nome}} - {{filme.diretor}}</p>
     </div>
-    <div *ngFor="let jogo in jogos" class="resumo">
+    <div *ngFor="let jogo of jogos" class="resumo">
         <p>{{jogo.nome}} - {{jogo.autor}}</p>
     </div>
-    <div *ngFor="let livro in livros" class="resumo">
+    <div *ngFor="let livro of livros" class="resumo">
         <p>{{livro.nome}} - {{livro.autor}}</p>
     </div>
-    <div *ngFor="let novela in novelas" class="resumo">
+    <div *ngFor="let novela of novelas" class="resumo">
         <p>{{novela.nome}} - {{novela.autor}}</p>
     </div>
-    <div *ngFor="let quadrinho in quadrinhos" class="resumo">
+    <div *ngFor="let quadrinho of quadrinhos" class="resumo">
         <p>{{quadrinho.nome}} - {{quadrinho.autor}}</p>
     </div>
-    <div *ngFor="let serie in series" class="resumo">
+    <div *ngFor="let serie of series" class="resumo">
         <p>{{serie.nome}} - {{serie.autor}}</p>
     </div>
 </main>

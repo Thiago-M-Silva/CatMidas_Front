@@ -1,10 +1,18 @@
 .conteudo{
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: #6a4ee6;
     color: aliceblue;
     margin: 1%;
     border-radius: 100px;
+}
+
+.resumo{
+    color: black;
+    margin: .5vw .5vh;
+    border-radius: 100%;
 }
 
 h2{

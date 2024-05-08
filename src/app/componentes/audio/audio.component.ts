@@ -51,7 +51,7 @@ export class AudioComponent {
     }
 
     getDados(): void{
-      this.envioService.getDados(this.origem).subscribe((audio) => (this.Audio = audio))
+      this.envioService.getDados(this.origem).subscribe((audios) => (this.Audios = audios))
     }
 
     deletaDados(id: number){

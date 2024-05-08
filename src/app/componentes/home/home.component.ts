@@ -15,14 +15,29 @@ import { EnvioService } from 'src/app/service/envio.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  desenhos!: Desenho[]
-  audios!: Audio[]
-  filmes!: Filmes[]
-  jogos!: Jogos[]
-  livros!: Livros[]
-  novelas!: Novela[]
-  quadrinhos!: Quadrinhos[]
-  series!: Serie[]
+  id: number = 0;
+  nome: string = ' ';
+  autor: string = ' ';
+  descricao: string = ' ';
+  disponibilidade: string = ' ';
+  tipo: string = ' ';
+  statusVisto: string = ' ';
+  estudio: string = ' ';
+  duracao: number = 0;
+  dtLancamento: Date = new Date();
+
+  Audio: Audio = {
+    id: this.id,
+    nome: this.nome,
+    autor: this.autor,
+    descricao: this.descricao,
+    disponibilidade: this.disponibilidade,
+    tipo: this.tipo,
+    statusVisto: this.statusVisto,
+    estudio: this.estudio,
+    duracao: this.duracao,
+    dtLancamento: this.dtLancamento,
+  }
 
   constructor(
     private envioService: EnvioService
@@ -30,9 +45,18 @@ export class HomeComponent {
     this.getAll();
   }
 
+  desenhos: Desenho[] = []
+  Audios: Audio[] = [];
+  filmes!: Filmes[]
+  jogos!: Jogos[]
+  livros!: Livros[]
+  novelas!: Novela[]
+  quadrinhos!: Quadrinhos[]
+  series!: Serie[]
+
   getAll(){
     this.envioService.getDados('anime').subscribe((desenhos) => this.desenhos = desenhos)
-    this.envioService.getDados('audio').subscribe((audios) => this.audios = audios)
+    this.envioService.getDados('audio').subscribe((audios) => this.Audios = audios)
     this.envioService.getDados('filme').subscribe((filmes) => this.filmes = filmes)
     this.envioService.getDados('jogo').subscribe((jogos) => this.jogos = jogos)
     this.envioService.getDados('livro').subscribe((livros) => this.livros = livros)

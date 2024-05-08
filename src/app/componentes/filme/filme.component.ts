@@ -51,7 +51,7 @@ export class FilmeComponent {
     }
     
     getDados(): void{
-      this.envioService.getDados(this.origem).subscribe((filme) => (this.Filme = filme))
+      this.envioService.getDados(this.origem).subscribe((filme) => (this.Filmes = filme))
     }
 
     deletaDados(id: number){

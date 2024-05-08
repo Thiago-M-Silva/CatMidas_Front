@@ -54,7 +54,7 @@ export class NovelaComponent {
   }
   
   getDados(){
-    this.envioService.getDados(this.origem).subscribe((novela) => (this.Novela = novela))
+    this.envioService.getDados(this.origem).subscribe((novela) => (this.Novelas = novela))
   }
   
   deletaDados(id: number){
