@@ -11,8 +11,18 @@
 
 .resumo{
     color: black;
-    margin: .5vw .5vh;
-    border-radius: 100%;
+    margin: 5px 0;
+    width: 80%;
+}
+
+mat-card-header{
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+
+mat-card-content{
+    display: flex;
 }
 
 h2{

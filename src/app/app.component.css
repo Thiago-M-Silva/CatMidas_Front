@@ -1,7 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    font: 1em sans-serif;
+    font-family: 'poppins' arial sans-serif;
+    font-size: 1em;
     height: 100%;
 }
 

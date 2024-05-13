@@ -1,28 +1,74 @@
 <main class="conteudo">
     <h2>Ultimas adições</h2>
-    <div *ngFor="let audio of Audios" class="resumo">
-        <p>{{audio.nome}} - {{audio.autor}}</p>
-    </div>
+    <mat-card class="resumo">
+        <mat-card-header>
+            <mat-card-title>Audio</mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngFor="let audio of Audios">
+            <p>teste de teste</p>
+        </mat-card-content>
+    </mat-card>
 
-    <div *ngFor="let desenho of desenhos" class="resumo">
-        <p>{{desenho.nome}} - {{desenho.autor}}</p>
-    </div>
-    <div *ngFor="let filme of filmes" class="resumo">
-        <p>{{filme.nome}} - {{filme.diretor}}</p>
-    </div>
-    <div *ngFor="let jogo of jogos" class="resumo">
-        <p>{{jogo.nome}} - {{jogo.autor}}</p>
-    </div>
-    <div *ngFor="let livro of livros" class="resumo">
-        <p>{{livro.nome}} - {{livro.autor}}</p>
-    </div>
-    <div *ngFor="let novela of novelas" class="resumo">
-        <p>{{novela.nome}} - {{novela.autor}}</p>
-    </div>
-    <div *ngFor="let quadrinho of quadrinhos" class="resumo">
-        <p>{{quadrinho.nome}} - {{quadrinho.autor}}</p>
-    </div>
-    <div *ngFor="let serie of series" class="resumo">
-        <p>{{serie.nome}} - {{serie.autor}}</p>
-    </div>
+    <mat-card class="resumo">
+        <mat-card-header>
+            <mat-card-title>Desenhos</mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngFor="let desenho of desenhos">
+            <p>teste de teste</p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="resumo">
+        <mat-card-header>
+            <mat-card-title>Filmes</mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngFor="let filme of filmes">
+            <p>teste de teste</p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="resumo">
+        <mat-card-header>
+            <mat-card-title>Jogos</mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngFor="let jogo of jogos">
+            <p>teste de teste</p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="resumo">
+        <mat-card-header>
+            <mat-card-title>Livros</mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngFor="let livro of livros">
+            <p>teste de teste</p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="resumo">
+        <mat-card-header>
+            <mat-card-title>Novelas</mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngFor="let novela of novelas">
+            <p>teste de teste</p>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="resumo">
+        <mat-card-header>
+            <mat-card-title>Quadrinhos</mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngFor="let quadrinho of quadrinhos">
+            <p>teste de teste</p>
+        </mat-card-content>
+    </mat-card>
+    
+    <mat-card class="resumo">
+        <mat-card-header>
+            <mat-card-title>Series</mat-card-title>
+        </mat-card-header>
+        <mat-card-content *ngFor="let serie of series">
+            <p>teste de teste</p>
+        </mat-card-content>
+    </mat-card>
 </main>
