@@ -23,7 +23,7 @@ export class FormDesenhoComponent {
   maxEps: number = 0;
   dtLancamento: Date = new Date();
   nacionalidade: string = ' ';
-  status: string =' ';
+  status: string = ' ';
   statusVisto: string =' ';
   temps: number = 0;
 

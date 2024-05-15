@@ -68,7 +68,7 @@
                             <mat-card-header>
                                     <mat-card-title>Lancamento</mat-card-title>
                             </mat-card-header>
-                            <mat-card-content>{{ audio.dtLancamento }}</mat-card-content>
+                            <mat-card-content>{{ audio.dtLancamento | date: 'dd/MM/yyyy' }}</mat-card-content>
                     </mat-card>
             </div>        
     </div>

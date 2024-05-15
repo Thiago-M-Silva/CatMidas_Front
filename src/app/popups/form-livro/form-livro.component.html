@@ -22,10 +22,10 @@
     <div class="checkbox">
         <div class="visto">
             <p>Já leu ou não:</p>
-            <mat-radio-group>
-                <mat-radio-button value="vi" [(ngModel)]="Livro.statusLido" name="statusVisto">Já li</mat-radio-button>
-                <mat-radio-button value="nvi" [(ngModel)]="Livro.statusLido" name="statusVisto">Não li</mat-radio-button>
-                <mat-radio-button value="ass" [(ngModel)]="Livro.statusLido" name="statusVisto">Ainda lerei</mat-radio-button>
+            <mat-radio-group [(ngModel)]="Livro.statusLido" name="statusVisto">
+                <mat-radio-button value="vi" >Já li</mat-radio-button>
+                <mat-radio-button value="nvi" >Não li</mat-radio-button>
+                <mat-radio-button value="verei" >Ainda lerei</mat-radio-button>
             </mat-radio-group>
         </div>
     </div>

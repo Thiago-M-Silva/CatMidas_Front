@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Desenho } from 'src/app/interfaces/Desenho';
 import { EnvioService } from 'src/app/service/envio.service';
-import { MatDialog,  MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { FormDesenhoComponent } from 'src/app/popups/form-desenho/form-desenho.component';
-import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-desenho',
@@ -27,7 +26,7 @@ export class DesenhoComponent {
   dtLancamento: Date = new Date();
   nacionalidade: string = ' ';
   status: string = ' '; //em lancamento, finalizado
-  statusVisto: string = ' ';
+  statusVisto: string = ' '; //vi, nvi, verei
   temps: number = 0;
 
   Desenho: Desenho = {
@@ -49,7 +48,6 @@ export class DesenhoComponent {
 
   constructor(
     private envioService: EnvioService,
-    // private location: Location,
     public dialog: MatDialog)
   {
     this.getDados();

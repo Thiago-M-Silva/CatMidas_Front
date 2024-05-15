@@ -90,26 +90,8 @@
                             <mat-card-header>
                                     <mat-card-title>Lancamento</mat-card-title>
                             </mat-card-header>
-                            <mat-card-content>{{ serie.dtLancamento }}</mat-card-content>
+                            <mat-card-content>{{ serie.dtLancamento | date: 'dd/MM/yyyy' }}</mat-card-content>
                     </mat-card>
             </div>        
     </div>
 </div>
-
-<!-- <form >
-    <div class="form-group">
-        <input type="text" [(ngModel)]="Serie.nome" name="nome">
-        <input type="text" [(ngModel)]="Serie.autor" name="autor" >
-        <input type="text" [(ngModel)]="Serie.descricao" name="descricao">
-        <input type="text" [(ngModel)]="Serie.disponibilidade" name="disponibilidade">
-        <input type="text" [(ngModel)]="Serie.estudio" name="estudio">
-        <input type="text" [(ngModel)]="Serie.nacionalidade" name="nacionalidade">
-        <input type="text" [(ngModel)]="Serie.statusVisto" name="statusVisto">
-        <input type="number" [(ngModel)]="Serie.status" name="status">
-        <input type="number" [(ngModel)]="Serie.maxEps" name="maxEps">
-        <input type="number" [(ngModel)]="Serie.temps" name="temps">
-        <input type="date" [(ngModel)]="Serie.dtLancamento" name="dtLancamento">
-
-        <input type="submit" value="Enviar" (click)="enviaDados()">
-    </div>
-</form> -->

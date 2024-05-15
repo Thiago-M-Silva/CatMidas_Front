@@ -31,15 +31,13 @@
         <input matInput [(ngModel)]="Audio.estudio" name="estudio">
     </mat-form-field>
 
-    <!-- checkbox ou lista de opcoes talvez agrupar com o proximo -->
     <div class="checkbox">
-        <!-- checkbox ou lista de opcoes -->
         <div class="visto">
             <p>Já assistiu ou não:</p>
-            <mat-radio-group>
-                <mat-radio-button value="vi" [(ngModel)]="Audio.statusVisto" name="statusVisto">Já assisti</mat-radio-button>
-                <mat-radio-button value="nvi" [(ngModel)]="Audio.statusVisto" name="statusVisto">Não assisti</mat-radio-button>
-                <mat-radio-button value="ass" [(ngModel)]="Audio.statusVisto" name="statusVisto">Ainda Assistirei</mat-radio-button>
+            <mat-radio-group [(ngModel)]="Audio.statusVisto" name="statusVisto">
+                <mat-radio-button value="vi" >Já assisti</mat-radio-button>
+                <mat-radio-button value="nvi" >Não assisti</mat-radio-button>
+                <mat-radio-button value="verei" >Ainda Assistirei</mat-radio-button>
             </mat-radio-group>
         </div>
     </div>
