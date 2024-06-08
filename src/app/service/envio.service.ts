@@ -5,7 +5,7 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class EnvioService {
-  private apiUrl = 'http://localhost:8080/';
+  private apiUrl = 'http://catalogo-backend-production-adf2.up.railway.app/';
 
   constructor(private http: HttpClient) { }
 
@@ -28,7 +28,7 @@ export class EnvioService {
   }
 
   sendDados(dados: any, origem: string): Observable<any>{
-    return this.http.post<any>(this.apiUrl + {origem}, dados).pipe(
+    return this.http.post<any>(this.apiUrl + origem, dados).pipe(
       catchError(this.handleError)
     )
   }
