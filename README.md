@@ -1,27 +1,26 @@
 # CatalogoTela
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+## CatMidas - WIP
+![gato1](https://github.com/Thiago-M-Silva/CatMidas_Front/assets/63210947/66d85c7c-e32b-4461-9f02-94c7642fbb89)
 
-## Development server
+### Descrição
+  É um sistema web que serve de catálogo de diferentes tipos de mídia de  entretenimento, atuando de forma similar à sites como IMDB ou My Anime List, em que o usuário pode listar os conteúdos que ele já consumiu, podendo realizar avaliações, comentários, listas de favoritos e compartilhamento. 
+  Este é o repositório do Frontend do projeto que está sendo feito em Angular 16.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Link 
+  Este repositório já esta hospedado na Vercel, voce pode acessá-lo neste link <a href="catmidas.vercel.app"> CatMidas </a>
 
-## Code scaffolding
+### Download e configuração do projeto
+  1. Clone este repositorio </br>
+    `git clone https://github.com/Thiago-M-Silva/CatMidas_Front.git`
+  2. Apos clonar, instale as dependencias </br>
+    `npm install`
+  3. Para subir o projeto, execute o comando </br>
+    `ng serve`
+  4. Assim o projeto estará disponivel em http://localhost:4200
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Imagens
+![Captura de tela_15-5-2024_181955_localhost](https://github.com/Thiago-M-Silva/CatMidas_Front/assets/63210947/2b23f804-d6c6-4fc1-b93a-cd2472185a85)
+![Captura de tela_15-5-2024_181541_localhost](https://github.com/Thiago-M-Silva/CatMidas_Front/assets/63210947/81c26b27-e62a-40e9-a1f0-72e64070a716)
+![Captura de tela_15-5-2024_18836_localhost](https://github.com/Thiago-M-Silva/CatMidas_Front/assets/63210947/dfec31ec-7a22-4830-a50b-c2a5ebd298c4)
+![Captura de tela_15-5-2024_18716_localhost](https://github.com/Thiago-M-Silva/CatMidas_Front/assets/63210947/8bbf8aef-2220-45d2-aa90-999215a7e3e7)
