@@ -1,6 +1,4 @@
-# CatalogoTela
-
-## CatMidas - WIP
+# CatMidas - WIP
 ![gato1](https://github.com/Thiago-M-Silva/CatMidas_Front/assets/63210947/66d85c7c-e32b-4461-9f02-94c7642fbb89)
 
 ### Descrição
