@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
-import { HomeComponent } from './componentes/home/home.component';
-import { DesenhoComponent } from './componentes/desenho/desenho.component';
-import { FilmeComponent } from './componentes/filme/filme.component';
-import { LivroComponent } from './componentes/livro/livro.component';
-import { QuadrinhosComponent } from './componentes/quadrinhos/quadrinhos.component';
-import { NovelaComponent } from './componentes/novela/novela.component';
-import { SeriesComponent } from './componentes/series/series.component';
-import { JogosComponent } from './componentes/jogos/jogos.component';
-import { AudioComponent } from './componentes/audio/audio.component';
+import { HomeComponent } from './pages/home/home.component';
+import { DesenhoComponent } from './pages/desenho/desenho.component';
+import { FilmeComponent } from './pages/filme/filme.component';
+import { LivroComponent } from './pages/livro/livro.component';
+import { QuadrinhosComponent } from './pages/quadrinhos/quadrinhos.component';
+import { NovelaComponent } from './pages/novela/novela.component';
+import { SeriesComponent } from './pages/series/series.component';
+import { JogosComponent } from './pages/jogos/jogos.component';
+import { AudioComponent } from './pages/audio/audio.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

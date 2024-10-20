@@ -14,15 +14,15 @@ import { MatRadioModule } from '@angular/material/radio';
 import { Location } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { DesenhoComponent } from './componentes/desenho/desenho.component';
-import { SeriesComponent } from './componentes/series/series.component';
-import { LivroComponent } from './componentes/livro/livro.component';
-import { FilmeComponent } from './componentes/filme/filme.component';
-import { NovelaComponent } from './componentes/novela/novela.component';
-import { QuadrinhosComponent } from './componentes/quadrinhos/quadrinhos.component';
-import { HomeComponent } from './componentes/home/home.component';
-import { JogosComponent } from './componentes/jogos/jogos.component';
-import { AudioComponent } from './componentes/audio/audio.component';
+import { DesenhoComponent } from './pages/desenho/desenho.component';
+import { SeriesComponent } from './pages/series/series.component';
+import { LivroComponent } from './pages/livro/livro.component';
+import { FilmeComponent } from './pages/filme/filme.component';
+import { NovelaComponent } from './pages/novela/novela.component';
+import { QuadrinhosComponent } from './pages/quadrinhos/quadrinhos.component';
+import { HomeComponent } from './pages/home/home.component';
+import { JogosComponent } from './pages/jogos/jogos.component';
+import { AudioComponent } from './pages/audio/audio.component';
 import { FormDesenhoComponent } from './popups/form-desenho/form-desenho.component';
 import { FormAudioComponent } from './popups/form-audio/form-audio.component';
 import { FormFilmeComponent } from './popups/form-filme/form-filme.component';
@@ -31,6 +31,8 @@ import { FormLivroComponent } from './popups/form-livro/form-livro.component';
 import { FormNovelaComponent } from './popups/form-novela/form-novela.component';
 import { FormQuadrinhoComponent } from './popups/form-quadrinho/form-quadrinho.component';
 import { FormSerieComponent } from './popups/form-serie/form-serie.component';
+import { LateralBarComponent } from "./components/lateral-bar/lateral-bar.component";
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -51,11 +53,12 @@ import { FormSerieComponent } from './popups/form-serie/form-serie.component';
     FormLivroComponent,
     FormNovelaComponent,
     FormQuadrinhoComponent,
-    FormSerieComponent
+    FormSerieComponent,
+    LateralBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     FormsModule,
     HttpClientModule,
     MatDialogModule,
@@ -64,8 +67,9 @@ import { FormSerieComponent } from './popups/form-serie/form-serie.component';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatRadioModule
-  ],
+    MatRadioModule,
+    MatSidenavModule,
+],
   providers: [],
   bootstrap: [AppComponent]
 })

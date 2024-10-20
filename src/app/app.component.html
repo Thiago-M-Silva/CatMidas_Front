@@ -5,8 +5,8 @@
 <body >
 
     <img src="../assets/gato1.png" alt="gato.png">
-    
-    <nav class="rotas">
+
+    <nav *ngIf="mobile" class="rotas">
         <button mat-fab routerLink="/desenho">Desenho</button>
         <button mat-fab routerLink="/filme">Filme</button>
         <button mat-fab routerLink="/livro">Livro</button>
@@ -16,7 +16,12 @@
         <button mat-fab routerLink="/jogos">Jogos</button>
         <button mat-fab routerLink="/audio">Audio</button>
     </nav>
-    
+
+    <!-- tentativa de responsividade -->
+    <div *ngIf="!mobile">
+      <app-lateral-bar></app-lateral-bar>
+    </div>
+
     <router-outlet></router-outlet>
 </body>
 

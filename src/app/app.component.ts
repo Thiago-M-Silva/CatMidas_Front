@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { LateralBarComponent } from './components/lateral-bar/lateral-bar.component';
 
 
 @Component({
@@ -9,6 +9,13 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class AppComponent {
   title = 'CatMidas';
-  creditos = 'Feito por Thiago Marcos da Silva'
+  creditos = 'Feito por Thiago Marcos da Silva';
+  mobile = false;
+
+  OnInit(){
+    if(window.screen.width === 360){
+      this.mobile = true;
+    }
+  }
 
 }
