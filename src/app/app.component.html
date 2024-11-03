@@ -1,12 +1,38 @@
 <header>
-    <button mat-fab routerLink="/" class="Home">Home</button>
+    <button mat-fab routerLink="/" class="Home" *ngIf="!showSidebar">
+      <mat-icon aria-hidden="false" aria-label="Menu icon" fontIcon="home"></mat-icon>
+    </button>
+
+    <button mat-fab class="SideBar" *ngIf="showSidebar">
+      <mat-icon aria-hidden="false" aria-label="Menu icon" fontIcon="menu" onclick="toggleSidebar()"></mat-icon>
+    </button>
+
     <h1> {{ title }} </h1>
 </header>
-<body >
 
+<body >
     <img src="../assets/gato1.png" alt="gato.png">
 
-    <nav *ngIf="mobile" class="rotas">
+
+    <!-- <mat-sidenav-container  *ngIf="showSidebar" class="example-container">
+      <mat-sidenav mode="side" opened>
+        <div style="display: flex; flex-direction: column;">
+          <button mat-fab routerLink="/desenho">Desenho</button>
+          <button mat-fab routerLink="/filme">Filme</button>
+          <button mat-fab routerLink="/livro">Livro</button>
+          <button mat-fab routerLink="/quadrinhos">Quadrinhos</button>
+          <button mat-fab routerLink="/novela">Novela</button>
+          <button mat-fab routerLink="/serie">Series</button>
+          <button mat-fab routerLink="/jogos">Jogos</button>
+          <button mat-fab routerLink="/audio">Audio</button>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container> -->
+
+    <nav *ngIf="!showSidebar" class="rotas">
         <button mat-fab routerLink="/desenho">Desenho</button>
         <button mat-fab routerLink="/filme">Filme</button>
         <button mat-fab routerLink="/livro">Livro</button>
@@ -16,12 +42,6 @@
         <button mat-fab routerLink="/jogos">Jogos</button>
         <button mat-fab routerLink="/audio">Audio</button>
     </nav>
-
-    <!-- tentativa de responsividade -->
-    <div *ngIf="!mobile">
-      <app-lateral-bar></app-lateral-bar>
-    </div>
-
     <router-outlet></router-outlet>
 </body>
 

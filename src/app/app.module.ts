@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 import { Location } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -32,7 +36,7 @@ import { FormNovelaComponent } from './popups/form-novela/form-novela.component'
 import { FormQuadrinhoComponent } from './popups/form-quadrinho/form-quadrinho.component';
 import { FormSerieComponent } from './popups/form-serie/form-serie.component';
 import { LateralBarComponent } from "./components/lateral-bar/lateral-bar.component";
-import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
@@ -69,6 +73,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatIconModule,
     MatRadioModule,
     MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    BrowserAnimationsModule,
 ],
   providers: [],
   bootstrap: [AppComponent]
